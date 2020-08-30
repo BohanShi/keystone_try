@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">keystone_try</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Report</string>
+
+    <string name="welcome_cal">Calculation</string>
+    <string name="title_img_info">title img</string>
+    <string name="title_btn">enter cal game</string>
+    <string name="high_score_cal">High Score:</string>
+    <string name="current_score">Score:</string>
+    <string name="input_indicate">Your Answer:</string>
+    <string name="lose_msg">You lose!</string>
+    <string name="Win_msg">You Win!</string>
+    <string name="lose_score">Your Score:</string>
+    <string name="win_score">New Record:</string>
+    <string name="you_win">You win!</string>
+    <string name="you_lose">You lose!</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,2 @@
+rootProject.name='keystone_try'
+include ':app'
