@@ -20,7 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginVertical="60dp"
+            android:layout_marginVertical="20dp"
             android:orientation="horizontal"
             android:gravity="center_horizontal">
 
@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:text="Search by Category"
-                    android:textSize="@dimen/btn_size"/>
+                    android:textSize="15sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:text="Search by Purpose"
-                    android:textSize="@dimen/btn_size"/>
+                    android:textSize="15sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -75,21 +75,21 @@
             android:layout_height="wrap_content"
             android:id="@+id/count_game_btn"
             android:layout_marginVertical="10dp"
-            android:textSize="@dimen/Huge_font"
+            android:textSize="25sp"
             android:text="count game"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/second_game_btn"
             android:layout_marginVertical="10dp"
-            android:textSize="@dimen/Huge_font"
+            android:textSize="25sp"
             android:text="second game"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/third_game_btn"
             android:layout_marginVertical="10dp"
-            android:textSize="@dimen/Huge_font"
+            android:textSize="25sp"
             android:text="third game"/>
 
     </LinearLayout>
