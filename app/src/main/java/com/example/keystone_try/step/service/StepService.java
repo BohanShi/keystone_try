@@ -111,7 +111,7 @@ public class StepService extends Service implements SensorEventListener {
                     .setPriority(Notification.PRIORITY_DEFAULT)//设置该通知优先级
                     .setAutoCancel(false)//设置这个标志当用户单击面板就可以让通知将自动取消
                     .setOngoing(true)//ture，设置他为一个正在进行的通知。他们通常是用来表示一个后台任务,用户积极参与(如播放音乐)或以某种方式正在等待,因此占用设备(如一个文件下载,同步操作,主动网络连接)
-                    .setSmallIcon(R.mipmap.ic_launcher);
+                    .setSmallIcon(R.mipmap.keystone_logo);
             Notification notification = mBuilder.build();
             mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             startForeground(notifyId_Step, notification);
@@ -133,7 +133,7 @@ public class StepService extends Service implements SensorEventListener {
 
         mBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
         Notification notification = mBuilder.setOngoing(true)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.keystone_logo)
                 .setContentTitle(getResources().getString(R.string.app_name))
                 .setContentText("Today Step " + CURRENT_STEP + " steps")
                 .setWhen(System.currentTimeMillis())
@@ -334,7 +334,7 @@ public class StepService extends Service implements SensorEventListener {
                 .setOngoing(false)//ture，设置他为一个正在进行的通知。他们通常是用来表示一个后台任务,用户积极参与(如播放音乐)或以某种方式正在等待,因此占用设备(如一个文件下载,同步操作,主动网络连接)
                 .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)//向通知添加声音、闪灯和振动效果的最简单、最一致的方式是使用当前的用户默认设置，使用defaults属性，可以组合：
                 //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
-                .setSmallIcon(R.mipmap.ic_launcher);
+                .setSmallIcon(R.mipmap.keystone_logo);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotificationManager.notify(notify_remind_id, mBuilder.build());
     }
