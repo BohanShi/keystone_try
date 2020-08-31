@@ -24,7 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.keystone_try.R;
-import com.example.keystone_try.StepView;
+import com.example.keystone_try.views.StepView;
 import com.example.keystone_try.step.UpdateUiCallBack;
 import com.example.keystone_try.step.bean.StepData;
 import com.example.keystone_try.step.service.StepService;
@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
     LineChart lineChart;
     Button settingBtn;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
+    public View onCreateView(@NonNull final LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
@@ -73,6 +73,10 @@ public class HomeFragment extends Fragment {
                                 String input = et.getText().toString();
                                 if (input.equals("")) {
                                     Toast.makeText(getContext(), "Invalid input!" + input, Toast.LENGTH_LONG).show();
+                                }else if (Integer.parseInt(input) > 15000){
+                                    Toast.makeText(getContext(), "Too many steps!" + input, Toast.LENGTH_LONG).show();
+                                }else if (Integer.parseInt(input) < 1000){
+                                    Toast.makeText(getContext(), "Please set more!" + input, Toast.LENGTH_LONG).show();
                                 }
                                 else {
                                     SPHelper.putString(getContext(),"planWalk_QTY", input);

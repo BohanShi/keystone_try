@@ -1,4 +1,4 @@
-package com.example.keystone_try;
+package com.example.keystone_try.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,6 +11,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+
+import com.example.keystone_try.R;
 
 public class StepView extends View {
 

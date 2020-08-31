@@ -1,4 +1,4 @@
-package com.example.keystone_try;
+package com.example.keystone_try.views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,9 +6,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
+import com.example.keystone_try.Constant;
+
 public class ChartView extends View{
     public int XPoint=40;    //原点的X坐标
-    public int YPoint=Constant.point.y/2;     //原点的Y坐标
+    public int YPoint= Constant.point.y/2;     //原点的Y坐标
     public int XScale=55;     //X的刻度长度
     public int YScale=40;     //Y的刻度长度
     public int XLength=Constant.point.x-100;        //X轴的长度
