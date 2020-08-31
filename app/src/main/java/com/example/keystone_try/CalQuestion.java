@@ -44,6 +44,7 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cal_question);
         answerTv = findViewById(R.id.textViewResult);
@@ -75,6 +76,7 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
         num2Tv = findViewById(R.id.num2);
         scoreTv = findViewById(R.id.textView_score);
         initData();
+
     }
 
     private void initData() {
@@ -247,6 +249,18 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // 点击“确认”后的操作
+                        int highScore = SPHelper.getInt(getApplicationContext(), "HighScore");
+
+                        if (score > highScore) {
+                            SPHelper.putInt(getApplicationContext(), "HighScore", score);
+                            Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+                            it.putExtra("Score", score);
+                            startActivity(it);
+                        } else {
+                            Intent it = new Intent(CalQuestion.this, FailActivity.class);
+                            it.putExtra("Score", score);
+                            startActivity(it);
+                        }
                         CalQuestion.this.finish();
 
                     }
