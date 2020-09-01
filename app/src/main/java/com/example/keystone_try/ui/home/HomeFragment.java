@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment {
                 final EditText et = new EditText(getContext());
                 et.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-                new AlertDialog.Builder(getContext()).setTitle("Set Goal")
+                new AlertDialog.Builder(getContext()).setTitle("Set Your Daily Steps Goal")
                         .setIcon(android.R.drawable.ic_dialog_info)
                         .setView(et)
                         .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {

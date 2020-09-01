@@ -81,8 +81,8 @@ public class StepView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int width = View.MeasureSpec.getSize(widthMeasureSpec);
-        int height = View.MeasureSpec.getSize(heightMeasureSpec);
+        int width = (int) (MeasureSpec.getSize(widthMeasureSpec)*0.8);
+        int height = (int) (MeasureSpec.getSize(heightMeasureSpec)*0.8);
         setMeasuredDimension(width > height ? height : width, width > height ? height : width);
     }
 
