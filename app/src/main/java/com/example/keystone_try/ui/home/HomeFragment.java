@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -57,6 +58,21 @@ public class HomeFragment extends Fragment {
         lineChart.animateXY(1000,1000);
         lineChart.getDescription().setEnabled(false);
 
+        TextView tv = new TextView(getContext());
+        tv.setPadding(35,0,25,0);
+        tv.setText("For the better experience, we Strong Advise you to test this App on real machine");
+
+
+            int highScore = SPHelper.getInt(getContext(), "HighScore");
+        if (highScore <1 ){
+            new AlertDialog.Builder(getContext()).setTitle("Friendly notice")
+                    .setView(tv)
+                    .setPositiveButton("Confirm", null)
+                    .show();
+        }
+
+
+
         settingBtn = root.findViewById(R.id.goal_btn);
         settingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +107,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//计步器动画
+//Pedometer animation
         stepView = root.findViewById(R.id.step_display);
 
         //====
@@ -116,9 +132,10 @@ public class HomeFragment extends Fragment {
     private void xText() {
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.TOP);
+        xAxis.setEnabled(false);
     }
 
-    //设置y轴
+    //Set y axis
     private void yText() {
         YAxis yAxisLeft = lineChart.getAxisLeft();
         yAxisLeft.setEnabled(false);
@@ -146,7 +163,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initData() {
-        //获取用户设置的计划锻炼步数，没有设置过的话默认2000
+        //Get the number of planned exercise steps set by the user, if not set, the default is 2000
         final String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
         int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
 
@@ -175,22 +192,27 @@ public class HomeFragment extends Fragment {
         List<StepData> stepDatas =DbUtils.getQueryAll(StepData.class);
 
         ArrayList<Entry> values = new ArrayList<>();
-        //添加数据
+        ArrayList<Entry> newValues = new ArrayList<>();
+        //adding data
         if (!stepDatas.isEmpty()) {
             int i=0;
+
             for (; i<7&&i<stepDatas.size(); i++) {
-                StepData stepData = stepDatas.get(i);
+                StepData stepData = stepDatas.get(stepDatas.size()-i-1);
                 values.add(new Entry(7-i, Integer.parseInt(stepData.getStep())));
+
             }
+
             for (; i<7; i++) {
                 values.add(new Entry(7-i, 0));
             }
         }
 
+
         xText();
         yText();
 
-        //执行
+        //execute
         if (!values.isEmpty()) {
             Collections.reverse(values);
             text_all(values);
@@ -213,11 +235,11 @@ public class HomeFragment extends Fragment {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             StepService stepService = ((StepService.StepBinder) service).getService();
-            //设置初始化数据
+            //Set initialization data
             String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
             int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
 
-            //设置步数监听回调
+            //Set the number of steps to monitor the callback
             stepService.registerCallback(new UpdateUiCallBack() {
                 @Override
                 public void updateUi(int stepCount) {

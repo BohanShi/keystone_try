@@ -46,7 +46,8 @@ public class StepDetector implements SensorEventListener {
     }
 
     /*
-     * 检测步子，并开始计步
+     * Detect steps and start counting steps
+
      * */
     public void detectorNewStep(float values) {
         if (gravityOld == 0) {
@@ -59,7 +60,7 @@ public class StepDetector implements SensorEventListener {
                         && (peakOfWave - valleyOfWave >= ThreadValue)) {
                     timeOfThisPeak = timeOfNow;
                     /*
-                     * 更新界面的处理，不涉及到算法
+                     * Update interface processing, no algorithm involved
                      * */
                     mStepListeners.countStep();
                 }
@@ -74,7 +75,7 @@ public class StepDetector implements SensorEventListener {
     }
 
     /*
-     * 检测波峰
+     * Detection peak
      * */
     public boolean detectorPeak(float newValue, float oldValue) {
         lastStatus = isDirectionUp;
@@ -100,7 +101,7 @@ public class StepDetector implements SensorEventListener {
     }
 
     /*
-     * 阈值的计算
+     * Calculation of threshold
      * */
     public float peakValleyThread(float value) {
         float tempThread = ThreadValue;
@@ -119,7 +120,7 @@ public class StepDetector implements SensorEventListener {
     }
 
     /*
-     * 梯度化阈值
+     * Gradient threshold
      * */
     public float averageValue(float value[], int n) {
         float ave = 0;

@@ -8,7 +8,7 @@ import com.litesuits.orm.db.enums.AssignType;
 @Table("step")
 public class StepData {
 
-    // 指定自增，每个对象需要有一个主键
+    // Specify auto-increment, each object needs to have a primary key
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     private int id;
 

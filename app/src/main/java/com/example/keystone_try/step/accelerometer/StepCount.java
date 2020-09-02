@@ -18,8 +18,8 @@ public class StepCount implements StepCountListener{
     }
 
     /*
-     * 连续走十步才会开始计步
-     * 连续走了9步以下,停留超过3秒,则计数清空
+     * Take ten steps in a row to start counting steps count
+     * If you walk for less than 9 steps and stay for more than 3 seconds, the count will be cleared
      * */
     @Override
     public void countStep() {
@@ -36,8 +36,8 @@ public class StepCount implements StepCountListener{
                 this.mCount++;
                 notifyListener();
             }
-        } else {//超时
-            this.count = 1;//为1,不是0
+        } else {//time out
+            this.count = 1;
         }
 
     }

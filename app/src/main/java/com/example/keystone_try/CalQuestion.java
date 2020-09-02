@@ -248,7 +248,7 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // 点击“确认”后的操作
+                        // Operation after clicking "Confirm"
                         int highScore = SPHelper.getInt(getApplicationContext(), "HighScore");
 
                         if (score > highScore) {
@@ -269,10 +269,11 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // 点击“返回”后的操作,这里不设置没有任何操作
+                        // The operation after clicking "return", there is no operation without setting here
                     }
                 }).show();
     }
+
 
 
 }

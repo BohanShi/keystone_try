@@ -62,7 +62,7 @@ public class NotificationsFragment extends Fragment {
         List<GameOneScore> scoreList = DbUtils.getQueryAll(GameOneScore.class);
         Collections.reverse(scoreList);
         ArrayList<Entry> values = new ArrayList<>();
-        //添加数据
+        //adding data
         if (!scoreList.isEmpty()) {
             int i=0;
             for (; i<7&&i<scoreList.size(); i++) {
@@ -77,7 +77,7 @@ public class NotificationsFragment extends Fragment {
         xText();
         yText();
 
-        //执行
+        //execute
         if (!values.isEmpty()) {
             text_all(values);
         }
@@ -88,7 +88,7 @@ public class NotificationsFragment extends Fragment {
         xAxis.setPosition(XAxis.XAxisPosition.TOP);
     }
 
-    //设置y轴
+    //Set y axis
     private void yText() {
         YAxis yAxisLeft = scoreChart.getAxisLeft();
         yAxisLeft.setEnabled(false);

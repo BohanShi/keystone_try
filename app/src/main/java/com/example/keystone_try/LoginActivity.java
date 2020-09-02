@@ -1,9 +1,11 @@
 package com.example.keystone_try;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -22,19 +24,23 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        textView = findViewById(R.id.test);
-        String ime = getUUID();
-        textView.setText(ime);
+        textView = new TextView(getApplicationContext());
+        textView.setText("Friendly notice: for the better experience, we strongly suggest you to test on real machine");
 
-        login = findViewById(R.id.no_name_login);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(it);
-            }
-        });
+//        textView = findViewById(R.id.test);
+//        String ime = getUUID();
+//        textView.setText(ime);
+//
+//        login = findViewById(R.id.no_name_login);
+//
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent it = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(it);
+//            }
+//        });
     }
 
     public String getUUID() {

@@ -53,7 +53,7 @@ public class DbUtils {
     }
 
     /**
-     * 查询  某字段 等于 Value的值
+     * Query a field equal to the value of Value
      *
      * @param cla
      * @param field

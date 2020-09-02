@@ -29,7 +29,7 @@ public class StepCountModeDispatcher {
      */
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public static boolean isSupportStepCountSensor(Context context) {
-        // 获取传感器管理器的实例
+        // Get an instance of the sensor manager
         SensorManager sensorManager = (SensorManager) context
                 .getSystemService(context.SENSOR_SERVICE);
         Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
