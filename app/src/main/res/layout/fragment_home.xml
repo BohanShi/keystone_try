@@ -65,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="set your goal"
+        style="@style/button_blue_style"
         app:layout_constraintBottom_toTopOf="@+id/guideline26"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintHorizontal_bias="0.497"
