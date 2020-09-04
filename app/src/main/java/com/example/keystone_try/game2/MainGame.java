@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * reference from Youtuber AtoTalKs
+ */
 public class MainGame {
 
     public static final int SPAWN_ANIMATION = -1;

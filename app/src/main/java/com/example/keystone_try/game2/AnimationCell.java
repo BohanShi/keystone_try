@@ -1,5 +1,8 @@
 package com.example.keystone_try.game2;
 
+/**
+ * reference from Youtuber AtoTalKs
+ */
 class AnimationCell extends Cell {
     public final int[] extras;
     private final int animationType;

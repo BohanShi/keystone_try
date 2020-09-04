@@ -7,7 +7,9 @@ import android.view.KeyEvent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ * reference from Youtuber AtoTalKs
+ */
 public class game_2048 extends AppCompatActivity {
     private static final String WIDTH = "width";
     private static final String HEIGHT = "height";

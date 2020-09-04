@@ -15,6 +15,9 @@ import android.view.View;
 import com.example.keystone_try.R;
 
 import java.util.ArrayList;
+/**
+ * reference from Youtuber AtoTalKs
+ */
 
 @SuppressWarnings("deprecation")
 public class MainView extends View {

@@ -2,6 +2,9 @@ package com.example.keystone_try.game2;
 
 import java.util.ArrayList;
 
+/**
+ * reference from Youtuber AtoTalKs
+ */
 
 public class AnimationGrid {
     public final ArrayList<AnimationCell> globalAnimation = new ArrayList<>();

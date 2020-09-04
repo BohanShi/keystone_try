@@ -1,5 +1,8 @@
 package com.example.keystone_try.game2;
 
+/**
+ * reference from Youtuber AtoTalKs
+ */
 import java.util.ArrayList;
 
 public class Grid {

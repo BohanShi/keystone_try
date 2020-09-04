@@ -1,5 +1,9 @@
 package com.example.keystone_try.game2;
 
+/**
+ * reference from Youtuber AtoTalKs
+ */
+
 public class Tile extends Cell {
     private final int value;
     private Tile[] mergedFrom = null;

@@ -7,6 +7,9 @@ import android.view.View;
 
 import com.example.keystone_try.R;
 
+/**
+ * reference from Youtuber AtoTalKs
+ */
 class InputListener implements View.OnTouchListener {
 
     private static final int SWIPE_MIN_DISTANCE = 0;
