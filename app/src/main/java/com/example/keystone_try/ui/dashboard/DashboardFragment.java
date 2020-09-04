@@ -1,28 +1,23 @@
 package com.example.keystone_try.ui.dashboard;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.keystone_try.CalTitle;
 import com.example.keystone_try.R;
+import com.example.keystone_try.game2.game_2048;
 import com.example.keystone_try.step.utils.SPHelper;
 
 public class DashboardFragment extends Fragment {
@@ -76,8 +71,11 @@ public class DashboardFragment extends Fragment {
         game2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                game2.setError("Not available now");
-                Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
+
+                Intent it = new Intent(getActivity(), game_2048.class);
+                startActivity(it);
+                //game2.setError("Not available now");
+                //Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
             }
         });
 
