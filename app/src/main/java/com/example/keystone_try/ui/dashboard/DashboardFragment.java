@@ -93,7 +93,7 @@ public class DashboardFragment extends Fragment {
     }
 
 
-    public void isFirstTime(String instructionTitle, String instruction, final Class c){
+    public void isFirstTime(final String instructionTitle, String instruction, final Class c){
         if (!(highScore > 1)){
             final TextView tv = new TextView(getContext());
             tv.setText(instruction);
@@ -104,8 +104,10 @@ public class DashboardFragment extends Fragment {
                     .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getActivity(), c);
+//                            new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
+//                                    .setPositiveButton("Confirm", )
 
+                            Intent intent = new Intent(getActivity(), c);
                             startActivity(intent);
                         }
                     })
