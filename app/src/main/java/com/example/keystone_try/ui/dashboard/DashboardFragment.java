@@ -15,7 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.keystone_try.CalTitle;
+import com.example.keystone_try.game1.CalTitle;
 import com.example.keystone_try.R;
 import com.example.keystone_try.game2.game_2048;
 import com.example.keystone_try.step.utils.SPHelper;

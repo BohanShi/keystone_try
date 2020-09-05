@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.keystone_try.step.utils.DbUtils;
+
 import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,9 +26,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        textView = new TextView(getApplicationContext());
-        textView.setText("Friendly notice: for the better experience, we strongly suggest you to test on real machine");
+        //textView = new TextView(getApplicationContext());
+        //textView.setText("Friendly notice: for the better experience, we strongly suggest you to test on real machine");
+        if(DbUtils.getLiteOrm()==null){
+            DbUtils.createDb(this, "jingzhi");
+        }
 
+        Intent it = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(it);
 
 //        textView = findViewById(R.id.test);
 //        String ime = getUUID();

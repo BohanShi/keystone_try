@@ -1,6 +1,4 @@
-package com.example.keystone_try;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.keystone_try.game1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.keystone_try.R;
 import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;

@@ -1,6 +1,4 @@
-package com.example.keystone_try;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.keystone_try.game1;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,12 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.keystone_try.R;
 import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
 import com.example.keystone_try.views.BaseActivity;
-import com.example.keystone_try.views.FailActivity;
-import com.example.keystone_try.views.SuccessActivity;
 
 import java.util.Random;
 
@@ -82,7 +79,8 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
 
     private void initData() {
         getRandomNumber();
-        scoreTv.setText(score+"");
+        score = SPHelper.getInt(this, "currentScore");
+        scoreTv.setText(score + "");
     }
 
     private void getRandomNumber() {
@@ -229,51 +227,58 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
                     if (score > highScore) {
                         SPHelper.putInt(this, "HighScore", score);
                         Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+
                         it.putExtra("Score", score);
+                        score = 0;
                         startActivity(it);
                     } else {
                         Intent it = new Intent(CalQuestion.this, FailActivity.class);
+
                         it.putExtra("Score", score);
+                        score = 0;
                         startActivity(it);
                     }
                 }
             }
+            SPHelper.putInt(this, "currentScore", score);
             break;
         }
     }
 
-    public void onBackPressed() {
-        new AlertDialog.Builder(this).setTitle("Are you sure to quit？")
-                .setIcon(android.R.drawable.ic_dialog_info)
-                .setPositiveButton("Sure", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Operation after clicking "Confirm"
-                        int highScore = SPHelper.getInt(getApplicationContext(), "HighScore");
-
-                        if (score > highScore) {
-                            SPHelper.putInt(getApplicationContext(), "HighScore", score);
-                            Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
-                            it.putExtra("Score", score);
-                            startActivity(it);
-                        } else {
-                            Intent it = new Intent(CalQuestion.this, FailActivity.class);
-                            it.putExtra("Score", score);
-                            startActivity(it);
-                        }
-                        CalQuestion.this.finish();
-
-                    }
-                })
-                .setNegativeButton("Not Sure", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // The operation after clicking "return", there is no operation without setting here
-                    }
-                }).show();
-    }
+  //  public void onBackPressed() {
+//        new AlertDialog.Builder(this).setTitle("Are you sure to quit？")
+//                .setIcon(android.R.drawable.ic_dialog_info)
+//                .setPositiveButton("Sure", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // Operation after clicking "Confirm"
+//                        int highScore = SPHelper.getInt(getApplicationContext(), "HighScore");
+//
+//                        if (score > highScore) {
+//                            SPHelper.putInt(getApplicationContext(), "HighScore", score);
+//                            Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+//                            it.putExtra("Score", score);
+//                            startActivity(it);
+//                        } else {
+//                            Intent it = new Intent(CalQuestion.this, FailActivity.class);
+//                            it.putExtra("Score", score);
+//                            startActivity(it);
+//                        }
+//                        CalQuestion.this.finish();
+//
+//                    }
+//                })
+//                .setNegativeButton("Not Sure", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // The operation after clicking "return", there is no operation without setting here
+//                    }
+//                }).show();
+//
+   //     SPHelper.putInt(this, "currentScore", score);
+//    }
 
 
 

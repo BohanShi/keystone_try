@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.SuccessActivity">
+    tools:context=".game1.SuccessActivity">
 
     <ImageView
         android:id="@+id/status_img"
