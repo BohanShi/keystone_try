@@ -46,6 +46,7 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         setContentView(R.layout.activity_cal_question);
         answerTv = findViewById(R.id.textViewResult);
         btn0 = findViewById(R.id.btn_0);

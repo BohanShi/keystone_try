@@ -22,6 +22,7 @@ public class CalTitle extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         setContentView(R.layout.activity_cal_title);
         enter = findViewById(R.id.cal_enter_question);
         enter.setOnClickListener(new View.OnClickListener() {

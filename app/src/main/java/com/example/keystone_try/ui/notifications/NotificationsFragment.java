@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.keystone_try.R;
 import com.example.keystone_try.bean.GameOneScore;
 
+import com.example.keystone_try.bean.GameTwoScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
 import com.github.mikephil.charting.charts.LineChart;
@@ -59,15 +60,15 @@ public class NotificationsFragment extends Fragment {
             DbUtils.createDb(getContext(), "jingzhi");
         }
 
-        List<GameOneScore> scoreList = DbUtils.getQueryAll(GameOneScore.class);
+        List<GameTwoScore> scoreList = DbUtils.getQueryAll(GameTwoScore.class);
         Collections.reverse(scoreList);
         ArrayList<Entry> values = new ArrayList<>();
         //adding data
         if (!scoreList.isEmpty()) {
             int i=0;
             for (; i<7&&i<scoreList.size(); i++) {
-                GameOneScore gameOneScore = scoreList.get(i);
-                values.add(new Entry(i+1, gameOneScore.getScore()));
+                GameTwoScore gameTwoScore = scoreList.get(i);
+                values.add(new Entry(i+1,gameTwoScore.getScore()));
             }
             for (; i<7; i++) {
                 values.add(new Entry(i+1, 0));

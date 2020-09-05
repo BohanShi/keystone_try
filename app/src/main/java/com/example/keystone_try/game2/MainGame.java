@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.example.keystone_try.bean.GameTwoScore;
+import com.example.keystone_try.step.utils.DbUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -63,9 +66,11 @@ public class MainGame {
             prepareUndoState();
             saveUndoState();
             grid.clearGrid();
+            setScores(score);
         }
         aGrid = new AnimationGrid(numSquaresX, numSquaresY);
         highScore = getHighScore();
+
         if (score >= highScore) {
             highScore = score;
             recordHighScore();
@@ -256,6 +261,10 @@ public class MainGame {
 
     private void endGame() {
         aGrid.startAnimation(-1, -1, FADE_GLOBAL_ANIMATION, NOTIFICATION_ANIMATION_TIME, NOTIFICATION_DELAY_TIME, null);
+
+        setScores(score);
+
+
         if (score >= highScore) {
             highScore = score;
             recordHighScore();
@@ -359,5 +368,11 @@ public class MainGame {
 
     public boolean canContinue() {
         return !(gameState == GAME_ENDLESS || gameState == GAME_ENDLESS_WON);
+    }
+
+    public void setScores(long m_score) {
+        GameTwoScore gameTwoScore = new GameTwoScore();
+        gameTwoScore.setScore(m_score);
+        DbUtils.insert(gameTwoScore);
     }
 }
