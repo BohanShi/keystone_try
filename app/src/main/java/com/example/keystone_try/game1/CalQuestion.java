@@ -250,10 +250,10 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
             case R.id.game1_help_btn:{
                 final TextView et = new TextView(getApplicationContext());
                 et.setText("that is instruction of game 1");
-                et.setPadding(25,10,15,5);
+                et.setPadding(45,10,15,5);
                 et.setInputType(InputType.TYPE_CLASS_NUMBER);
                 new AlertDialog.Builder(this).setTitle("Game Introduction")
-                        .setIcon(android.R.drawable.ic_dialog_info)
+                        .setIcon(android.R.drawable.ic_menu_help)
                         .setView(et)
                         .setPositiveButton("Sure", null)
                         .show();
