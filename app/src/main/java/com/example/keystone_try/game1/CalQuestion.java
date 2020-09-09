@@ -223,6 +223,10 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
                     scoreTv.setText(score+"");
                     getRandomNumber();
                 } else {
+                    int oneTimes = SPHelper.getInt(this, "OneTimes");
+                    oneTimes++;
+                    SPHelper.putInt(this, "OneTimes", oneTimes);
+
                     int highScore = SPHelper.getInt(this, "HighScore");
 
                     GameOneScore gameOneScore = new GameOneScore();

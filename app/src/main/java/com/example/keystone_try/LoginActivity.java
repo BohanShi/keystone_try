@@ -35,19 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent it = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(it);
 
-//        textView = findViewById(R.id.test);
-//        String ime = getUUID();
-//        textView.setText(ime);
-//
-//        login = findViewById(R.id.no_name_login);
-//
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent it = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(it);
-//            }
-//        });
+
     }
 
     public String getUUID() {

@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.bean.GameTwoScore;
 import com.example.keystone_try.step.utils.DbUtils;
+import com.example.keystone_try.step.utils.SPHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -264,6 +266,9 @@ public class MainGame {
 
         setScores(score);
 
+//        int twoTimes = SPHelper.getInt(mContext, "TwoTimes");
+//        twoTimes++;
+//        SPHelper.putInt(mContext, "TwoTimes", twoTimes);
 
         if (score >= highScore) {
             highScore = score;
@@ -374,5 +379,9 @@ public class MainGame {
         GameTwoScore gameTwoScore = new GameTwoScore();
         gameTwoScore.setScore(m_score);
         DbUtils.insert(gameTwoScore);
+
+        int twoTimes = SPHelper.getInt(mContext, "TwoTimes");
+        twoTimes++;
+        SPHelper.putInt(mContext, "TwoTimes", twoTimes);
     }
 }

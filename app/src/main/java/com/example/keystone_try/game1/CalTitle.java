@@ -11,6 +11,9 @@ import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
 import com.example.keystone_try.views.BaseActivity;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -34,6 +37,7 @@ public class CalTitle extends BaseActivity {
 
         textView = findViewById(R.id.textView);
         initData();
+
     }
 
     @Override

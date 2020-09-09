@@ -253,13 +253,18 @@ public class StepService extends Service implements SensorEventListener {
      * Monitor time changes to remind users to exercise
      */
     private void isCall() {
-        String time = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("achieveTime", "21:00");
+//        String time = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("achieveTime", "21:00");
+        String time = "21:00";
+        String moreTime = "14:00";
         String plan = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("planWalk_QTY", SPHelper.getString(getApplicationContext(),  "planWalk_QTY"));
         String remind = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("remind", "1");
 
-        if (("1".equals(remind)) &&                                       
-                (CURRENT_STEP < Integer.parseInt(plan)) &&
-                (time.equals(new SimpleDateFormat("HH:mm").format(new Date())))
+        if (CURRENT_STEP<200 && moreTime.equals(new SimpleDateFormat("HH:mm").format(new Date())))
+        {
+            remindMoreWalkNotify();
+        }
+
+        if ((time.equals(new SimpleDateFormat("HH:mm").format(new Date())))
         ) {
             remindNotify();
         }
@@ -328,10 +333,48 @@ public class StepService extends Service implements SensorEventListener {
         Intent hangIntent = new Intent(this, MainActivity.class);
         PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 0, hangIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        String plan = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("planWalk_QTY", "2000");
+        String plan = SPHelper.getString(getBaseContext(), "planWalk_QTY");
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        if (CURRENT_STEP >= Integer.valueOf(plan)) {
+            mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
+                    .setContentText("You've achieved your goal. Congratulations!")
+                    .setContentIntent(hangPendingIntent)
+                    .setTicker(getResources().getString(R.string.app_name) + "notice you that you have achieved your goal.")//The notification appears in the notification bar for the first time, with a rising animation effect
+                    .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
+                    .setPriority(Notification.PRIORITY_DEFAULT)//Set the priority of this notification
+                    .setAutoCancel(true)//Set this flag when the user clicks on the panel to make the notification automatically cancel
+                    .setOngoing(false)//ture，
+                    .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)//Add sound to notification
+                    //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
+                    .setSmallIcon(R.mipmap.keystone_logo);
+        } else {
+            mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
+                    .setContentText("Still needs" + (Integer.valueOf(plan) - CURRENT_STEP) + " steps to goal，come on！")
+                    .setContentIntent(hangPendingIntent)
+                    .setTicker(getResources().getString(R.string.app_name) + "notice you to have some work")//The notification appears in the notification bar for the first time, with a rising animation effect
+                    .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
+                    .setPriority(Notification.PRIORITY_DEFAULT)//Set the priority of this notification
+                    .setAutoCancel(true)//Set this flag when the user clicks on the panel to make the notification automatically cancel
+                    .setOngoing(false)//ture，
+                    .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)//Add sound to notification
+                    //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
+                    .setSmallIcon(R.mipmap.keystone_logo);
+        }
+
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mNotificationManager.notify(notify_remind_id, mBuilder.build());
+    }
+
+    /**
+     *  14:00 notice
+     */
+    private void remindMoreWalkNotify() {
+        Intent hangIntent = new Intent(this, MainActivity.class);
+        PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 0, hangIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        String plan = SPHelper.getString(getBaseContext(), "planWalk_QTY");
         mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
-                .setContentText("Still needs" + (Integer.valueOf(plan) - CURRENT_STEP) + " steps to goal，come on！")
+                .setContentText("You have only walked " + CURRENT_STEP + " steps，come on！")
                 .setContentIntent(hangPendingIntent)
                 .setTicker(getResources().getString(R.string.app_name) + "notice you to have some work")//The notification appears in the notification bar for the first time, with a rising animation effect
                 .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
