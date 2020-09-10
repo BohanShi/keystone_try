@@ -22,4 +22,10 @@
         android:name="com.example.keystone_try.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_opendata"
+        android:name="com.example.keystone_try.ui.OpenData.OpenData"
+        android:label="@string/title_opendata"
+        tools:layout="@layout/fragment_open_data" />
 </navigation>

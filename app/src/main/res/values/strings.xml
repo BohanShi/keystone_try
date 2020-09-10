@@ -47,4 +47,6 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_opendata">Open Data</string>
 </resources>

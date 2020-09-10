@@ -26,18 +26,26 @@ public class CalTitle extends BaseActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         setContentView(R.layout.activity_cal_title);
-        enter = findViewById(R.id.cal_enter_question);
-        enter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(CalTitle.this, CalQuestion.class);
-                startActivity(it);
-            }
-        });
+        //enter = findViewById(R.id.cal_enter_question);
+//        enter.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         textView = findViewById(R.id.textView);
         initData();
 
+
+        try {
+            Thread.currentThread().sleep(2750);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Intent it = new Intent(CalTitle.this, CalQuestion.class);
+        startActivity(it);
     }
 
     @Override

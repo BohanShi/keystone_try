@@ -180,10 +180,13 @@ public class NotificationsFragment extends Fragment {
         yAxisRight.setGranularityEnabled(true);
         yAxisRight.setGranularity(1f);
         yAxisRight.setValueFormatter(new IntegerAxisFormatter());
+        yAxisLeft.setEnabled(false);
+        yAxisRight.setEnabled(false);
         XAxis xAxis = barChart.getXAxis();
         xAxis.setGranularityEnabled(true);
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(new XaxisFormatter());
+
 
         barChart.setScrollBarSize(1);
         barChart.setData(bardata);
@@ -281,9 +284,9 @@ public class NotificationsFragment extends Fragment {
         @Override
         public String getFormattedValue(float value, AxisBase axis) {
             if (value == 1) {
-                return "Game One";
+                return "Count";
             } else if (value == 2) {
-                return "Game Two";
+                return "2048";
             } else if (value == 3) {
                 return "Game Three";
             } else {

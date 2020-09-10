@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.keystone_try.MainActivity;
 import com.example.keystone_try.R;
 
 public class SuccessActivity extends AppCompatActivity {
@@ -28,7 +29,8 @@ public class SuccessActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SuccessActivity.this, CalTitle.class);
+                Intent intent = new Intent(SuccessActivity.this, MainActivity.class);
+                intent.putExtra("game","game");
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();

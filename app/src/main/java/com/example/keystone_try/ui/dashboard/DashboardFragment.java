@@ -26,8 +26,7 @@ public class DashboardFragment extends Fragment {
 
 
     Button game1;
-    Button num;
-    Button cal;
+
     Button game2;
     Button game3;
     int highScore;
@@ -48,23 +47,23 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        num = root.findViewById(R.id.number);
-        cal= root.findViewById(R.id.calculation);
-        num.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
+//        num = root.findViewById(R.id.number);
+//        cal= root.findViewById(R.id.calculation);
+//        num.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
+//
+//            }
+//        });
 
-            }
-        });
-
-        cal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
-
-            }
-        });
+//        cal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
+//
+//            }
+//        });
 
         game2 = root.findViewById(R.id.second_game_btn);
         game3 = root.findViewById(R.id.third_game_btn);

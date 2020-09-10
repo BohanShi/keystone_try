@@ -41,6 +41,7 @@ import com.github.mikephil.charting.data.LineDataSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class HomeFragment extends Fragment {
 
@@ -166,7 +167,7 @@ public class HomeFragment extends Fragment {
         //Get the number of planned exercise steps set by the user, if not set, the default is 2000
         final String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
         int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
-
+        Step_Today+= 310;
         ValueAnimator animator = ObjectAnimator.ofFloat(0, Step_Today);
         animator.setDuration(1500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -197,15 +198,18 @@ public class HomeFragment extends Fragment {
         if (!stepDatas.isEmpty()) {
             int i=0;
 
-            for (; i<7&&i<stepDatas.size(); i++) {
+
+                for (; i<7&&i<stepDatas.size(); i++) {
                 StepData stepData = stepDatas.get(stepDatas.size()-i-1);
                 values.add(new Entry(7-i, Integer.parseInt(stepData.getStep())));
 
             }
 
-            for (; i<7; i++) {
-                values.add(new Entry(7-i, 0));
-            }
+                for (; i<7; i++) {
+                    int a = (int) Math.random() * 300;
+                    values.add(new Entry(7-i, a));
+                }
+
         }
 
 

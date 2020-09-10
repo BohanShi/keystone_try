@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_show_chart_black_24dp"
         android:title="@string/title_notifications" />
 
+    <item
+        android:id="@+id/navigation_opendata"
+        android:icon="@drawable/ic_data_usage_black_24dp"
+        android:title="@string/title_opendata" />
+
 </menu>
