@@ -150,7 +150,7 @@
                 android:id="@+id/OD_title03"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/amaranth_italic"
+                android:fontFamily="@font/aclonica"
                 android:hint="@string/OD_title03"
                 android:textColorHint="@color/red"
                 android:textSize="18sp"
