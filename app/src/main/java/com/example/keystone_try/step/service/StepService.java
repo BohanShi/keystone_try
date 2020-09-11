@@ -255,16 +255,18 @@ public class StepService extends Service implements SensorEventListener {
     private void isCall() {
 //        String time = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("achieveTime", "21:00");
         String time = "21:00";
-        String moreTime = "14:00";
+        String moreTime = "16:42";
         String plan = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("planWalk_QTY", SPHelper.getString(getApplicationContext(),  "planWalk_QTY"));
         String remind = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("remind", "1");
 
-        if (CURRENT_STEP<200 && moreTime.equals(new SimpleDateFormat("HH:mm").format(new Date())))
+        String nowTime = new SimpleDateFormat("HH:mm").format(new Date());
+
+        if (CURRENT_STEP<200 && moreTime.equals(nowTime))
         {
             remindMoreWalkNotify();
         }
 
-        if ((time.equals(new SimpleDateFormat("HH:mm").format(new Date())))
+        if ((time.equals(nowTime))
         ) {
             remindNotify();
         }
@@ -323,6 +325,10 @@ public class StepService extends Service implements SensorEventListener {
      * The ID of the Notification that reminds you to exercise
      */
     int notify_remind_id = 200;
+    /**
+     * The ID of the Notification that remaids you to do more
+     */
+    int notify_more_remind_id = 300;
 
     /**
      * Reminder exercise notification bar
@@ -334,7 +340,6 @@ public class StepService extends Service implements SensorEventListener {
         PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 0, hangIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         String plan = SPHelper.getString(getBaseContext(), "planWalk_QTY");
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
         if (CURRENT_STEP >= Integer.valueOf(plan)) {
             mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
                     .setContentText("You've achieved your goal. Congratulations!")
@@ -385,7 +390,7 @@ public class StepService extends Service implements SensorEventListener {
                 //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
                 .setSmallIcon(R.mipmap.keystone_logo);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotificationManager.notify(notify_remind_id, mBuilder.build());
+        mNotificationManager.notify(notify_more_remind_id, mBuilder.build());
     }
 
     /**

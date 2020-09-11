@@ -1,8 +1,11 @@
 package com.example.keystone_try.ui.dashboard;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,55 +18,47 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.keystone_try.game1.CalTitle;
+import com.example.keystone_try.game1.CalQuestion;
 import com.example.keystone_try.R;
 import com.example.keystone_try.game2.game_2048;
 import com.example.keystone_try.step.utils.SPHelper;
+
+import java.util.ArrayList;
 
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
 
 
+    private static final String HIGH_SCORE = "high score";
     Button game1;
 
     Button game2;
     Button game3;
     int highScore;
+    int highScore2;
+    ArrayList<Integer> scores;
+
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_games, container, false);
+        scores = new ArrayList<>();
         highScore = SPHelper.getInt(getContext(), "HighScore");
-
-
+        highScore2 = (int) get2HighScore();
+        scores.add(highScore);
+        scores.add(highScore2);
         game1 = root.findViewById(R.id.count_game_btn);
         game1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
-
+                isFirstTime(R.string.intro, R.string.introCal, CalQuestion.class, 0);
             }
         });
 
-//        num = root.findViewById(R.id.number);
-//        cal= root.findViewById(R.id.calculation);
-//        num.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
-//
-//            }
-//        });
-
-//        cal.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                isFirstTime("Calculation Game Instruction","Welcome to Count Game! In this game, you will need to calculate the equation that appeared on screen. You will get one point if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer. You can exit the game in the middle of the game and your current score at the point when you leave will be your final score of the game.", CalTitle.class);
-//
-//            }
-//        });
 
         game2 = root.findViewById(R.id.second_game_btn);
         game3 = root.findViewById(R.id.third_game_btn);
@@ -71,10 +66,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent it = new Intent(getActivity(), game_2048.class);
-                startActivity(it);
-                //game2.setError("Not available now");
-                //Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
+                isFirstTime(R.string.intro, R.string.introCal, game_2048.class, 1);
             }
         });
 
@@ -90,8 +82,8 @@ public class DashboardFragment extends Fragment {
     }
 
 
-    public void isFirstTime(final String instructionTitle, String instruction, final Class c){
-        if (!(highScore > 1)){
+    public void isFirstTime(final int instructionTitle, int instruction, final Class c, int position){
+        if (!(scores.get(position) > 1)){
             final TextView tv = new TextView(getContext());
             tv.setText(instruction);
             tv.setTextSize(26);
@@ -113,5 +105,10 @@ public class DashboardFragment extends Fragment {
             Intent intent = new Intent(getActivity(), c);
             startActivity(intent);
         }
+    }
+
+    private long get2HighScore() {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
+        return settings.getLong(HIGH_SCORE, -1);
     }
 }

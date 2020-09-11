@@ -1,12 +1,17 @@
 package com.example.keystone_try.game2;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.example.keystone_try.MainActivity;
 import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.bean.GameTwoScore;
+import com.example.keystone_try.game1.CalQuestion;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
 
@@ -384,4 +389,5 @@ public class MainGame {
         twoTimes++;
         SPHelper.putInt(mContext, "TwoTimes", twoTimes);
     }
+
 }

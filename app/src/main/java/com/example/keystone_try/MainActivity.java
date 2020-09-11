@@ -1,15 +1,20 @@
 package com.example.keystone_try;
 
 import android.Manifest;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.example.keystone_try.step.utils.DbUtils;
+import com.example.keystone_try.ui.dashboard.DashboardFragment;
+import com.example.keystone_try.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         if(DbUtils.getLiteOrm()==null){
             DbUtils.createDb(this, "jingzhi");
         }
@@ -47,5 +53,7 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, 1000);
         }
     }
+
+
 
 }

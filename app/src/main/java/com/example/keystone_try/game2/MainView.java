@@ -42,6 +42,7 @@ public class MainView extends View {
     public int sYIcons;
     public int sXNewGame;
     public int sXUndo;
+    public int sXIntro;
     public int iconSize;
     //Misc
     boolean refreshLastTime = true;
@@ -249,6 +250,23 @@ public class MainView extends View {
         );
     }
 
+    private void drawIntroButton(Canvas canvas) {
+        drawDrawable(canvas,
+                backgroundRectangle,
+                sXIntro,
+                sYIcons, sXIntro + iconSize,
+                sYIcons + iconSize
+        );
+
+        drawDrawable(canvas,
+                getResources().getDrawable(R.drawable.ic_help_outline_black_24dp),
+                sXIntro + iconPaddingSize,
+                sYIcons + iconPaddingSize,
+                sXIntro + iconSize - iconPaddingSize,
+                sYIcons + iconSize - iconPaddingSize
+        );
+    }
+
     private void drawHeader(Canvas canvas) {
         paint.setTextSize(headerTextSize);
         paint.setColor(getResources().getColor(R.color.text_black));
@@ -433,11 +451,14 @@ public class MainView extends View {
         drawHeader(canvas);
         drawNewGameButton(canvas, false);
         drawUndoButton(canvas);
+        drawIntroButton(canvas);
         drawBackground(canvas);
         drawBackgroundGrid(canvas);
         if (showHelp) drawInstructions(canvas);
 
     }
+
+
 
     private void createBitmapCells() {
         Resources resources = getResources();
@@ -564,6 +585,7 @@ public class MainView extends View {
         sYIcons = (startingY + eYAll) / 2 - iconSize / 2;
         sXNewGame = (endingX - iconSize);
         sXUndo = sXNewGame - iconSize * 3 / 2 - iconPaddingSize;
+        sXIntro = sXUndo- iconSize * 3 / 2 - iconPaddingSize;
         resyncTime();
     }
 

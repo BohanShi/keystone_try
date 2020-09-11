@@ -26,26 +26,26 @@ public class CalTitle extends BaseActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         setContentView(R.layout.activity_cal_title);
-        //enter = findViewById(R.id.cal_enter_question);
-//        enter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-
+        enter = findViewById(R.id.cal_enter_question);
         textView = findViewById(R.id.textView);
-        initData();
+        enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initData();
+            }
+        });
 
 
-        try {
-            Thread.currentThread().sleep(2750);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        Intent it = new Intent(CalTitle.this, CalQuestion.class);
-        startActivity(it);
+
+
+//        try {
+//            Thread.currentThread().sleep(2750);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+
     }
 
     @Override
@@ -67,5 +67,9 @@ public class CalTitle extends BaseActivity {
         }
         SPHelper.putInt(this, "HighScore", highScore);
         textView.setText("High Score: "+highScore);
+        final Intent it = new Intent(CalTitle.this, CalQuestion.class);
+        it.putExtra("highScore", highScore+"");
+
+        startActivity(it);
     }
 }

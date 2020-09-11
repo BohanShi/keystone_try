@@ -47,6 +47,9 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="intro">Introduction</string>
     <string name="title_opendata">Open Data</string>
+    <string name="intro2048">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided.</string>
+
+    <string name="introCal">In this game, you will need to calculate the equation that appeared on the screen. You will get one score if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer.</string>
 </resources>
