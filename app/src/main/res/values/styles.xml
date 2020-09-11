@@ -17,8 +17,8 @@
     </style>
 
     <style name="button_blue_style">
-        <item name="android:textColor">@color/blue</item>
-        <item name="android:background">@color/yellow</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/powderblue</item>
     </style>
 
 </resources>

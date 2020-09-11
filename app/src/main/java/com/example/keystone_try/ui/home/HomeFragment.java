@@ -59,12 +59,11 @@ public class HomeFragment extends Fragment {
         lineChart.animateXY(1000,1000);
         lineChart.getDescription().setEnabled(false);
 
+        //add real machine notification
         TextView tv = new TextView(getContext());
         tv.setPadding(35,0,25,0);
         tv.setText("For the better experience, we Strong Advise you to test this App on real machine");
-
-
-            int highScore = SPHelper.getInt(getContext(), "HighScore");
+        int highScore = SPHelper.getInt(getContext(), "HighScore");
         if (highScore <1 ){
             new AlertDialog.Builder(getContext()).setTitle("Friendly notice")
                     .setView(tv)
@@ -117,7 +116,7 @@ public class HomeFragment extends Fragment {
                 stepView.setGoalStep(Integer.parseInt(SPHelper.getString(getContext(), "planWalk_QTY")));
             }
         } catch (Exception e) {
-            SPHelper.putString(getContext(),"planWalk_QTY", "200");
+            SPHelper.putString(getContext(),"planWalk_QTY", "2000");
             e.printStackTrace();
         }
         //====
