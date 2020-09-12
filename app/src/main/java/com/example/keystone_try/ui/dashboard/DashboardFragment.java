@@ -22,6 +22,7 @@ import com.example.keystone_try.game1.CalQuestion;
 import com.example.keystone_try.R;
 import com.example.keystone_try.game2.game_2048;
 import com.example.keystone_try.step.utils.SPHelper;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
@@ -31,10 +32,11 @@ public class DashboardFragment extends Fragment {
 
 
     private static final String HIGH_SCORE = "high score";
-    Button game1;
 
-    Button game2;
-    Button game3;
+
+    RoundedImageView game1;
+    RoundedImageView game2;
+    RoundedImageView game3;
     int highScore;
     int highScore2;
     ArrayList<Integer> scores;
@@ -51,7 +53,7 @@ public class DashboardFragment extends Fragment {
         highScore2 = SPHelper.getInt(getContext(), "TwoTimes");
         scores.add(highScore);
         scores.add(highScore2);
-        game1 = root.findViewById(R.id.count_game_btn);
+        game1 = root.findViewById(R.id.game1);
         game1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,8 +62,8 @@ public class DashboardFragment extends Fragment {
         });
 
 
-        game2 = root.findViewById(R.id.second_game_btn);
-        game3 = root.findViewById(R.id.third_game_btn);
+        game2 = root.findViewById(R.id.game2);
+        game3 = root.findViewById(R.id.game3);
         game2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +75,7 @@ public class DashboardFragment extends Fragment {
         game3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                game3.setError("Not available now");
+                //game3.setError("Not available now");
                 Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
             }
         });

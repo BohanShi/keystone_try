@@ -4,105 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:background="@color/background"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <ImageView
+        android:id="@+id/imageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/elder"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
+    <TextView
+        android:id="@+id/texttoplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.45255473" />
+        android:shadowColor="@color/colorPrimary"
+        android:textColor="@color/black"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:text="Let's paly some games"
+        android:textSize="@dimen/_29sdp"
+        android:paddingTop="@dimen/_110sdp"
+        app:layout_constraintTop_toTopOf="@id/imageHeader"
+        app:layout_constraintStart_toStartOf="@id/imageHeader"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/imageHeader"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_24sdp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_10sdp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/game1"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/calculate"
+                    app:riv_corner_radius="@dimen/_12sdp"/>
 
-    <Button
-        android:id="@+id/count_game_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:background="@drawable/button_drawable"
-        android:text="Calculate"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline30"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline16"
-        app:layout_constraintVertical_bias="0.113" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:shadowColor="@color/colorPrimary"
+                    android:shadowRadius="10"
+                    android:shadowDy="0"
+                    android:shadowDx="0"
+                    android:text="Calculate"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"/>
+            </FrameLayout>
 
-    <Button
-        android:id="@+id/second_game_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:background="@drawable/button_drawable"
-        android:text="2048"
-        android:textSize="25sp"
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_10sdp">
 
-        app:layout_constraintBottom_toTopOf="@+id/guideline30"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline16"
-        app:layout_constraintVertical_bias="0.437" />
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/game2"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/puzzle"
+                    app:riv_corner_radius="@dimen/_12sdp"/>
 
-    <Button
-        android:id="@+id/third_game_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:text="third game"
-        android:textSize="25sp"
-        android:background="@drawable/button_drawable"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:shadowColor="@color/colorPrimary"
+                    android:shadowRadius="10"
+                    android:shadowDy="0"
+                    android:shadowDx="0"
+                    android:text="2048"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black"/>
+            </FrameLayout>
 
-        app:layout_constraintBottom_toTopOf="@+id/guideline30"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline16"
-        app:layout_constraintVertical_bias="0.769" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_10sdp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10462287" />
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/game3"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image"
+                    app:riv_corner_radius="@dimen/_12sdp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5523114" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:shadowColor="@color/colorPrimary"
+                    android:shadowRadius="10"
+                    android:shadowDy="0"
+                    android:shadowDx="0"
+                    android:text="Image"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black"/>
+            </FrameLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
