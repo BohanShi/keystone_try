@@ -1,26 +1,23 @@
 package com.example.keystone_try.game1;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.keystone_try.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.keystone_try.R;
 import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
 import com.example.keystone_try.views.BaseActivity;
 
-import java.util.List;
 import java.util.Random;
 
-public class CalQuestion extends BaseActivity implements View.OnClickListener {
+public class CalQuestion extends AppCompatActivity implements View.OnClickListener {
 
     private TextView answerTv;
     private TextView scoreTv;
@@ -50,7 +47,7 @@ public class CalQuestion extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         setContentView(R.layout.activity_cal_question);
         answerTv = findViewById(R.id.textViewResult);
         operator = findViewById(R.id.operator);

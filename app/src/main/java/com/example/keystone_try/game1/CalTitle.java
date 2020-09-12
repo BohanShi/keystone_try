@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.keystone_try.R;
 import com.example.keystone_try.bean.GameOneScore;
 import com.example.keystone_try.step.utils.DbUtils;
@@ -17,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class CalTitle extends BaseActivity {
+public class CalTitle extends AppCompatActivity {
     Button enter;
     TextView textView;
 

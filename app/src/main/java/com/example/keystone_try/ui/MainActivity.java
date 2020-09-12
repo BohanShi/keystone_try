@@ -1,4 +1,4 @@
-package com.example.keystone_try;
+package com.example.keystone_try.ui;
 
 import android.Manifest;
 import android.content.ClipData;
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import com.example.keystone_try.R;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.ui.dashboard.DashboardFragment;
 import com.example.keystone_try.ui.home.HomeFragment;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.navigation_home, R.id.navigation_games, R.id.navigation_notifications, R.id.navigation_opendata)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
 

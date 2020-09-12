@@ -47,8 +47,8 @@ public class DashboardFragment extends Fragment {
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_games, container, false);
         scores = new ArrayList<>();
-        highScore = SPHelper.getInt(getContext(), "HighScore");
-        highScore2 = (int) get2HighScore();
+        highScore = SPHelper.getInt(getContext(), "OneTimes");
+        highScore2 = SPHelper.getInt(getContext(), "TwoTimes");
         scores.add(highScore);
         scores.add(highScore2);
         game1 = root.findViewById(R.id.count_game_btn);
@@ -93,9 +93,6 @@ public class DashboardFragment extends Fragment {
                     .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-//                            new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
-//                                    .setPositiveButton("Confirm", )
-
                             Intent intent = new Intent(getActivity(), c);
                             startActivity(intent);
                         }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.keystone_try.MainActivity;
+import com.example.keystone_try.ui.MainActivity;
 import com.example.keystone_try.R;
 
 public class SuccessActivity extends AppCompatActivity {

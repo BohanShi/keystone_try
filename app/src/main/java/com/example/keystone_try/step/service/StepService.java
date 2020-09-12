@@ -21,10 +21,9 @@ import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.util.Log;
 
-import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-import com.example.keystone_try.MainActivity;
+import com.example.keystone_try.ui.MainActivity;
 import com.example.keystone_try.R;
 import com.example.keystone_try.step.UpdateUiCallBack;
 import com.example.keystone_try.step.accelerometer.StepCount;
@@ -255,7 +254,7 @@ public class StepService extends Service implements SensorEventListener {
     private void isCall() {
 //        String time = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("achieveTime", "21:00");
         String time = "21:00";
-        String moreTime = "16:42";
+        String moreTime = "14:00";
         String plan = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("planWalk_QTY", SPHelper.getString(getApplicationContext(),  "planWalk_QTY"));
         String remind = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("remind", "1");
 
