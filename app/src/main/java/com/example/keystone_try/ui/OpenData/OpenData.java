@@ -40,7 +40,7 @@ TextView a;
         View root = inflater.inflate(R.layout.fragment_open_data, container, false);
 
         //insert codes for data extraction
-        a = (TextView)findViewById(R.id.test_text);
+        //a = (TextView)findViewById(R.id.test_text);
 
         ref = FirebaseDatabase.getInstance().getReference().child("Census").child("1");
 

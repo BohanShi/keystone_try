@@ -68,7 +68,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                isFirstTime(R.string.intro, R.string.introCal, game_2048.class, 1);
+                isFirstTime(R.string.intro, R.string.intro2048, game_2048.class, 1);
             }
         });
 
