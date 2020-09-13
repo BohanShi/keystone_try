@@ -71,6 +71,7 @@ public class game_2048 extends AppCompatActivity {
         save();
     }
 
+    //save game progress
     private void save() {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = settings.edit();

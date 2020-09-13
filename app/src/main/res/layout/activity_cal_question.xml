@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingTop="@dimen/list_item_spacing_half"
         android:paddingBottom="@dimen/list_item_spacing_half"
         tools:context=".ui.GameClass.Calculation.QuestionFragment">
 
@@ -20,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.6" />
+            app:layout_constraintGuide_percent="0.75" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline9"
@@ -34,14 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.11" />
+            app:layout_constraintGuide_percent="0.28" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.16" />
+            app:layout_constraintGuide_percent="0.32" />
 
         <TextView
             android:id="@+id/textView3"
@@ -76,21 +75,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.32" />
+            app:layout_constraintGuide_percent="0.46" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4" />
+            app:layout_constraintGuide_percent="0.55" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8" />
+            app:layout_constraintGuide_percent="0.95" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
@@ -109,7 +108,8 @@
             app:layout_constraintEnd_toStartOf="@+id/result"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/num2"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            app:layout_constraintTop_toTopOf="@+id/guideline42"
+            app:layout_constraintVertical_bias="0.181" />
 
         <TextView
             android:id="@+id/result"
@@ -121,7 +121,8 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline9"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/equal"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            app:layout_constraintTop_toTopOf="@+id/guideline42"
+            app:layout_constraintVertical_bias="0.181" />
 
         <TextView
             android:id="@+id/num2"
@@ -133,7 +134,8 @@
             app:layout_constraintEnd_toStartOf="@+id/equal"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/operator"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline42"
+            app:layout_constraintVertical_bias="0.181"
             tools:text="3" />
 
         <TextView
@@ -146,20 +148,22 @@
             app:layout_constraintEnd_toStartOf="@+id/num2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/num1"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline42"
+            app:layout_constraintVertical_bias="0.181"
             tools:text="+" />
 
         <TextView
             android:id="@+id/num1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/Huge_font"
             android:text="5"
+            android:textSize="@dimen/Huge_font"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toStartOf="@+id/operator"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline42"
+            app:layout_constraintVertical_bias="0.181"
             tools:text="5" />
 
         <TextView
@@ -168,12 +172,12 @@
             android:layout_height="wrap_content"
             android:text="@string/input_indicate"
             android:textSize="@dimen/middle_size"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.324"
+            app:layout_constraintHorizontal_bias="0.311"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.305"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:layout_constraintVertical_bias="0.952"
             tools:text="Your Answer:" />
 
         <TextView
@@ -182,12 +186,12 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textSize="@dimen/middle_size"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.756"
+            app:layout_constraintHorizontal_bias="0.71"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.31"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:layout_constraintVertical_bias="0.409"
             tools:text="0" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -195,14 +199,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.65" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.7" />
+            app:layout_constraintGuide_percent="0.85" />
 
         <Button
             android:id="@+id/btn_1"
@@ -353,7 +357,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.051983584" />
+            app:layout_constraintGuide_percent="0.2" />
 
         <Button
             android:id="@+id/game1_help_btn"
@@ -366,7 +370,7 @@
             app:layout_constraintHorizontal_bias="0.062"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView7"
@@ -390,6 +394,18 @@
             app:layout_constraintTop_toTopOf="@+id/textView7"
             app:layout_constraintVertical_bias="0.0"
             tools:text="3" />
+
+        <ImageView
+            android:id="@+id/imageHeader"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/calculate"
+            app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

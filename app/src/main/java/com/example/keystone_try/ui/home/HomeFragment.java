@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment {
     StepView stepView;
     LineChart lineChart;
     Button settingBtn;
+    TextView goalStepTVl;
 
     public View onCreateView(@NonNull final LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class HomeFragment extends Fragment {
         lineChart = root.findViewById(R.id.linechart);
         lineChart.animateXY(1000,1000);
         lineChart.getDescription().setEnabled(false);
+
+        goalStepTVl = root.findViewById(R.id.TVgoalStep);
 
         //add real machine notification
         TextView tv = new TextView(getContext());
@@ -98,6 +101,7 @@ public class HomeFragment extends Fragment {
                                     SPHelper.putString(getContext(),"planWalk_QTY", input);
                                     stepView.setGoalStep(Integer.parseInt(input));
                                     Toast.makeText(getContext(), "Your goal " + input + " steps setting success!", Toast.LENGTH_LONG).show();
+                                    initData();
                                 }
                             }
                         })
@@ -165,6 +169,7 @@ public class HomeFragment extends Fragment {
     private void initData() {
         //Get the number of planned exercise steps set by the user, if not set, the default is 2000
         final String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
+        goalStepTVl.setText(planWalk_QTY);
         int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
         Step_Today+= 310;
         ValueAnimator animator = ObjectAnimator.ofFloat(0, Step_Today);

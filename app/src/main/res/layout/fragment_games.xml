@@ -25,7 +25,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="10"
-        android:text="Let's paly some games"
+        android:text="Let's play some games"
         android:textSize="@dimen/_29sdp"
         android:paddingTop="@dimen/_110sdp"
         app:layout_constraintTop_toTopOf="@id/imageHeader"
