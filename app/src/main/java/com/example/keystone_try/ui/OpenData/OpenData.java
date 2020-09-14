@@ -25,16 +25,15 @@ import java.util.Objects;
 import static android.content.ContentValues.TAG;
 
 
-public class OpenData extends AppCompatActivity {
+public class OpenData extends Fragment {
 
 DatabaseReference ref;
 TextView a;
 
 
-    public View onCreate(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_open_data);
 
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_open_data, container, false);

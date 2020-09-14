@@ -34,14 +34,18 @@ public class LoginActivity extends AppCompatActivity {
     private OnBoardingAdapter onBoardingAdapter;
     private LinearLayout layoutOnBoardingIndicators;
     private MaterialButton buttonOnboardingAction;
-
+    private MaterialButton buttonOnboardingSkip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if(DbUtils.getLiteOrm()==null){
             DbUtils.createDb(this, "jingzhi");
         }
+
+
         if ( SPHelper.getInt(getApplicationContext(), "OneTimes") < 1
             && SPHelper.getInt(getApplicationContext(), "TwoTimes" )< 1){
             startOnBoardingpage();
@@ -121,6 +125,15 @@ public class LoginActivity extends AppCompatActivity {
         buttonOnboardingAction = findViewById(R.id.buttonOnboardAction);
         setUpOnboardingItems();
 
+        buttonOnboardingSkip = findViewById(R.id.buttonOnboardSkip);
+        buttonOnboardingSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
         final ViewPager2 onboardingViewPager = findViewById(R.id.onBoardingViewPager);
         onboardingViewPager.setAdapter(onBoardingAdapter);
 
@@ -145,6 +158,10 @@ public class LoginActivity extends AppCompatActivity {
         });
         setupOnboardingTndicators();
         setCurrentOnboardingIndicator(0);
+    }
+
+    private void skipOnBoardingpgae(){
+
     }
 
     public String getUUID() {
