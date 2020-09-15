@@ -1,0 +1,321 @@
+@startuml
+
+title __GAME2's Class Diagram__\n
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.AnimationCell {
+          + extras : int[]
+          - animationTime : long
+          - animationType : int
+          - delayTime : long
+          - timeElapsed : long
+          + AnimationCell()
+          + animationDone()
+          + getAnimationType()
+          + getPercentageDone()
+          + isActive()
+          + tick()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.AnimationGrid {
+          + globalAnimation : ArrayList<AnimationCell>
+          - activeAnimations : int
+          - field : ArrayList<AnimationCell>[][]
+          - oneMoreFrame : boolean
+          + AnimationGrid()
+          + cancelAnimations()
+          + getAnimationCell()
+          + isAnimationActive()
+          + startAnimation()
+          + tickAll()
+          - cancelAnimation()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.Cell {
+          - x : int
+          - y : int
+          + Cell()
+          + getX()
+          + getY()
+          ~ setX()
+          ~ setY()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.Grid {
+          + field : Tile[][]
+          + undoField : Tile[][]
+          - bufferField : Tile[][]
+          + Grid()
+          + clearGrid()
+          + getCellContent()
+          + getCellContent()
+          + insertTile()
+          + isCellAvailable()
+          + isCellOccupied()
+          + isCellWithinBounds()
+          + isCellsAvailable()
+          + prepareSaveTiles()
+          + randomAvailableCell()
+          + removeTile()
+          + revertTiles()
+          + saveTiles()
+          - clearUndoGrid()
+          - getAvailableCells()
+          - isCellWithinBounds()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.InputListener {
+          {static} - MOVE_THRESHOLD : int
+          {static} - RESET_STARTING : int
+          {static} - SWIPE_MIN_DISTANCE : int
+          {static} - SWIPE_THRESHOLD_VELOCITY : int
+          - beganOnIcon : boolean
+          - hasMoved : boolean
+          - lastDx : float
+          - lastDy : float
+          - previousDirection : int
+          - previousX : float
+          - previousY : float
+          - startingX : float
+          - startingY : float
+          - veryLastDirection : int
+          - x : float
+          - y : float
+          + InputListener()
+          + onTouch()
+          - iconPressed()
+          - inRange()
+          - isTap()
+          - pathMoved()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.MainGame {
+          {static} + FADE_GLOBAL_ANIMATION : int
+          {static} + MERGE_ANIMATION : int
+          {static} + MOVE_ANIMATION : int
+          {static} + SPAWN_ANIMATION : int
+          + canUndo : boolean
+          + gameState : int
+          + highScore : long
+          + lastGameState : int
+          + lastScore : long
+          + score : long
+          ~ numSquaresX : int
+          ~ numSquaresY : int
+          {static} - FIRST_RUN : String
+          {static} - GAME_ENDLESS : int
+          {static} - GAME_ENDLESS_WON : int
+          {static} - GAME_LOST : int
+          {static} - GAME_NORMAL : int
+          {static} - GAME_WIN : int
+          {static} - HIGH_SCORE : String
+          {static} - MOVE_ANIMATION_TIME : long
+          {static} - NOTIFICATION_ANIMATION_TIME : long
+          {static} - NOTIFICATION_DELAY_TIME : long
+          {static} - SPAWN_ANIMATION_TIME : long
+          - bufferGameState : int
+          - bufferScore : long
+          {static} - endingMaxValue : int
+          - mContext : Context
+          {static} - startingMaxValue : int
+          + MainGame()
+          + canContinue()
+          + gameLost()
+          + gameWon()
+          + isActive()
+          + move()
+          + newGame()
+          + revertUndoState()
+          + setEndlessMode()
+          + setScores()
+          - addRandomTile()
+          - addStartTiles()
+          - buildTraversalsX()
+          - buildTraversalsY()
+          - checkLose()
+          - endGame()
+          - findFarthestPosition()
+          - firstRun()
+          - getHighScore()
+          - getVector()
+          - moveTile()
+          - movesAvailable()
+          - positionsEqual()
+          - prepareTiles()
+          - prepareUndoState()
+          - recordHighScore()
+          - saveUndoState()
+          - spawnTile()
+          - tileMatchesAvailable()
+          - winValue()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.MainView {
+          + continueButtonEnabled : boolean
+          + endingX : int
+          + endingY : int
+          + hasSaveState : boolean
+          + iconSize : int
+          + numCellTypes : int
+          + sXIntro : int
+          + sXNewGame : int
+          + sXUndo : int
+          + sYIcons : int
+          + startingX : int
+          + startingY : int
+          {static} ~ BASE_ANIMATION_TIME : int
+          ~ refreshLastTime : boolean
+          ~ showHelp : boolean
+          {static} - INITIAL_VELOCITY : float
+          {static} - MERGING_ACCELERATION : float
+          {static} - TAG : String
+          - background : Bitmap
+          - backgroundRectangle : Drawable
+          - bitmapCell : BitmapDrawable[]
+          - bodyStartYAll : int
+          - bodyTextSize : float
+          - cellSize : int
+          - cellTextSize : float
+          - eYAll : int
+          - fadeRectangle : Drawable
+          - gameOverTextSize : float
+          - gridWidth : int
+          - headerTextSize : float
+          - iconPaddingSize : int
+          - instructionsTextSize : float
+          - lastFPSTime : long
+          - lightUpRectangle : Drawable
+          - loseGameOverlay : BitmapDrawable
+          - paint : Paint
+          - sYAll : int
+          - textPaddingSize : int
+          - textSize : float
+          - titleStartYAll : int
+          - titleTextSize : float
+          - titleWidthHighScore : int
+          - titleWidthScore : int
+          - winGameContinueOverlay : BitmapDrawable
+          - winGameFinalOverlay : BitmapDrawable
+          + MainView()
+          + onDraw()
+          + resyncTime()
+          # onSizeChanged()
+          - centerText()
+          - createBackgroundBitmap()
+          - createBitmapCells()
+          - createEndGameStates()
+          - createOverlays()
+          - drawBackground()
+          - drawBackgroundGrid()
+          - drawCellText()
+          - drawCells()
+          - drawDrawable()
+          - drawEndGameState()
+          - drawEndlessText()
+          - drawHeader()
+          - drawInstructions()
+          - drawIntroButton()
+          - drawNewGameButton()
+          - drawScoreText()
+          - drawUndoButton()
+          - getCellRectangleIds()
+          - getLayout()
+          {static} - log2()
+          - tick()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.Tile {
+          - mergedFrom : Tile[]
+          - value : int
+          + Tile()
+          + Tile()
+          + getMergedFrom()
+          + getValue()
+          + setMergedFrom()
+          + updatePosition()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace game2 {
+      class com.example.keystone_try.game2.game_2048 {
+          {static} - CAN_UNDO : String
+          {static} - GAME_STATE : String
+          {static} - HEIGHT : String
+          {static} - HIGH_SCORE : String
+          {static} - SCORE : String
+          {static} - UNDO_GAME_STATE : String
+          {static} - UNDO_GRID : String
+          {static} - UNDO_SCORE : String
+          {static} - WIDTH : String
+          + onKeyDown()
+          + onSaveInstanceState()
+          # onCreate()
+          # onPause()
+          # onResume()
+          - load()
+          - save()
+      }
+    }
+  }
+  
+
+  com.example.keystone_try.game2.AnimationCell -up-|> com.example.keystone_try.game2.Cell
+  com.example.keystone_try.game2.InputListener .up.|> android.view.View.OnTouchListener
+  com.example.keystone_try.game2.InputListener o-- com.example.keystone_try.game2.MainView : mView
+  com.example.keystone_try.game2.MainGame o-- com.example.keystone_try.game2.AnimationGrid : aGrid
+  com.example.keystone_try.game2.MainGame o-- com.example.keystone_try.game2.Grid : grid
+  com.example.keystone_try.game2.MainGame o-- com.example.keystone_try.game2.MainView : mView
+  com.example.keystone_try.game2.MainView -up-|> android.view.View
+  com.example.keystone_try.game2.MainView o-- com.example.keystone_try.game2.MainGame : game
+  com.example.keystone_try.game2.Tile -up-|> com.example.keystone_try.game2.Cell
+  com.example.keystone_try.game2.game_2048 -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.keystone_try.game2.game_2048 o-- com.example.keystone_try.game2.MainView : view
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

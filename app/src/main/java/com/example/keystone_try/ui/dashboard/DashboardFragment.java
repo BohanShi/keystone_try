@@ -1,5 +1,6 @@
 package com.example.keystone_try.ui.dashboard;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -27,9 +27,6 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.ArrayList;
 
 public class DashboardFragment extends Fragment {
-
-    private DashboardViewModel dashboardViewModel;
-
 
     private static final String HIGH_SCORE = "high score";
 
@@ -45,8 +42,6 @@ public class DashboardFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_games, container, false);
         scores = new ArrayList<>();
         highScore = SPHelper.getInt(getContext(), "OneTimes");
@@ -86,12 +81,9 @@ public class DashboardFragment extends Fragment {
 
     public void isFirstTime(final int instructionTitle, int instruction, final Class c, int position){
         if (!(scores.get(position) > 1)){
-            final TextView tv = new TextView(getContext());
-            tv.setText(instruction);
-            tv.setTextSize(26);
-            tv.setPadding(25,0,15,0);
             new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
-                    .setView(tv)
+                    .setIcon(android.R.drawable.ic_menu_help)
+                    .setMessage(instruction)
                     .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

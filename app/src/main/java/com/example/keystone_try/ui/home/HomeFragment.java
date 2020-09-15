@@ -45,7 +45,6 @@ import java.util.Random;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     StepView stepView;
     LineChart lineChart;
     Button settingBtn;
@@ -53,8 +52,6 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull final LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         lineChart = root.findViewById(R.id.linechart);
         lineChart.animateXY(1000,1000);
