@@ -39,6 +39,12 @@
     <string name="for_now">For now…</string>
     <string name="endless">"Endless" Mode</string>
 
+    <!-- Onboarding page -->
+    <string name="nul">" "</string>
+    <string name="on_boarding_intro">"Explore more interesting games?
+        track your daily steps?
+        we are here with you~"</string>
+
     <!-- Confirmation dialog-->
     <string name="reset">Reset</string>
     <string name="continue_game">Cancel</string>

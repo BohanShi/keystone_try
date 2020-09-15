@@ -60,7 +60,7 @@
                     android:layout_width="@dimen/_180sdp"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/calculate"
+                    android:src="@drawable/ca"
                     app:riv_corner_radius="@dimen/_12sdp"/>
 
                 <TextView

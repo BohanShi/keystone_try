@@ -45,37 +45,49 @@ public class LoginActivity extends AppCompatActivity {
             DbUtils.createDb(this, "jingzhi");
         }
 
+        startOnBoardingpage();
 
-        if ( SPHelper.getInt(getApplicationContext(), "OneTimes") < 1
-            && SPHelper.getInt(getApplicationContext(), "TwoTimes" )< 1){
-            startOnBoardingpage();
-        }else {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
     }
 
     private void setUpOnboardingItems(){
         List<OnBoardingItem> onBoardingItems = new ArrayList<>();
 
         OnBoardingItem itemOne = new OnBoardingItem();
-        itemOne.setTitle(R.string.OD_title_01);
-        itemOne.setDescription(R.string.OD_Content02);
-        itemOne.setImage(R.drawable.image_1);
+        itemOne.setTitle(R.string.nul);
+        itemOne.setDescription(R.string.on_boarding_intro);
+        itemOne.setImage(R.drawable.onb1);
 
         OnBoardingItem itemTwo = new OnBoardingItem();
-        itemTwo.setTitle(R.string.OD_Title02);
-        itemTwo.setDescription(R.string.OD_Content03);
-        itemTwo.setImage(R.drawable.image_2);
+        itemTwo.setTitle(R.string.nul);
+        itemTwo.setDescription(R.string.nul);
+        itemTwo.setImage(R.drawable.onb2);
 
         OnBoardingItem itemThree = new OnBoardingItem();
-        itemThree.setTitle(R.string.OD_title03);
-        itemThree.setDescription(R.string.OD_content04);
-        itemThree.setImage(R.drawable.image_3);
+        itemThree.setTitle(R.string.nul);
+        itemThree.setDescription(R.string.nul);
+        itemThree.setImage(R.drawable.onb3);
+
+        OnBoardingItem itemFour = new OnBoardingItem();
+        itemFour.setTitle(R.string.nul);
+        itemFour.setDescription(R.string.nul);
+        itemFour.setImage(R.drawable.onb4);
+
+        OnBoardingItem itemFive = new OnBoardingItem();
+        itemFive.setTitle(R.string.nul);
+        itemFive.setDescription(R.string.nul);
+        itemFive.setImage(R.drawable.onb5);
+
+        OnBoardingItem itemSix = new OnBoardingItem();
+        itemSix.setTitle(R.string.nul);
+        itemSix.setDescription(R.string.nul);
+        itemSix.setImage(R.drawable.onb6);
 
         onBoardingItems.add(itemOne);
         onBoardingItems.add(itemTwo);
         onBoardingItems.add(itemThree);
+        onBoardingItems.add(itemFour);
+        onBoardingItems.add(itemFive);
+        onBoardingItems.add(itemSix);
 
         onBoardingAdapter = new OnBoardingAdapter(onBoardingItems);
     }
