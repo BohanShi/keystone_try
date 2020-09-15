@@ -266,7 +266,7 @@ public class NotificationsFragment extends Fragment {
         }
     }
 
-    public class MonthlyIntegerYValueFormatter implements IValueFormatter {
+    public static class MonthlyIntegerYValueFormatter implements IValueFormatter {
         @Override
         public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
             return (int) (value) + "";

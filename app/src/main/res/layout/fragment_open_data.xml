@@ -152,8 +152,8 @@
                 android:id="@+id/OD_title03"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/OD_title03"
                 android:fontFamily="@font/amaranth_italic"
+                android:hint="@string/OD_title03"
                 android:textColorHint="@color/royalblue"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -165,8 +165,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:hint="@string/OD_title04"
                 android:fontFamily="@font/amaranth_italic"
+                android:hint="@string/OD_title04"
                 android:textColorHint="@color/royalblue"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -209,18 +209,29 @@
             android:id="@+id/OD_Content5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autoLink="web"
             android:fontFamily="@font/amarante"
+            android:linksClickable="true"
             android:text="@string/OD_link01"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"
-            android:linksClickable="true"
-            android:autoLink="web"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/OD_linechart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/OD_Content5"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

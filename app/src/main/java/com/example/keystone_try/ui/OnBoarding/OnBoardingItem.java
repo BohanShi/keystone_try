@@ -26,7 +26,5 @@ public class OnBoardingItem {
         return description;
     }
 
-    public void setDescription(int description) {
-        this.description = description;
-    }
+    public void setDescription(int description) {        this.description = description;    }
 }
