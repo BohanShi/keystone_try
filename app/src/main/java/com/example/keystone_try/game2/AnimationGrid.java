@@ -3,7 +3,7 @@ package com.example.keystone_try.game2;
 import java.util.ArrayList;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 
 public class AnimationGrid {
@@ -12,6 +12,11 @@ public class AnimationGrid {
     private int activeAnimations = 0;
     private boolean oneMoreFrame = false;
 
+    /**
+     * constructor draw the grid
+     * @param x
+     * @param y
+     */
     public AnimationGrid(int x, int y) {
         field = new ArrayList[x][y];
 
@@ -22,6 +27,15 @@ public class AnimationGrid {
         }
     }
 
+    /**
+     * start the animation, same as AnimationCell constructor
+     * @param x
+     * @param y
+     * @param animationType
+     * @param length
+     * @param delay
+     * @param extras
+     */
     public void startAnimation(int x, int y, int animationType, long length, long delay, int[] extras) {
         AnimationCell animationToAdd = new AnimationCell(x, y, animationType, length, delay, extras);
         if (x == -1 && y == -1) {
@@ -32,6 +46,10 @@ public class AnimationGrid {
         activeAnimations = activeAnimations + 1;
     }
 
+    /**
+     * set cell animation
+     * @param timeElapsed
+     */
     public void tickAll(long timeElapsed) {
         ArrayList<AnimationCell> cancelledAnimations = new ArrayList<>();
         for (AnimationCell animation : globalAnimation) {
@@ -59,6 +77,10 @@ public class AnimationGrid {
         }
     }
 
+    /**
+     * Judge is animation finished
+     * @return
+     */
     public boolean isAnimationActive() {
         if (activeAnimations != 0) {
             oneMoreFrame = true;
@@ -75,6 +97,9 @@ public class AnimationGrid {
         return field[x][y];
     }
 
+    /**
+     * Cancel all Animation
+     */
     public void cancelAnimations() {
         for (ArrayList<AnimationCell>[] array : field) {
             for (ArrayList<AnimationCell> list : array) {
@@ -85,6 +110,10 @@ public class AnimationGrid {
         activeAnimations = 0;
     }
 
+    /**
+     * cancel cell animation
+     * @param animation
+     */
     private void cancelAnimation(AnimationCell animation) {
         if (animation.getX() == -1 && animation.getY() == -1) {
             globalAnimation.remove(animation);

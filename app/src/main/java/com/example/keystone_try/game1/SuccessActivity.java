@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.keystone_try.ui.MainActivity;
 import com.example.keystone_try.R;
+/**
+ * success page
+ */
 
 public class SuccessActivity extends AppCompatActivity {
 

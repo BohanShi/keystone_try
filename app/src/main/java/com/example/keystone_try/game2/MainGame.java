@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 public class MainGame {
 

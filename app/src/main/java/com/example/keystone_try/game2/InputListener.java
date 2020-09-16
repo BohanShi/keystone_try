@@ -8,7 +8,7 @@ import android.view.View;
 import com.example.keystone_try.R;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 class InputListener implements View.OnTouchListener {
 

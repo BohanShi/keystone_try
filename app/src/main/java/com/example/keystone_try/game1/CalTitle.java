@@ -23,6 +23,11 @@ public class CalTitle extends AppCompatActivity {
     Button enter;
     TextView textView;
 
+    /**
+     * abandon class, newest version never used
+     * @param savedInstanceState
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,17 +41,6 @@ public class CalTitle extends AppCompatActivity {
                 initData();
             }
         });
-
-
-
-
-
-//        try {
-//            Thread.currentThread().sleep(2750);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
 
     }
 

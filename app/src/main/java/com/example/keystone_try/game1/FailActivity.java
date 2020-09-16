@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.keystone_try.ui.MainActivity;
 import com.example.keystone_try.R;
 
+/**
+ * fail page
+ */
 public class FailActivity extends AppCompatActivity {
 
     private TextView scoreTv;

@@ -44,7 +44,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     private TextView highScoreTV;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {                                            // set listener and initial
 
         super.onCreate(savedInstanceState);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -90,6 +90,9 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
 
     }
 
+    /**
+     * get all data
+     */
     private void initData() {
         getRandomNumber();
 
@@ -100,6 +103,9 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
         highScoreTV.setText(highScore+"");
     }
 
+    /**
+     * get random numbers and set operator
+     */
     private void getRandomNumber() {
         random = new Random();
         num1 = random.nextInt(20);
@@ -115,6 +121,9 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
         answerTv.setText("0");
     }
 
+    /**
+    set on click event
+     */
     @Override
     public void onClick(View v) {
         String input = answerTv.getText().toString();
@@ -232,11 +241,16 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                 answerTv.setText(input);
             }
             break;
+            /**
+             * pressed ok and check validation
+             */
             case R.id.btn_ok:
             {
                 int inputNum = Integer.parseInt(input);
 
-
+                /**
+                 * if correct
+                 */
                 if ((num1+num2) == inputNum || (num1-num2) == inputNum) {
                     score++;
                     scoreTv.setText(score+"");
@@ -246,6 +260,9 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
 
                     getRandomNumber();
                 } else {
+                    /**
+                     * if not
+                     */
                     int oneTimes = SPHelper.getInt(this, "OneTimes");
                     oneTimes++;
                     SPHelper.putInt(this, "OneTimes", oneTimes);
@@ -255,7 +272,9 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                     GameOneScore gameOneScore = new GameOneScore();
                     gameOneScore.setScore(score);
                     DbUtils.insert(gameOneScore);
-
+                    /**
+                     * save the score
+                     */
                     if (score > highScore) {
                         SPHelper.putInt(this, "HighScore", score);
                         Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
@@ -287,38 +306,11 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     }
 
 
-
+    /**
+     * when quit, set current status
+     */
     public void onBackPressed() {
-//        new AlertDialog.Builder(this).setTitle("Are you sure to quit？")
-//                .setIcon(android.R.drawable.ic_dialog_info)
-//                .setPositiveButton("Sure", new DialogInterface.OnClickListener() {
-//
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        // Operation after clicking "Confirm"
-//                        Intent it = new Intent(CalQuestion.this, MainActivity.class);
-//                        startActivity(it);
-//                        CalQuestion.this.finish();
-//
-//                    }
-//                })
-//                .setNegativeButton("Not Sure", new DialogInterface.OnClickListener() {
-//
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        // The operation after clicking "return", there is no operation without setting here
-//                    }
-//                }).show();
-
         SPHelper.putInt(this, "currentScore", score);
-//        Intent it = new Intent(CalQuestion.this, MainActivity.class);
-//        startActivity(it);
         CalQuestion.this.finish();
     }
-
-
-//
-
-
-
 }

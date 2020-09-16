@@ -1,7 +1,7 @@
 package com.example.keystone_try.game2;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 public class Cell {
     private int x;
