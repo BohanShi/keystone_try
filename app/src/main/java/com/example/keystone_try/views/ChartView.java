@@ -63,7 +63,7 @@ public class ChartView extends View{
         canvas.drawLine(XPoint,YPoint-YLength,XPoint+3,YPoint-YLength+6,paint);
         //Set font size, angle, etc.
         paint.setTextSize(20);
-        drawText(canvas,"单位:kWh", XPoint-5, YPoint-YLength+YScale-5, paint,-90);
+        drawText(canvas,"", XPoint-5, YPoint-YLength+YScale-5, paint,-90);
 
         //设置X轴
         paint.setTextSize(12);
