@@ -9,16 +9,16 @@ import android.view.View;
 import com.example.keystone_try.Constant;
 
 public class ChartView extends View{
-    public int XPoint=40;    //原点的X坐标
-    public int YPoint= Constant.point.y/2;     //原点的Y坐标
-    public int XScale=55;     //X的刻度长度
-    public int YScale=40;     //Y的刻度长度
-    public int XLength=Constant.point.x-100;        //X轴的长度
-    public int YLength=Constant.point.y/2-100;        //Y轴的长度
-    public String[] XLabel;    //X的刻度
-    public String[] YLabel;    //Y的刻度
-    public String[] Data;      //数据
-    public String Title;    //显示的标题
+    public int XPoint=40;    //X coordinate of origin
+    public int YPoint= Constant.point.y/2;     //X coordinate of origin
+    public int XScale=55;     //X scale length
+    public int YScale=40;     //Y scale length
+    public int XLength=Constant.point.x-100;        //X axis length
+    public int YLength=Constant.point.y/2-100;        //Y axis length
+    public String[] XLabel;    //X scale
+    public String[] YLabel;    //Y scale
+    public String[] Data;      //data
+    public String Title;    //Displayed title
     public ChartView(Context context)
     {
         super(context);
@@ -29,57 +29,57 @@ public class ChartView extends View{
         YLabel=YLabels;
         Data=AllData;
         Title=strTitle;
-        XScale=XLength/AllData.length;//实际X的刻度长度
+        XScale=XLength/AllData.length;//Actual X scale length
         YScale=YLength/YLabels.length;
     }
     @Override
     protected void onDraw(Canvas canvas){
-        super.onDraw(canvas);//重写onDraw方法
+        super.onDraw(canvas);//Override the onDraw method
 
-        //canvas.drawColor(Color.WHITE);//设置背景颜色
+        //canvas.drawColor(Color.WHITE);//Set background color
         Paint paint= new Paint();
         paint.setStyle(Paint.Style.STROKE);
-        paint.setAntiAlias(true);//去锯齿
-        paint.setColor(Color.BLACK);//颜色
+        paint.setAntiAlias(true);//Anti-aliasing
+        paint.setColor(Color.BLACK);//colour
         Paint paint1=new Paint();
         paint1.setStyle(Paint.Style.STROKE);
-        paint1.setAntiAlias(true);//去锯齿
+        paint1.setAntiAlias(true);//Anti-aliasing
         paint1.setColor(Color.DKGRAY);
-        paint.setTextSize(12);  //设置轴文字大小
-        //设置Y轴
-        canvas.drawLine(XPoint, YPoint-YLength, XPoint, YPoint, paint);   //轴线
+        paint.setTextSize(12);  //Set the axis text size
+        //Set Y axis
+        canvas.drawLine(XPoint, YPoint-YLength, XPoint, YPoint, paint);   //Axis
         for(int i=0;i*YScale<YLength ;i++)
         {
-            canvas.drawLine(XPoint,YPoint-i*YScale, XPoint+5, YPoint-i*YScale, paint);  //刻度
+            canvas.drawLine(XPoint,YPoint-i*YScale, XPoint+5, YPoint-i*YScale, paint);  //Scale
             try
             {
-                canvas.drawText(YLabel[i] , XPoint-30, YPoint-i*YScale+5, paint);  //文字
+                canvas.drawText(YLabel[i] , XPoint-30, YPoint-i*YScale+5, paint);  //Text
             }
             catch(Exception e)
             {
             }
         }
-        canvas.drawLine(XPoint,YPoint-YLength,XPoint-3,YPoint-YLength+6,paint);  //箭头
+        canvas.drawLine(XPoint,YPoint-YLength,XPoint-3,YPoint-YLength+6,paint);  //arrow
         canvas.drawLine(XPoint,YPoint-YLength,XPoint+3,YPoint-YLength+6,paint);
-        //设置字体的大小角度等
+        //Set font size, angle, etc.
         paint.setTextSize(20);
         drawText(canvas,"单位:kWh", XPoint-5, YPoint-YLength+YScale-5, paint,-90);
 
         //设置X轴
         paint.setTextSize(12);
-        canvas.drawLine(XPoint,YPoint,XPoint+XLength,YPoint,paint);   //轴线
+        canvas.drawLine(XPoint,YPoint,XPoint+XLength,YPoint,paint);   //Axis
         for(int i=0;i*XScale<XLength;i++)
         {
-            canvas.drawLine(XPoint+i*XScale, YPoint, XPoint+i*XScale, YPoint-5, paint);  //刻度
+            canvas.drawLine(XPoint+i*XScale, YPoint, XPoint+i*XScale, YPoint-5, paint);  //Scale
             try
             {
 //                canvas.drawText(XLabel[i], XPoint + i * XScale - 10,
-//                        YPoint + 20, paint); // 文字
+//                        YPoint + 20, paint); // Text
                 drawText(canvas,XLabel[i], XPoint + i * XScale,
-                        YPoint + 40, paint,-45); // 文字
+                        YPoint + 40, paint,-45); // Text
                 // 数据值
                 if (i > 0 && YCoord(Data[i - 1]) != -999
-                        && YCoord(Data[i]) != -999) // 保证有效数据
+                        && YCoord(Data[i]) != -999) // Make data valid
                     canvas.drawLine(XPoint + (i - 1) * XScale,
                             YCoord(Data[i - 1]), XPoint + i * XScale,
                             YCoord(Data[i]), paint);
@@ -88,13 +88,13 @@ public class ChartView extends View{
             } catch (Exception e) {
             }
         }
-        canvas.drawLine(XPoint+XLength,YPoint,XPoint+XLength-6,YPoint-3,paint);    //箭头
+        canvas.drawLine(XPoint+XLength,YPoint,XPoint+XLength-6,YPoint-3,paint);    //arrow
         canvas.drawLine(XPoint+XLength,YPoint,XPoint+XLength-6,YPoint+3,paint);
-        //设置标题位置
+        //Set title position
         paint.setTextSize(28);
         canvas.drawText(Title, XLength/2-28, 50, paint);
     }
-    //设置文字显示方向
+    //Set text display direction
     void drawText(Canvas canvas ,String text , float x ,float y,Paint paint ,float angle){
         if(angle != 0){
             canvas.rotate(angle, x, y);
@@ -105,7 +105,7 @@ public class ChartView extends View{
         }
     }
 
-    private int YCoord(String y0)  //计算绘制时的Y坐标，无数据时返回-999
+    private int YCoord(String y0)  //Calculate the Y coordinate when drawing, return -999 when there is no data
     {
         int y;
         try
@@ -114,7 +114,7 @@ public class ChartView extends View{
         }
         catch(Exception e)
         {
-            return -999;    //出错则返回-999
+            return -999;    //Return on error -999
         }
         try
         {
