@@ -74,4 +74,5 @@
     <string name="OD_link01">Want to know more! \n Check it out <a href="https://www.dementia.org.au">Dementia.org.au!! </a> </string>
     <string name="OD_TextforNumber">The total cases in Australia for 2020</string>
     <string name="OD_know_more">Would you like to know about Dementia?</string>
+    <string name="OD_barchartDesc">Number of Deaths Across Australia</string>
 </resources>
