@@ -265,12 +265,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/linearLayout3"
+                    android:id="@+id/linearLayou"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/OD_title03"
+                        android:id="@+id/OD_titl"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/amaranth_italic"
@@ -282,7 +282,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/OD_title04"
+                        android:id="@+id/OD_titladw"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -293,10 +293,10 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/OD_Content3" />
+                        app:layout_constraintTop_toBottomOf="@id/OD_Contenta3" />
 
                     <TextView
-                        android:id="@+id/OD_Content3"
+                        android:id="@+id/OD_Contenta3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="2dp"
@@ -305,14 +305,14 @@
                         android:hint="@string/OD_Content03"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
-                        app:layout_constraintBottom_toTopOf="@+id/OD_title04"
+                        app:layout_constraintBottom_toTopOf="@+id/OD_titladw"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/OD_title03" />
+                        app:layout_constraintTop_toBottomOf="@+id/OD_titladw" />
 
                     <TextView
-                        android:id="@+id/OD_Content4"
+                        android:id="@+id/OD_Conteqt4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="2dp"
@@ -323,9 +323,27 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/OD_title04" />
+                        app:layout_constraintTop_toBottomOf="@+id/OD_titladw" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/OD_Content5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/amarante"
+                    android:linksClickable="true"
+                    android:text="@string/OD_link01"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp" />
             </FrameLayout>
 
 
@@ -333,20 +351,6 @@
 
 
 
-            <TextView
-                android:id="@+id/OD_Content5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="0dp"
-                android:autoLink="web"
-                android:fontFamily="@font/amarante"
-                android:linksClickable="true"
-                android:text="@string/OD_link01"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>
