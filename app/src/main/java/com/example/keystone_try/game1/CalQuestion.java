@@ -19,6 +19,7 @@ import java.util.Random;
 
 public class CalQuestion extends AppCompatActivity implements View.OnClickListener {
 
+    //Create the Buttons for Game 1 - Calculation Game interface
     private TextView answerTv;
     private TextView scoreTv;
     private TextView operator;

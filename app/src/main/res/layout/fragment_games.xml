@@ -38,8 +38,8 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingStart="@dimen/_15sdp"
-        android:paddingEnd="@dimen/_15sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
         android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@id/imageHeader"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -136,7 +136,6 @@
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black"/>
             </FrameLayout>
-
 
         </LinearLayout>
 
