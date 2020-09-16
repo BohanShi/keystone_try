@@ -265,10 +265,6 @@ public class MainGame {
 
         setScores(score);
 
-//        int twoTimes = SPHelper.getInt(mContext, "TwoTimes");
-//        twoTimes++;
-//        SPHelper.putInt(mContext, "TwoTimes", twoTimes);
-
         if (score >= highScore) {
             highScore = score;
             recordHighScore();

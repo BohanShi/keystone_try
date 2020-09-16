@@ -38,6 +38,12 @@ class InputListener implements View.OnTouchListener {
         this.mView = view;
     }
 
+    /**
+     * set on touch event listener
+     * @param view
+     * @param event what kind of operation
+     * @return
+     */
     public boolean onTouch(View view, MotionEvent event) {
         switch (event.getAction()) {
 
@@ -82,7 +88,7 @@ class InputListener implements View.OnTouchListener {
                     }
                     if (pathMoved() > SWIPE_MIN_DISTANCE * SWIPE_MIN_DISTANCE && !hasMoved) {
                         boolean moved = false;
-                        //Vertical
+                                                                                                        //Vertical
                         if (((dy >= SWIPE_THRESHOLD_VELOCITY && Math.abs(dy) >= Math.abs(dx)) || y - startingY >= MOVE_THRESHOLD) && previousDirection % 2 != 0) {
                             moved = true;
                             previousDirection = previousDirection * 2;
@@ -94,7 +100,7 @@ class InputListener implements View.OnTouchListener {
                             veryLastDirection = 3;
                             mView.game.move(0);
                         }
-                        //Horizontal
+                                                                                                        //Horizontal
                         if (((dx >= SWIPE_THRESHOLD_VELOCITY && Math.abs(dx) >= Math.abs(dy)) || x - startingX >= MOVE_THRESHOLD) && previousDirection % 5 != 0) {
                             moved = true;
                             previousDirection = previousDirection * 5;
@@ -116,7 +122,7 @@ class InputListener implements View.OnTouchListener {
                 previousX = x;
                 previousY = y;
                 return true;
-            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_UP:                                                             // click
                 x = event.getX();
                 y = event.getY();
                 previousDirection = 1;

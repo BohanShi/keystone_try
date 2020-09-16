@@ -108,7 +108,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//Pedometer animation
+                                                                                                        //Pedometer animation
         stepView = root.findViewById(R.id.step_display);
 
         //====
@@ -164,7 +164,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initData() {
-        //Get the number of planned exercise steps set by the user, if not set, the default is 2000
+                                                                                                    //Get the number of planned exercise steps set by the user, if not set, the default is 2000
         final String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
         goalStepTVl.setText(planWalk_QTY);
         int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
@@ -240,11 +240,11 @@ public class HomeFragment extends Fragment {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             StepService stepService = ((StepService.StepBinder) service).getService();
-            //Set initialization data
+                                                                                                    //Set initialization data
             String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
             int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
 
-            //Set the number of steps to monitor the callback
+                                                                                                        //Set the number of steps to monitor the callback
             stepService.registerCallback(new UpdateUiCallBack() {
                 @Override
                 public void updateUi(int stepCount) {

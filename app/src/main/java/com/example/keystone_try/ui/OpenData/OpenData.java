@@ -121,6 +121,7 @@ public class OpenData extends Fragment {
                     yeardata.add(obj);
                 }
                 drawbarchart();
+
             }
 
             @Override
@@ -131,19 +132,6 @@ public class OpenData extends Fragment {
 
         return root;
     }
-
-//    public void print_census(){
-//        for(Fetch_data cur: censusData){
-//            Log.i("test_agegroup", cur.getAge_group());
-//        }
-//    }
-
-////Chart Creation
-
-//            int i = 0;
-//            for (; i < censusData.size(); i++) {
-//                values.add(new Entry(i + 1, censusData.get(i).getMale()));
-
 
 
 
@@ -203,7 +191,6 @@ public class OpenData extends Fragment {
 
         barChart.isDrawBordersEnabled();
 
-
         barChart.getAxisLeft().setDrawGridLines(false);
         barChart.getAxisRight().setDrawGridLines(false);
 
@@ -216,6 +203,7 @@ public class OpenData extends Fragment {
         barChart.getXAxis().setAxisMinimum(0);
         barChart.getXAxis().setAxisMaximum(0 + barChart.getBarData().getGroupWidth(groupSpace, barSpace) * groupCount);
         barChart.groupBars(0, groupSpace, barSpace);
+
     }
 
     private List<Long> getYear(List<Long> year) {

@@ -17,7 +17,7 @@ public class StepCount implements StepCountListener{
         return stepDetector;
     }
 
-    /*
+    /**
      * Take ten steps in a row to start counting steps count
      * If you walk for less than 9 steps and stay for more than 3 seconds, the count will be cleared
      * */

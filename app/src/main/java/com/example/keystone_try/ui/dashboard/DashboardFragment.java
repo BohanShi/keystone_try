@@ -49,6 +49,7 @@ public class DashboardFragment extends Fragment {
         scores.add(highScore);
         scores.add(highScore2);
         game1 = root.findViewById(R.id.game1);
+                                                                                                    // set listener
         game1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +62,7 @@ public class DashboardFragment extends Fragment {
         game3 = root.findViewById(R.id.game3);
         game2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {                                                            // set listener
 
                 isFirstTime(R.string.intro, R.string.intro2048, game_2048.class, 1);
             }
@@ -70,7 +71,7 @@ public class DashboardFragment extends Fragment {
         game3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //game3.setError("Not available now");
+                                                                                                    //game3.setError("Not available now");
                 Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
             }
         });
@@ -79,8 +80,15 @@ public class DashboardFragment extends Fragment {
     }
 
 
-    public void isFirstTime(final int instructionTitle, int instruction, final Class c, int position){
-        if (!(scores.get(position) > 1)){
+    /**
+     * To judge is first time to play the game
+     * @param instructionTitle
+     * @param instruction
+     * @param c game class (click to go to which game)
+     * @param times played times
+     */
+    public void isFirstTime(final int instructionTitle, int instruction, final Class c, int times){
+        if (!(scores.get(times) > 1)){
             new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
                     .setIcon(android.R.drawable.ic_menu_help)
                     .setMessage(instruction)
@@ -98,8 +106,5 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    private long get2HighScore() {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
-        return settings.getLong(HIGH_SCORE, -1);
-    }
+
 }

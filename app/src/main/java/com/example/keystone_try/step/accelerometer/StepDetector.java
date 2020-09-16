@@ -45,9 +45,8 @@ public class StepDetector implements SensorEventListener {
         this.mStepListeners = listener;
     }
 
-    /*
+    /**
      * Detect steps and start counting steps
-
      * */
     public void detectorNewStep(float values) {
         if (gravityOld == 0) {
@@ -74,7 +73,7 @@ public class StepDetector implements SensorEventListener {
         gravityOld = values;
     }
 
-    /*
+    /**
      * Detection peak
      * */
     public boolean detectorPeak(float newValue, float oldValue) {
@@ -100,7 +99,7 @@ public class StepDetector implements SensorEventListener {
         }
     }
 
-    /*
+    /**
      * Calculation of threshold
      * */
     public float peakValleyThread(float value) {
@@ -119,7 +118,7 @@ public class StepDetector implements SensorEventListener {
 
     }
 
-    /*
+    /**
      * Gradient threshold
      * */
     public float averageValue(float value[], int n) {
