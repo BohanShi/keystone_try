@@ -23,6 +23,7 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.google.firebase.database.DataSnapshot;
@@ -172,15 +173,17 @@ public class OpenData extends Fragment {
             BarDataSet barDataSet1 = new BarDataSet(yVals2,"Female");
             barDataSet1.setColors(Color.parseColor("#9C27B0"));
 
-            List<String> year_x = new ArrayList<String>();
-            for (; i < yeardata.size(); i++) {
-                year_x.add(yeardata.get(i).getYear().toString());
-            }
+//            List<String> year_x = new ArrayList<String>();
+//            for (; i < yeardata.size(); i++) {
+//                year_x.add(yeardata.get(i).getYear().toString());
+//            }
 
         BarData data = new BarData(barDataSet,barDataSet1);
         barChart.setData(data);
 
-        XAxis xAxis = barChart.getXAxis();
+        String[] year_x = new String[] {"2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"};
+
+        final XAxis xAxis = barChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(year_x));
         barChart.getAxisLeft().setAxisMinimum(0);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -188,6 +191,11 @@ public class OpenData extends Fragment {
         xAxis.setCenterAxisLabels(true);
         xAxis.setGranularityEnabled(true);
         xAxis.setDrawLabels(true);
+        xAxis.setLabelCount(8);
+
+
+
+
 
         barChart.isDrawBordersEnabled();
 
@@ -199,16 +207,16 @@ public class OpenData extends Fragment {
         int groupCount = 8;
 
         //IMPORTANT *****
-        data.setBarWidth(0.15f);
+        data.setBarWidth(0.33f);
         barChart.getXAxis().setAxisMinimum(0);
         barChart.getXAxis().setAxisMaximum(0 + barChart.getBarData().getGroupWidth(groupSpace, barSpace) * groupCount);
         barChart.groupBars(0, groupSpace, barSpace);
 
     }
 
-    private List<Long> getYear(List<Long> year) {
-        return year;
-    }
+//    private List<Long> getYear(List<Long> year) {
+//        return year;
+//    }
 
 
 }
