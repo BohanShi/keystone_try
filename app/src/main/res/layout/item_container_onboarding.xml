@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/imageOnboarding"
-        android:layout_width="@dimen/_290sdp"
+        android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_320sdp"
         android:layout_margin="15sp"
         android:adjustViewBounds="true"
