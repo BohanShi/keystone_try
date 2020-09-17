@@ -8,7 +8,7 @@ import android.view.KeyEvent;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 public class game_2048 extends AppCompatActivity {
     private static final String WIDTH = "width";
@@ -22,6 +22,10 @@ public class game_2048 extends AppCompatActivity {
     private static final String UNDO_GAME_STATE = "undo game state";
     private MainView view;
 
+    /**
+     * onCreate, main method
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,12 @@ public class game_2048 extends AppCompatActivity {
         setContentView(view);
     }
 
+    /**
+     * set animation based on user operations
+     * @param keyCode
+     * @param event
+     * @return
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
@@ -71,7 +81,10 @@ public class game_2048 extends AppCompatActivity {
         save();
     }
 
-    //save game progress
+
+    /**
+     * save game progress
+     */
     private void save() {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = settings.edit();
@@ -108,6 +121,9 @@ public class game_2048 extends AppCompatActivity {
         load();
     }
 
+    /**
+     * Load latest progress of game
+     */
     private void load() {
         //Stopping all animations
         view.game.aGrid.cancelAnimations();

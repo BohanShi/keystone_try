@@ -86,7 +86,7 @@ public class NotificationsFragment extends Fragment {
                 List<GameOneScore> scoreList = DbUtils.getQueryAll(GameOneScore.class);
                 Collections.reverse(scoreList);
                 ArrayList<Entry> values = new ArrayList<>();
-                //添加数据
+                //add data
                 if (!scoreList.isEmpty()) {
                     int i=0;
                     for (; i<7&&i<scoreList.size(); i++) {
@@ -101,7 +101,7 @@ public class NotificationsFragment extends Fragment {
                 xText();
                 yText();
 
-                //执行
+                //execute
                 if (!values.isEmpty()) {
                     text_all(values);
                 }
@@ -115,7 +115,7 @@ public class NotificationsFragment extends Fragment {
                 List<GameTwoScore> scoreList = DbUtils.getQueryAll(GameTwoScore.class);
                 Collections.reverse(scoreList);
                 ArrayList<Entry> values = new ArrayList<>();
-                //添加数据
+                //add data
                 if (!scoreList.isEmpty()) {
                     int i=0;
                     for (; i<7&&i<scoreList.size(); i++) {
@@ -130,7 +130,7 @@ public class NotificationsFragment extends Fragment {
                 xText();
                 yText();
 
-                //执行
+                //execute
                 if (!values.isEmpty()) {
                     text_all(values);
                 }
@@ -210,12 +210,13 @@ public class NotificationsFragment extends Fragment {
         }
     }
 
+    // set y axis
     private void xText() {
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.TOP);
     }
 
-    //设置y轴
+    //set x axis
     private void yText() {
         YAxis yAxisLeft = lineChart.getAxisLeft();
         yAxisLeft.setEnabled(false);
@@ -243,28 +244,6 @@ public class NotificationsFragment extends Fragment {
         lineChart.invalidate();
     }
 
-    public void getResentData(Class cls){
-        List<Entity> scoreList = DbUtils.getQueryAll(cls);
-        Collections.reverse(scoreList);
-        ArrayList<Entry> values = new ArrayList<>();
-    }
-
-    public void test(){
-        List<GameOneScore> scores = DbUtils.getQueryAll(GameOneScore.class);
-        Collections.reverse(scores);
-        List<Entry> values = new ArrayList<>();
-        //adding data
-        if (!scores.isEmpty()) {
-            int i=0;
-            for (; i<7&&i<scores.size(); i++) {
-                GameOneScore gameOneScore = scores.get(i);
-                values.add(new Entry(i+1,gameOneScore.getScore()));
-            }
-            for (; i<7; i++) {
-                values.add(new Entry(i+1, 0));
-            }
-        }
-    }
 
     public static class MonthlyIntegerYValueFormatter implements IValueFormatter {
         @Override

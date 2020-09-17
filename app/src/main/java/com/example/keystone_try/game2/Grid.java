@@ -1,7 +1,7 @@
 package com.example.keystone_try.game2;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 import java.util.ArrayList;
 
@@ -19,6 +19,10 @@ public class Grid {
         clearUndoGrid();
     }
 
+    /**
+     * get an random available cell
+     * @return
+     */
     public Cell randomAvailableCell() {
         ArrayList<Cell> availableCells = getAvailableCells();
         if (availableCells.size() >= 1) {
@@ -27,6 +31,10 @@ public class Grid {
         return null;
     }
 
+    /**
+     * get all available cell
+     * @return
+     */
     private ArrayList<Cell> getAvailableCells() {
         ArrayList<Cell> availableCells = new ArrayList<>();
         for (int xx = 0; xx < field.length; xx++) {
@@ -39,18 +47,37 @@ public class Grid {
         return availableCells;
     }
 
+    /**
+     * Judge is there still have cell available
+     * @return
+     */
     public boolean isCellsAvailable() {
         return (getAvailableCells().size() >= 1);
     }
 
+    /**
+     * To judge a cell is available or not
+     * @param cell the cell needs to be judged
+     * @return
+     */
     public boolean isCellAvailable(Cell cell) {
         return !isCellOccupied(cell);
     }
 
+    /**
+     * To judge a cell already has a number or not
+     * @param cell
+     * @return
+     */
     public boolean isCellOccupied(Cell cell) {
         return (getCellContent(cell) != null);
     }
 
+    /**
+     * Get cell number
+     * @param cell
+     * @return
+     */
     public Tile getCellContent(Cell cell) {
         if (cell != null && isCellWithinBounds(cell)) {
             return field[cell.getX()][cell.getY()];
@@ -59,6 +86,12 @@ public class Grid {
         }
     }
 
+    /**
+     * get a position number
+     * @param x
+     * @param y
+     * @return
+     */
     public Tile getCellContent(int x, int y) {
         if (isCellWithinBounds(x, y)) {
             return field[x][y];
@@ -67,24 +100,46 @@ public class Grid {
         }
     }
 
+    /**
+     * To judge a cell is in bound or not
+     * @param cell
+     * @return
+     */
     public boolean isCellWithinBounds(Cell cell) {
         return 0 <= cell.getX() && cell.getX() < field.length
                 && 0 <= cell.getY() && cell.getY() < field[0].length;
     }
 
+    /**
+     * To judge a position is in bound or not
+     * @param x
+     * @param y
+     * @return
+     */
     private boolean isCellWithinBounds(int x, int y) {
         return 0 <= x && x < field.length
                 && 0 <= y && y < field[0].length;
     }
 
+    /**
+     * Put a number in the cell
+     * @param tile
+     */
     public void insertTile(Tile tile) {
         field[tile.getX()][tile.getY()] = tile;
     }
 
+    /**
+     * Delete a number from the cell
+     * @param tile
+     */
     public void removeTile(Tile tile) {
         field[tile.getX()][tile.getY()] = null;
     }
 
+    /**
+     * save all numbers
+     */
     public void saveTiles() {
         for (int xx = 0; xx < bufferField.length; xx++) {
             for (int yy = 0; yy < bufferField[0].length; yy++) {
@@ -97,6 +152,9 @@ public class Grid {
         }
     }
 
+    /**
+     * get all number to be saved
+     */
     public void prepareSaveTiles() {
         for (int xx = 0; xx < field.length; xx++) {
             for (int yy = 0; yy < field[0].length; yy++) {
@@ -109,6 +167,9 @@ public class Grid {
         }
     }
 
+    /**
+     * get all saved number
+     */
     public void revertTiles() {
         for (int xx = 0; xx < undoField.length; xx++) {
             for (int yy = 0; yy < undoField[0].length; yy++) {
@@ -121,6 +182,9 @@ public class Grid {
         }
     }
 
+    /**
+     * clear the grid (new game, first time in)
+     */
     public void clearGrid() {
         for (int xx = 0; xx < field.length; xx++) {
             for (int yy = 0; yy < field[0].length; yy++) {
@@ -129,6 +193,9 @@ public class Grid {
         }
     }
 
+    /**
+     * Delete last status(on undo pressed)
+     */
     private void clearUndoGrid() {
         for (int xx = 0; xx < field.length; xx++) {
             for (int yy = 0; yy < field[0].length; yy++) {

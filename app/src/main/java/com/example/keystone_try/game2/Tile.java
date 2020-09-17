@@ -1,7 +1,7 @@
 package com.example.keystone_try.game2;
 
 /**
- * Reference from Youtuber AtoTalKs
+ * reference from Youtuber AtoTalKs
  */
 
 public class Tile extends Cell {

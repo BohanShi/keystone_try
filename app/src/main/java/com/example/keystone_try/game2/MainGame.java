@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * reference from Youtuber AtoTalKs
+ * leaned from Youtuber AtoTalKs
  */
 public class MainGame {
 
@@ -264,10 +264,6 @@ public class MainGame {
         aGrid.startAnimation(-1, -1, FADE_GLOBAL_ANIMATION, NOTIFICATION_ANIMATION_TIME, NOTIFICATION_DELAY_TIME, null);
 
         setScores(score);
-
-//        int twoTimes = SPHelper.getInt(mContext, "TwoTimes");
-//        twoTimes++;
-//        SPHelper.putInt(mContext, "TwoTimes", twoTimes);
 
         if (score >= highScore) {
             highScore = score;

@@ -177,17 +177,17 @@ public class StepService extends Service implements SensorEventListener {
      */
     private void initBroadcastReceiver() {
         final IntentFilter filter = new IntentFilter();
-        // Screen off screen broadcast
+                                                                                                    // Screen off screen broadcast
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        //Shutdown broadcast
+                                                                                                    //Shutdown broadcast
         filter.addAction(Intent.ACTION_SHUTDOWN);
-        // Bright screen broadcast
+                                                                                                    // Bright screen broadcast
         filter.addAction(Intent.ACTION_SCREEN_ON);
-        // Screen unlock broadcast
+                                                                                                    // Screen unlock broadcast
 //        filter.addAction(Intent.ACTION_USER_PRESENT);
-        // 当长按电源键弹出“关机”对话或者锁屏时系统会发出这个广播
-        // example：有时候会用到系统对话框，权限可能很高，会覆盖在锁屏界面或者“关机”对话框之上，
-        // 所以监听这个广播，当收到时就隐藏自己的对话，如点击pad右下角部分弹出的对话框
+        // When long press the power button to pop up the "shut down" dialog or lock the screen, the system will send out this broadcast
+        // example：Sometimes system dialogs are used, and the permissions may be very high, which will be overlaid on the lock screen or the "shutdown" dialog box.
+        // So listen to this broadcast, and hide your conversation when you receive it, such as clicking the dialog box that pops up in the lower right corner of the pad
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         //Monitoring date changes
         filter.addAction(Intent.ACTION_DATE_CHANGED);
@@ -216,16 +216,16 @@ public class StepService extends Service implements SensorEventListener {
                 } else if (Intent.ACTION_SHUTDOWN.equals(intent.getAction())) {
                     Log.i(TAG, " receive ACTION_SHUTDOWN");
                     save();
-                } else if (Intent.ACTION_DATE_CHANGED.equals(action)) {//Reset the number of steps for date change to 0
+                } else if (Intent.ACTION_DATE_CHANGED.equals(action)) {                             //Reset the number of steps for date change to 0
 //                    Logger.d("Reset steps" + StepDcretor.CURRENT_STEP);
                     save();
                     isNewDay();
                 } else if (Intent.ACTION_TIME_CHANGED.equals(action)) {
-                    //Reset the number of steps in time change to 0
+                                                                                                    //Reset the number of steps in time change to 0
                     isCall();
                     save();
                     isNewDay();
-                } else if (Intent.ACTION_TIME_TICK.equals(action)) {//日期变化步数重置为0
+                } else if (Intent.ACTION_TIME_TICK.equals(action)) {                                //Reset the number of steps for date change to 0
                     isCall();
 //                    Logger.d("Reset" + StepDcretor.CURRENT_STEP);
                     save();
@@ -292,7 +292,7 @@ public class StepService extends Service implements SensorEventListener {
 
         Notification notification = mBuilder.setContentTitle(getResources().getString(R.string.app_name))
                 .setContentText("Today's step: " + CURRENT_STEP + " steps")
-                .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
+                .setWhen(System.currentTimeMillis())                                                //The time when the notification is generated will be displayed in the notification message
                 .setContentIntent(hangPendingIntent)
                 .build();
         mNotificationManager.notify(notifyId_Step, notification);
@@ -334,7 +334,7 @@ public class StepService extends Service implements SensorEventListener {
      */
     private void remindNotify() {
 
-        //设置点击跳转
+                                                                                                    //Set click to jump
         Intent hangIntent = new Intent(this, MainActivity.class);
         PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 0, hangIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
@@ -343,25 +343,25 @@ public class StepService extends Service implements SensorEventListener {
             mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
                     .setContentText("You've achieved your goal. Congratulations!")
                     .setContentIntent(hangPendingIntent)
-                    .setTicker(getResources().getString(R.string.app_name) + "notice you that you have achieved your goal.")//The notification appears in the notification bar for the first time, with a rising animation effect
-                    .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
-                    .setPriority(Notification.PRIORITY_DEFAULT)//Set the priority of this notification
-                    .setAutoCancel(true)//Set this flag when the user clicks on the panel to make the notification automatically cancel
+                    .setTicker(getResources().getString(R.string.app_name) + "notice you that you have achieved your goal.")            //The notification appears in the notification bar for the first time, with a rising animation effect
+                    .setWhen(System.currentTimeMillis())                                            //The time when the notification is generated will be displayed in the notification message
+                    .setPriority(Notification.PRIORITY_DEFAULT)                                     //Set the priority of this notification
+                    .setAutoCancel(true)                                                            //Set this flag when the user clicks on the panel to make the notification automatically cancel
                     .setOngoing(false)//ture，
-                    .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)//Add sound to notification
-                    //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
+                    .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)         //Add sound to notification
+                                                                                                    //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND  // requires VIBRATE permission
                     .setSmallIcon(R.mipmap.keystone_logo);
         } else {
             mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
                     .setContentText("Still needs" + (Integer.valueOf(plan) - CURRENT_STEP) + " steps to goal，come on！")
                     .setContentIntent(hangPendingIntent)
-                    .setTicker(getResources().getString(R.string.app_name) + "notice you to have some work")//The notification appears in the notification bar for the first time, with a rising animation effect
-                    .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
-                    .setPriority(Notification.PRIORITY_DEFAULT)//Set the priority of this notification
-                    .setAutoCancel(true)//Set this flag when the user clicks on the panel to make the notification automatically cancel
+                    .setTicker(getResources().getString(R.string.app_name) + "notice you to have some work")                            //The notification appears in the notification bar for the first time, with a rising animation effect
+                    .setWhen(System.currentTimeMillis())                                            //The time when the notification is generated will be displayed in the notification message
+                    .setPriority(Notification.PRIORITY_DEFAULT)                                     //Set the priority of this notification
+                    .setAutoCancel(true)                                                            //Set this flag when the user clicks on the panel to make the notification automatically cancel
                     .setOngoing(false)//ture，
-                    .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)//Add sound to notification
-                    //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
+                    .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)         //Add sound to notification
+                                                                                                    //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND  // requires VIBRATE permission
                     .setSmallIcon(R.mipmap.keystone_logo);
         }
 
@@ -380,13 +380,13 @@ public class StepService extends Service implements SensorEventListener {
         mBuilder.setContentTitle("Today's step: " + CURRENT_STEP + " steps")
                 .setContentText("You have only walked " + CURRENT_STEP + " steps，come on！")
                 .setContentIntent(hangPendingIntent)
-                .setTicker(getResources().getString(R.string.app_name) + "notice you to have some work")//The notification appears in the notification bar for the first time, with a rising animation effect
-                .setWhen(System.currentTimeMillis())//The time when the notification is generated will be displayed in the notification message
-                .setPriority(Notification.PRIORITY_DEFAULT)//Set the priority of this notification
-                .setAutoCancel(true)//Set this flag when the user clicks on the panel to make the notification automatically cancel
+                .setTicker(getResources().getString(R.string.app_name) + "notice you to have some work")                                //The notification appears in the notification bar for the first time, with a rising animation effect
+                .setWhen(System.currentTimeMillis())                                                    //The time when the notification is generated will be displayed in the notification message
+                .setPriority(Notification.PRIORITY_DEFAULT)                                             //Set the priority of this notification
+                .setAutoCancel(true)                                                                    //Set this flag when the user clicks on the panel to make the notification automatically cancel
                 .setOngoing(false)//ture，
-                .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)//Add sound to notification
-                //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
+                .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)                     //Add sound to notification
+                                                                                                        //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND  // requires VIBRATE permission
                 .setSmallIcon(R.mipmap.keystone_logo);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotificationManager.notify(notify_more_remind_id, mBuilder.build());
@@ -442,10 +442,10 @@ public class StepService extends Service implements SensorEventListener {
         if (sensorManager != null) {
             sensorManager = null;
         }
-        // Get an instance of the sensor manager
+                                                                                                     // Get an instance of the sensor manager
         sensorManager = (SensorManager) this
                 .getSystemService(SENSOR_SERVICE);
-        //Pedometer sensor can be used after android4.4
+                                                                                                    //Pedometer sensor can be used after android4.4
         int VERSION_CODES = Build.VERSION.SDK_INT;
         if (VERSION_CODES >= 19) {
             addCountStepListener();
@@ -482,25 +482,25 @@ public class StepService extends Service implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (stepSensorType == Sensor.TYPE_STEP_COUNTER) {
-            //Get the number of temporary steps returned by the current sensor
+                                                                                                    //Get the number of temporary steps returned by the current sensor
             int tempStep = (int) event.values[0];
-            //For the first time, if the number of steps already in the mobile phone system is not obtained,
-            // then the number of steps that the APP in the system has not yet started to count steps
+                                                                                                    //For the first time, if the number of steps already in the mobile phone system is not obtained,
+                                                                                                    // then the number of steps that the APP in the system has not yet started to count steps
             if (!hasRecord) {
                 hasRecord = true;
                 hasStepCount = tempStep;
             } else {
-                //Get the total number of steps since the APP was opened
-                // = the total number of steps in this system callback
-                // -the number of steps that existed before the APP was opened
+                                                                                                    //Get the total number of steps since the APP was opened
+                                                                                                        // = the total number of steps in this system callback
+                                                                                                        // -the number of steps that existed before the APP was opened
                 int thisStepCount = tempStep - hasStepCount;
-                //The number of effective steps this time
-                // = (the total number of steps recorded after the APP is opened-the total number of steps recorded
-                // since the last time the APP is opened)
+                                                                                                    //The number of effective steps this time
+                                                                                                        // = (the total number of steps recorded after the APP is opened-the total number of steps recorded
+                                                                                                        // since the last time the APP is opened)
                 int thisStep = thisStepCount - previousStepCount;
-                //The total number of steps = the number of existing steps + the number of effective steps this time
+                                                                                                    //The total number of steps = the number of existing steps + the number of effective steps this time
                 CURRENT_STEP += (thisStep);
-                //Record the total number of steps since the last time the APP was opened
+                                                                                                    //Record the total number of steps since the last time the APP was opened
                 previousStepCount = thisStepCount;
             }
         } else if (stepSensorType == Sensor.TYPE_STEP_DETECTOR) {
@@ -517,9 +517,9 @@ public class StepService extends Service implements SensorEventListener {
     private void addBasePedometerListener() {
         mStepCount = new StepCount();
         mStepCount.setSteps(CURRENT_STEP);
-        // Get the type of sensor, the type obtained here is an acceleration sensor
-        // This method is used to register, and it will take effect only after registration.
-        // Parameters: instance of SensorEventListener, instance of Sensor, update rate
+                                                                                                    // Get the type of sensor, the type obtained here is an acceleration sensor
+                                                                                                        // This method is used to register, and it will take effect only after registration.
+                                                                                                        // Parameters: instance of SensorEventListener, instance of Sensor, update rate
         Sensor sensor = sensorManager
                 .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         boolean isAvailable = sensorManager.registerListener(mStepCount.getStepDetector(), sensor,
@@ -554,7 +554,7 @@ public class StepService extends Service implements SensorEventListener {
 
         @Override
         public void onFinish() {
-            // If the timer ends normally, start counting steps
+                                                                                                        // If the timer ends normally, start counting steps
             time.cancel();
             save();
             startTimeCount();
@@ -591,7 +591,7 @@ public class StepService extends Service implements SensorEventListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //Cancel the foreground process
+                                                                                                    //Cancel the foreground process
         stopForeground(true);
         DbUtils.closeDb();
         unregisterReceiver(mBatInfoReceiver);
