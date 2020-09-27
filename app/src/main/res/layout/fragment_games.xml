@@ -20,16 +20,19 @@
         android:id="@+id/texttoplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:paddingTop="@dimen/_110sdp"
         android:shadowColor="@color/colorPrimary"
-        android:textColor="@color/black"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="10"
         android:text="Let's play some games"
+        android:textColor="@color/black"
         android:textSize="@dimen/_29sdp"
-        android:paddingTop="@dimen/_110sdp"
-        app:layout_constraintTop_toTopOf="@id/imageHeader"
-        app:layout_constraintStart_toStartOf="@id/imageHeader"/>
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/imageHeader"
+        app:layout_constraintTop_toTopOf="@id/imageHeader" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -61,22 +64,22 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ca"
-                    app:riv_corner_radius="@dimen/_12sdp"/>
+                    app:riv_corner_radius="@dimen/_12sdp" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="68dp"
                     android:layout_gravity="bottom"
-                    android:paddingEnd="@dimen/_8sdp"
                     android:padding="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_8sdp"
                     android:shadowColor="@color/colorPrimary"
-                    android:shadowRadius="10"
-                    android:shadowDy="0"
                     android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
                     android:text="Calculate"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_30sdp"
+                    android:textStyle="bold" />
             </FrameLayout>
 
             <FrameLayout
@@ -86,26 +89,26 @@
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/game2"
-                    android:layout_width="@dimen/_180sdp"
-                    android:layout_height="match_parent"
+                    android:layout_width="222dp"
+                    android:layout_height="411dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/puzzle"
-                    app:riv_corner_radius="@dimen/_12sdp"/>
+                    app:riv_corner_radius="@dimen/_12sdp" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="191dp"
+                    android:layout_height="66dp"
                     android:layout_gravity="bottom"
+                    android:padding="@dimen/_10sdp"
                     android:paddingEnd="@dimen/_8sdp"
                     android:shadowColor="@color/colorPrimary"
-                    android:shadowRadius="10"
-                    android:shadowDy="0"
                     android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
                     android:text="2048"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/_14sdp"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_30sdp"
+                    android:textStyle="bold" />
             </FrameLayout>
 
             <FrameLayout
@@ -132,7 +135,7 @@
                     android:shadowDx="0"
                     android:text="Image"
                     android:textStyle="bold"
-                    android:textSize="@dimen/_14sdp"
+                    android:textSize="@dimen/_30sdp"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black"/>
             </FrameLayout>

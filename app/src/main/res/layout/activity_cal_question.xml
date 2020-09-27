@@ -389,14 +389,14 @@
             android:id="@+id/cal_ques_hg_scor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"
-            app:layout_constraintHorizontal_bias="0.859"
+            app:layout_constraintHorizontal_bias="0.863"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toTopOf="@+id/textView7"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="3"
-            android:textSize="25sp"/>
+            tools:text="3" />
 
         <ImageView
             android:id="@+id/imageHeader"
