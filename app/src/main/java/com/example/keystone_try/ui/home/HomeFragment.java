@@ -251,7 +251,6 @@ public class HomeFragment extends Fragment {
                     String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
                     stepView.setCurrentStep(stepCount);
                     SPHelper.putInt(getContext(),"Step_Today", stepCount);
-
                     getChartData();
                 }
             });

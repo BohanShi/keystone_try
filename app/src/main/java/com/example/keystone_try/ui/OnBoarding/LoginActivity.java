@@ -55,32 +55,32 @@ public class LoginActivity extends AppCompatActivity {
         OnBoardingItem itemOne = new OnBoardingItem();
         itemOne.setTitle(R.string.nul);
         itemOne.setDescription(R.string.on_boarding_intro);
-        itemOne.setImage(R.drawable.onb1);
+        itemOne.setImage(R.drawable.new1);
 
         OnBoardingItem itemTwo = new OnBoardingItem();
         itemTwo.setTitle(R.string.nul);
         itemTwo.setDescription(R.string.nul);
-        itemTwo.setImage(R.drawable.onb2);
+        itemTwo.setImage(R.drawable.new1);
 
         OnBoardingItem itemThree = new OnBoardingItem();
         itemThree.setTitle(R.string.nul);
         itemThree.setDescription(R.string.nul);
-        itemThree.setImage(R.drawable.onb3);
+        itemThree.setImage(R.drawable.new1);
 
         OnBoardingItem itemFour = new OnBoardingItem();
         itemFour.setTitle(R.string.nul);
         itemFour.setDescription(R.string.nul);
-        itemFour.setImage(R.drawable.onb4);
+        itemFour.setImage(R.drawable.new1);
 
         OnBoardingItem itemFive = new OnBoardingItem();
         itemFive.setTitle(R.string.nul);
         itemFive.setDescription(R.string.nul);
-        itemFive.setImage(R.drawable.onb5);
+        itemFive.setImage(R.drawable.new1);
 
         OnBoardingItem itemSix = new OnBoardingItem();
         itemSix.setTitle(R.string.nul);
         itemSix.setDescription(R.string.nul);
-        itemSix.setImage(R.drawable.onb6);
+        itemSix.setImage(R.drawable.new1);
 
         onBoardingItems.add(itemOne);
         onBoardingItems.add(itemTwo);

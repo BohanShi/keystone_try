@@ -2,15 +2,21 @@ package com.example.keystone_try.game2;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.keystone_try.R;
 
 /**
  * leaned from Youtuber AtoTalKs
  */
-class InputListener implements View.OnTouchListener {
+class InputListener extends AppCompatActivity implements View.OnTouchListener {
 
     private static final int SWIPE_MIN_DISTANCE = 0;
     private static final int SWIPE_THRESHOLD_VELOCITY = 25;
@@ -149,16 +155,33 @@ class InputListener implements View.OnTouchListener {
                     } else if (iconPressed(mView.sXUndo, mView.sYIcons)) {
                         mView.game.revertUndoState();
                     } else if (iconPressed(mView.sXIntro, mView.sYIcons)){
-                        new AlertDialog.Builder(mView.getContext())
-                                .setPositiveButton("Sure", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
 
-                                    }
-                                })
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mView.getContext())
                                 .setTitle(R.string.intro)
                                 .setMessage(R.string.intro2048)
-                                .show();
+                                .setNegativeButton("Sure", null);
+                        TextView tv = new TextView(mView.getContext());
+                        tv.setText(R.string.main_content);
+                        tv.setTextSize(18);
+                        tv.setPaddingRelative(60,60,0,0);
+                        tv.setMovementMethod(LinkMovementMethod.getInstance());
+                        builder.setView(tv);
+
+                        builder.show();
+//                        new AlertDialog.Builder(mView.getContext())
+//                                .setPositiveButton("Go to video", new DialogInterface.OnClickListener() {
+//                                    @Override
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        Uri uri = Uri.parse("http://www.baidu.com");
+//                                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//                                        startActivity(intent);
+//                                    }
+//
+//                                })
+//                                .setNegativeButton("Sure", null)
+//                                .setTitle(R.string.intro)
+//                                .setMessage(R.string.intro2048)
+//                                .show();
                     }
                     else if (isTap(2) && inRange(mView.startingX, x, mView.endingX)
                             && inRange(mView.startingY, x, mView.endingY) && mView.continueButtonEnabled) {
