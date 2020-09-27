@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Create the 'Step' page in the app-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,6 +29,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
 
+    <!--Create the Welcoming message to user in the app-->
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -44,6 +46,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />
 
+    <!--Create the number of step view in the step page-->
     <com.example.keystone_try.views.StepView
         android:id="@+id/step_display"
         android:layout_width="0dp"
@@ -68,6 +71,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.36" />
 
+    <!--Create the 'Set Step Goal' button in the step page-->
     <Button
         android:id="@+id/goal_btn"
         android:layout_width="wrap_content"
@@ -84,6 +88,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline32"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!--Create the line chart which shows the number of steps of the user in past 7 days-->
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/linechart"
         android:layout_width="0dp"
@@ -112,6 +117,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
 
+    <!--Create the title of the line chart which shows the no. of steps of users in past 7 days-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,6 +139,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.44" />
 
+    <!--Display the target step which set by the users in the step page-->
     <TextView
         android:id="@+id/TVgoalStep"
         android:layout_width="wrap_content"

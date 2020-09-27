@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Create the navigation menu with four buttons at the bottom of each page-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+    <!--Create the 'Game' button in the navigation menu-->
     <item
         android:id="@+id/navigation_games"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="games" />
+        android:title="Games" />
 
+    <!--Create the 'Step' button in the navigation menu-->
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/footsteps"
         android:title="@string/title_home" />
 
+    <!--Create the 'Game Report' button in the navigation menu-->
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_show_chart_black_24dp"
         android:title="@string/title_notifications" />
 
+    <!--Create the 'Know More' button in the navigation menu-->
     <item
         android:id="@+id/navigation_opendata"
         android:icon="@drawable/ic_data_usage_black_24dp"
