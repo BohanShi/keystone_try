@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="#CCC9C9"
     tools:context=".ui.dashboard.DashboardFragment">
 
     <ImageView
@@ -13,7 +13,7 @@
         android:layout_height="@dimen/_180sdp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:src="@drawable/elder"
+        android:src="@drawable/play"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
@@ -22,14 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:paddingTop="@dimen/_110sdp"
-        android:shadowColor="@color/colorPrimary"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="10"
-        android:text="Let's play some games"
+        android:paddingTop="@dimen/_120sdp"
+        android:shadowColor="@color/cornsilk"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="50"
+        android:text="Let's play games"
         android:textColor="@color/black"
-        android:textSize="@dimen/_29sdp"
+        android:textSize="@dimen/_30sdp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/imageHeader"
         app:layout_constraintTop_toTopOf="@id/imageHeader" />
@@ -43,6 +43,7 @@
         android:overScrollMode="never"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
         android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@id/imageHeader"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -89,8 +90,8 @@
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/game2"
-                    android:layout_width="222dp"
-                    android:layout_height="411dp"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/puzzle"
                     app:riv_corner_radius="@dimen/_12sdp" />

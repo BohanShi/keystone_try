@@ -60,16 +60,16 @@ public class HomeFragment extends Fragment {
         goalStepTVl = root.findViewById(R.id.TVgoalStep);
 
         //add real machine notification
-        TextView tv = new TextView(getContext());
-        tv.setPadding(35,0,25,0);
-        tv.setText("For the better experience, we Strong Advise you to test this App on real machine");
-        int highScore = SPHelper.getInt(getContext(), "HighScore");
-        if (highScore <1 ){
-            new AlertDialog.Builder(getContext()).setTitle("Friendly notice")
-                    .setView(tv)
-                    .setPositiveButton("Confirm", null)
-                    .show();
-        }
+//        TextView tv = new TextView(getContext());
+//        tv.setPadding(35,0,25,0);
+//        tv.setText("For the better experience, we Strong Advise you to test this App on real machine");
+//        int highScore = SPHelper.getInt(getContext(), "HighScore");
+//        if (highScore <1 ){
+//            new AlertDialog.Builder(getContext()).setTitle("Friendly notice")
+//                    .setView(tv)
+//                    .setPositiveButton("Confirm", null)
+//                    .show();
+//        }
 
 
 

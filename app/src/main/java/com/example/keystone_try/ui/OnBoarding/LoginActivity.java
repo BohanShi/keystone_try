@@ -3,7 +3,6 @@ package com.example.keystone_try.ui.OnBoarding;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.Manifest;
@@ -13,15 +12,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewPropertyAnimator;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.keystone_try.R;
 import com.example.keystone_try.step.utils.DbUtils;
-import com.example.keystone_try.step.utils.SPHelper;
 import com.example.keystone_try.ui.MainActivity;
 import com.google.android.material.button.MaterialButton;
 
@@ -53,41 +48,41 @@ public class LoginActivity extends AppCompatActivity {
         List<OnBoardingItem> onBoardingItems = new ArrayList<>();
 
         OnBoardingItem itemOne = new OnBoardingItem();
-        itemOne.setTitle(R.string.nul);
-        itemOne.setDescription(R.string.on_boarding_intro);
-        itemOne.setImage(R.drawable.new1);
+//        itemOne.setTitle(R.string.nul);
+//        itemOne.setDescription(R.string.nul);
+        itemOne.setImage(R.drawable.onb1);
 
         OnBoardingItem itemTwo = new OnBoardingItem();
-        itemTwo.setTitle(R.string.nul);
-        itemTwo.setDescription(R.string.nul);
-        itemTwo.setImage(R.drawable.new1);
+//        itemTwo.setTitle(R.string.nul);
+//        itemTwo.setDescription(R.string.nul);
+        itemTwo.setImage(R.drawable.ob2);
 
         OnBoardingItem itemThree = new OnBoardingItem();
-        itemThree.setTitle(R.string.nul);
-        itemThree.setDescription(R.string.nul);
-        itemThree.setImage(R.drawable.new1);
+//        itemThree.setTitle(R.string.nul);
+//        itemThree.setDescription(R.string.nul);
+        itemThree.setImage(R.drawable.ob3);
 
-        OnBoardingItem itemFour = new OnBoardingItem();
-        itemFour.setTitle(R.string.nul);
-        itemFour.setDescription(R.string.nul);
-        itemFour.setImage(R.drawable.new1);
-
-        OnBoardingItem itemFive = new OnBoardingItem();
-        itemFive.setTitle(R.string.nul);
-        itemFive.setDescription(R.string.nul);
-        itemFive.setImage(R.drawable.new1);
-
-        OnBoardingItem itemSix = new OnBoardingItem();
-        itemSix.setTitle(R.string.nul);
-        itemSix.setDescription(R.string.nul);
-        itemSix.setImage(R.drawable.new1);
+//        OnBoardingItem itemFour = new OnBoardingItem();
+//        itemFour.setTitle(R.string.nul);
+//        itemFour.setDescription(R.string.nul);
+//        itemFour.setImage(R.drawable.new1);
+//
+//        OnBoardingItem itemFive = new OnBoardingItem();
+//        itemFive.setTitle(R.string.nul);
+//        itemFive.setDescription(R.string.nul);
+//        itemFive.setImage(R.drawable.new1);
+//
+//        OnBoardingItem itemSix = new OnBoardingItem();
+//        itemSix.setTitle(R.string.nul);
+//        itemSix.setDescription(R.string.nul);
+//        itemSix.setImage(R.drawable.new1);
 
         onBoardingItems.add(itemOne);
         onBoardingItems.add(itemTwo);
         onBoardingItems.add(itemThree);
-        onBoardingItems.add(itemFour);
-        onBoardingItems.add(itemFive);
-        onBoardingItems.add(itemSix);
+//        onBoardingItems.add(itemFour);
+//        onBoardingItems.add(itemFive);
+//        onBoardingItems.add(itemSix);
 
         onBoardingAdapter = new OnBoardingAdapter(onBoardingItems);
     }

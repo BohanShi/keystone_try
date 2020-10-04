@@ -14,8 +14,8 @@
     <string name="Win_msg">You Win!</string>
     <string name="lose_score">Your Score:</string>
     <string name="win_score">New Record:</string>
-    <string name="you_win">You win!</string>
-    <string name="you_lose">You lose!</string>
+    <string name="you_win">Great Job!</string>
+    <string name="you_lose">Keep Trying!</string>
 
 
     <string name="action_settings">Settings</string>
@@ -76,5 +76,5 @@
     <string name="OD_know_more">Would you like to know about Dementia?</string>
     <string name="OD_barchartDesc">Number of Deaths Across Australia</string>
 
-    <string name="main_content">Go to Video: <a href="http://www.google.com">2048 guide Video</a></string>
+    <string name="main_content">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided. Go to Video: <a href="https://youtu.be/khnyOFmCgII">2048 guide Video</a></string>
 </resources>

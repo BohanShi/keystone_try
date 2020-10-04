@@ -158,14 +158,15 @@ class InputListener extends AppCompatActivity implements View.OnTouchListener {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(mView.getContext())
                                 .setTitle(R.string.intro)
-                                .setMessage(R.string.intro2048)
+                                //.setMessage(R.string.intro2048)
                                 .setNegativeButton("Sure", null);
                         TextView tv = new TextView(mView.getContext());
                         tv.setText(R.string.main_content);
-                        tv.setTextSize(18);
-                        tv.setPaddingRelative(60,60,0,0);
+                        tv.setTextSize(24);
+                        tv.setPaddingRelative(40,60,40,0);
                         tv.setMovementMethod(LinkMovementMethod.getInstance());
                         builder.setView(tv);
+                       // builder.setView(tv1);
 
                         builder.show();
 //                        new AlertDialog.Builder(mView.getContext())

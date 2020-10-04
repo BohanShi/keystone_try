@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {                                                            // set listener
 
-                isFirstTime(R.string.intro, R.string.intro2048, game_2048.class, 1);
+                isFirstTime(R.string.intro, R.string.main_content, game_2048.class, 1);
             }
         });
 
@@ -89,17 +90,36 @@ public class DashboardFragment extends Fragment {
      */
     public void isFirstTime(final int instructionTitle, int instruction, final Class c, int times){
         if (!(scores.get(times) > 1)){
-            new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
-                    .setIcon(android.R.drawable.ic_menu_help)
-                    .setMessage(instruction)
+//            new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
+//                    .setIcon(android.R.drawable.ic_menu_help)
+//                    .setMessage(instruction)
+//                    .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            Intent intent = new Intent(getActivity(), c);
+//                            startActivity(intent);
+//                        }
+//                    })
+//                    .show();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
+                    .setTitle(instructionTitle)
                     .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Intent intent = new Intent(getActivity(), c);
                             startActivity(intent);
                         }
-                    })
-                    .show();
+                    });
+            TextView tv = new TextView(getContext());
+            tv.setText(instruction);
+            tv.setTextSize(24);
+            tv.setPaddingRelative(40,60,40,0);
+            tv.setMovementMethod(LinkMovementMethod.getInstance());
+            builder.setView(tv);
+            // builder.setView(tv1);
+
+            builder.show();
         }else {
             Intent intent = new Intent(getActivity(), c);
             startActivity(intent);

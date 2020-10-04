@@ -43,20 +43,20 @@ public class OnBoardingAdapter extends RecyclerView.Adapter<OnBoardingAdapter.On
 
     class OnbarodingViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView textTitle;
-        private TextView textDescription;
+//        private TextView textTitle;
+//        private TextView textDescription;
         private ImageView imageOnBoarding;
 
         public OnbarodingViewHolder(@NonNull View itemView) {
             super(itemView);
-            textTitle = itemView.findViewById(R.id.textTitleOnboarding);
-            textDescription = itemView.findViewById(R.id.textDescOnboarding);
+//            textTitle = itemView.findViewById(R.id.textTitleOnboarding);
+//            textDescription = itemView.findViewById(R.id.textDescOnboarding);
             imageOnBoarding = itemView.findViewById(R.id.imageOnboarding);
         }
 
         void setOnBoardingData(OnBoardingItem onBoardingItem){
-            textTitle.setText(onBoardingItem.getTitle());
-            textDescription.setText(onBoardingItem.getDescription());
+//            textTitle.setText(onBoardingItem.getTitle());
+//            textDescription.setText(onBoardingItem.getDescription());
             imageOnBoarding.setImageResource(onBoardingItem.getImage());
         }
     }
