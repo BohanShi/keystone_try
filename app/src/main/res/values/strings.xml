@@ -60,21 +60,30 @@
     <string name="introCal">In this game, you will need to calculate the equation that appeared on the screen. You will get one score if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer.</string>
 
 
+    <!--Old Open data text -->
     <string name="title_opendata">Know More!</string>
-    <string name="OD_title_text">Dementia describes a collection of symptoms caused by disorders affecting the brain which affects thinking, behaviour and the ability to perform everyday tasks. Brain function is affected enough to interfere with the person’s normal social or working life.
+    <string name="OD_title_text">Dementia describes a collection of symptoms caused by disorders affecting the brain which affects thinking, behaviour and the ability to perform everyday tasks. \n\nBrain function is affected enough to interfere with the person’s normal social or working life.
 </string>
     <string name="OD_number01">459,000</string>
     <string name="OD_title_01">What is Dementia?</string>
     <string name="OD_Title02">Who gets dementia?</string>
-    <string name="OD_Content02">Most people with dementia are older and it is more common after the age of 65 years. People in their 40s and 50s can also have dementia.  As per ABS, the deaths due to Dementia increase every day in Australia.</string>
+    <string name="OD_Content02">People above the age of 60 are more prone to Dementia. Over the years Females are more affected by Dementia than Males. </string>
     <string name="OD_title03">What are the early signs?</string>
     <string name="OD_Content03">The early signs of dementia are very subtle and vague and may not be immediately obvious. Some common symptoms may include:  • Progressive and frequent memory loss • Confusion • Personality change • Apathy and withdrawal • Loss of ability to perform everyday tasks. </string>
     <string name="OD_title04">What can be done to help?</string>
     <string name="OD_content04">At present there is no prevention or cure for most forms of dementia. However, some medications have been found to reduce some symptoms. Support from Family and Friends is vital for people with dementia.</string>
-    <string name="OD_link01">Want to know more! \n Check it out <a href="https://www.dementia.org.au">Dementia.org.au!! </a> </string>
+    <string name="OD_link01"> Check it out @<a href="https://www.dementia.org.au"> Dementia.org.au!! </a> </string>
     <string name="OD_TextforNumber">The total cases in Australia for 2020</string>
     <string name="OD_know_more">Would you like to know about Dementia?</string>
     <string name="OD_barchartDesc">Number of Deaths Across Australia</string>
+
+    <!--New Open data text -->
+    <string-array name="Questions_list">
+        <item>What is Dementia?</item>
+        <item>Who gets dementia?</item>
+        <item>What are the early signs?</item>
+        <item>Who is more prone?</item>
+    </string-array>
 
     <string name="main_content">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided. Go to Video: <a href="https://youtu.be/khnyOFmCgII">2048 guide Video</a></string>
 </resources>
