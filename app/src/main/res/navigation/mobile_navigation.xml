@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_opendata"
-        android:name="com.example.keystone_try.ui.OpenData.knoeMoreTest"
+        android:name="com.example.keystone_try.ui.OpenData.OpenData"
         android:label="@string/title_opendata"
-        tools:layout="@layout/know_more_quiz" />
+        tools:layout="@layout/fragment_open_data" />
 </navigation>

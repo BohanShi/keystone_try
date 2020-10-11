@@ -3,6 +3,7 @@ package com.example.keystone_try.game1;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -43,6 +44,8 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     private TextView num2Tv;
     private int score = 0;
     private TextView highScoreTV;
+    private TextView timeCounterTV;
+    private boolean gameOver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {                                            // set listener and initial
@@ -79,16 +82,18 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
         num1Tv = findViewById(R.id.num1);
         num2Tv = findViewById(R.id.num2);
         scoreTv = findViewById(R.id.textView_score);
+        timeCounterTV = findViewById(R.id.timeCounter);
         help = findViewById(R.id.game1_help_btn);
         help.setOnClickListener(this);
         highScoreTV = findViewById(R.id.cal_ques_hg_scor);
+        gameOver = false;
 
         Intent it = getIntent();
 
         String highScore = it.getStringExtra("highScore");
         //highScoreTV.setText(SPHelper.getInt(this, "HighScore"+""));
         initData();
-
+        startCounter();
     }
 
     /**
@@ -102,6 +107,51 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
         int highScore = SPHelper.getInt(this, "HighScore");
         scoreTv.setText(score + "");
         highScoreTV.setText(highScore+"");
+    }
+
+    /**
+     *  start counter
+     */
+    private void startCounter() {
+        new CountDownTimer(60000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeCounterTV.setText(millisUntilFinished/1000 + "");
+            }
+
+            @Override
+            public void onFinish() {
+                timeCounterTV.setText("0");
+                gameOver = true;
+
+                int oneTimes = SPHelper.getInt(getApplicationContext(), "OneTimes");
+                oneTimes++;
+                SPHelper.putInt(getApplicationContext(), "OneTimes", oneTimes);
+
+                int highScore = SPHelper.getInt(getApplicationContext(), "HighScore");
+                //highScoreTV.setText(SPHelper.getInt(this, "HighScore"));
+                GameOneScore gameOneScore = new GameOneScore();
+                gameOneScore.setScore(score);
+                DbUtils.insert(gameOneScore);
+                /**
+                 * save the score
+                 */
+                if (score > highScore) {
+                    SPHelper.putInt(getApplicationContext(), "HighScore", score);
+                    Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+
+                    it.putExtra("Score", score);
+                    score = 0;
+                    startActivity(it);
+                } else {
+                    Intent it = new Intent(CalQuestion.this, FailActivity.class);
+
+                    it.putExtra("Score", score);
+                    score = 0;
+                    startActivity(it);
+                }
+            }
+        }.start();
     }
 
     /**
