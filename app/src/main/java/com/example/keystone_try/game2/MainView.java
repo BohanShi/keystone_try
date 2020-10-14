@@ -600,4 +600,6 @@ public class MainView extends View {
         return (int) ((paint.descent() + paint.ascent()) / 2);
     }
 
+
+
 }

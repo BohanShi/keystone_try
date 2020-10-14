@@ -77,4 +77,14 @@
     <string name="OD_barchartDesc">Number of Deaths Across Australia</string>
 
     <string name="main_content">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided. Go to Video: <a href="https://youtu.be/khnyOFmCgII">2048 guide Video</a></string>
+
+    <string name="metion1">Number of Deaths Across Australia</string>
+    <string name="metion2">Number of Deaths Across Australia</string>
+    <string name="metion3">Number of Deaths Across Australia</string>
+    <string name="metion4">Number of Deaths Across Australia</string>
+    <string name="metion5">Number of Deaths Across Australia</string>
+    <string name="metion6">Number of Deaths Across Australia</string>
+    <string name="metion7">Number of Deaths Across Australia</string>
+    <string name="metion8">Number of Deaths Across Australia</string>
+
 </resources>

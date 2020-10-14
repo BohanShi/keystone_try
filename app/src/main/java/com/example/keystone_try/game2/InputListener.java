@@ -3,15 +3,20 @@ package com.example.keystone_try.game2;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.text.method.LinkMovementMethod;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.keystone_try.R;
+import com.example.keystone_try.Util.MetionString;
+import com.example.keystone_try.game1.CalQuestion;
 
 /**
  * leaned from Youtuber AtoTalKs
@@ -208,5 +213,21 @@ class InputListener extends AppCompatActivity implements View.OnTouchListener {
 
     private boolean isTap(int factor) {
         return pathMoved() <= mView.iconSize * mView.iconSize * factor;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast toast =  Toast.makeText(InputListener.this, "ABCDEFGH", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
+        TextView text = new TextView(InputListener.this);
+        text.setText("ABCDE");	// 设置文本内容
+        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
+        text.setTextSize(45);	// 文本字体大小
+        text.setWidth(900);		// 设置toast的大小
+        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
+        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
+        toast.setView(text); // 将文本插入到toast里
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.show();
     }
 }

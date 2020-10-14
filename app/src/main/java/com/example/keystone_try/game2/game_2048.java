@@ -1,11 +1,18 @@
 package com.example.keystone_try.game2;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.keystone_try.R;
 
 /**
  * leaned from Youtuber AtoTalKs
@@ -153,5 +160,22 @@ public class game_2048 extends AppCompatActivity {
         view.game.canUndo = settings.getBoolean(CAN_UNDO, view.game.canUndo);
         view.game.gameState = settings.getInt(GAME_STATE, view.game.gameState);
         view.game.lastGameState = settings.getInt(UNDO_GAME_STATE, view.game.lastGameState);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast toast =  Toast.makeText(game_2048.this, "ABCDEFGH", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
+        TextView text = new TextView(game_2048.this);
+        text.setText("ABCDE");	// 设置文本内容
+        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
+        text.setTextSize(45);	// 文本字体大小
+        text.setWidth(900);		// 设置toast的大小
+        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
+        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
+        toast.setView(text); // 将文本插入到toast里
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.show();
     }
 }

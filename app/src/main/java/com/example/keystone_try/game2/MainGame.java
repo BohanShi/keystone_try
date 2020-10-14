@@ -1,10 +1,15 @@
 package com.example.keystone_try.game2;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.text.method.LinkMovementMethod;
+import android.widget.TextView;
 
+import com.example.keystone_try.Util.MetionString;
 import com.example.keystone_try.bean.GameTwoScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
@@ -379,5 +384,6 @@ public class MainGame {
         twoTimes++;
         SPHelper.putInt(mContext, "TwoTimes", twoTimes);
     }
+
 
 }

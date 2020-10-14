@@ -20,9 +20,11 @@
         android:title="@string/title_notifications" />
 
     <!--Create the 'Know More' button in the navigation menu-->
+    <!--
     <item
         android:id="@+id/navigation_opendata"
         android:icon="@drawable/ic_data_usage_black_24dp"
         android:title="@string/title_opendata" />
+        -->
 
 </menu>

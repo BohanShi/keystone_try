@@ -50,17 +50,17 @@ public class LoginActivity extends AppCompatActivity {
         OnBoardingItem itemOne = new OnBoardingItem();
 //        itemOne.setTitle(R.string.nul);
 //        itemOne.setDescription(R.string.nul);
-        itemOne.setImage(R.drawable.onb1);
+        itemOne.setImage(R.drawable.final1);
 
         OnBoardingItem itemTwo = new OnBoardingItem();
 //        itemTwo.setTitle(R.string.nul);
 //        itemTwo.setDescription(R.string.nul);
-        itemTwo.setImage(R.drawable.ob2);
+        itemTwo.setImage(R.drawable.final2);
 
         OnBoardingItem itemThree = new OnBoardingItem();
 //        itemThree.setTitle(R.string.nul);
 //        itemThree.setDescription(R.string.nul);
-        itemThree.setImage(R.drawable.ob3);
+        itemThree.setImage(R.drawable.final3);
 
 //        OnBoardingItem itemFour = new OnBoardingItem();
 //        itemFour.setTitle(R.string.nul);
