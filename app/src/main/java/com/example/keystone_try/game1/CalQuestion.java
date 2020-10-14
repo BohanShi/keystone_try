@@ -149,12 +149,14 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                     it.putExtra("Score", score);
                     score = 0;
                     startActivity(it);
+                    finish();
                 } else {
                     Intent it = new Intent(CalQuestion.this, FailActivity.class);
 
                     it.putExtra("Score", score);
                     score = 0;
                     startActivity(it);
+                    finish();
                 }
             }
         }.start();
@@ -339,12 +341,14 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                         it.putExtra("Score", score);
                         score = 0;
                         startActivity(it);
+                        finish();
                     } else {
                         Intent it = new Intent(CalQuestion.this, FailActivity.class);
 
                         it.putExtra("Score", score);
                         score = 0;
                         startActivity(it);
+                        finish();
                     }
                 }
             }
