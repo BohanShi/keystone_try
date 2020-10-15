@@ -34,10 +34,37 @@
         app:layout_constraintStart_toStartOf="@id/imageHeader"
         app:layout_constraintTop_toTopOf="@id/imageHeader" />
 
+    <LinearLayout
+        android:id="@+id/metionright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imageHeader"
+        app:layout_constraintBottom_toTopOf="@+id/scrollHo"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:src="@drawable/ic_baseline_arrow_right_alt_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="view more games"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowColor="@color/gray"
+            android:textStyle="bold"
+            android:textColor="#27358D"
+            android:shadowRadius="2"
+            android:textSize="@dimen/_25sdp"/>
+    </LinearLayout>
+
+
     <HorizontalScrollView
+        android:id="@+id/scrollHo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:clipToPadding="false"
         android:overScrollMode="never"
@@ -47,21 +74,23 @@
         android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@id/imageHeader"
         app:layout_constraintBottom_toBottomOf="parent">
-        
+
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/_24sdp">
+            android:paddingBottom="@dimen/_15sdp">
 
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_15sdp">
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/game1"
-                    android:layout_width="@dimen/_180sdp"
+                    android:layout_width="@dimen/_170sdp"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ca"
@@ -86,7 +115,7 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_15sdp">
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/game2"
@@ -115,14 +144,14 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_15sdp">
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/game3"
                     android:layout_width="@dimen/_180sdp"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/image"
+                    android:src="@drawable/image_game"
                     app:riv_corner_radius="@dimen/_12sdp"/>
 
                 <TextView

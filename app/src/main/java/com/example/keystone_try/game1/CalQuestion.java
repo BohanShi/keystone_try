@@ -142,22 +142,22 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                 /**
                  * save the score
                  */
-                if (score > highScore) {
-                    SPHelper.putInt(getApplicationContext(), "HighScore", score);
-                    Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
-
-                    it.putExtra("Score", score);
-                    score = 0;
-                    startActivity(it);
-                    finish();
-                } else {
-                    Intent it = new Intent(CalQuestion.this, FailActivity.class);
-
-                    it.putExtra("Score", score);
-                    score = 0;
-                    startActivity(it);
-                    finish();
-                }
+//                if (score > highScore) {
+//                    SPHelper.putInt(getApplicationContext(), "HighScore", score);
+//                    Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+//
+//                    it.putExtra("Score", score);
+//                    score = 0;
+//                    startActivity(it);
+//                    finish();
+//                } else {
+//                    Intent it = new Intent(CalQuestion.this, FailActivity.class);
+//
+//                    it.putExtra("Score", score);
+//                    score = 0;
+//                    startActivity(it);
+//                    finish();
+//                }
             }
         }.start();
     }
@@ -370,20 +370,5 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     /**
      * when quit, set current status
      */
-    public void onBackPressed() {
-        Toast toast =  Toast.makeText(CalQuestion.this, "ABCDEFGH", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
-        TextView text = new TextView(CalQuestion.this);
-        text.setText("ABCDE");	// 设置文本内容
-        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
-        text.setTextSize(45);	// 文本字体大小
-        text.setWidth(900);		// 设置toast的大小
-        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
-        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
-        toast.setView(text); // 将文本插入到toast里
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.show();
-        SPHelper.putInt(this, "currentScore", score);
-        CalQuestion.this.finish();
-    }
+
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="item_images">
+        <item>@drawable/apple</item>
+        <item>@drawable/apple1</item>
+        <item>@drawable/banana</item>
+        <item>@drawable/cabbage</item>
+        <item>@drawable/cherry</item>
+        <item>@drawable/eggplant</item>
+        <item>@drawable/goosebeery</item>
+        <item>@drawable/hamimelon</item>
+        <item>@drawable/lemon</item>
+        <item>@drawable/mango</item>
+        <item>@drawable/onion</item>
+        <item>@drawable/orange</item>
+        <item>@drawable/pear</item>
+        <item>@drawable/pepper</item>
+        <item>@drawable/pimiento</item>
+        <item>@drawable/pumpkin</item>
+        <item>@drawable/pumpkin1</item>
+        <item>@drawable/strawberry</item>
+        <item>@drawable/tomato</item>
+        <item>@drawable/watermelon</item>
+    </string-array>
+    <string-array name="item_names">
+        <item>Apple</item>
+        <item>Apple1</item>
+        <item>Banana</item>
+        <item>Cabbage</item>
+        <item>Cherry</item>
+        <item>Eggplant</item>
+        <item>Goosebeery</item>
+        <item>Hamimelon</item>
+        <item>Lemon</item>
+        <item>Mango</item>
+        <item>Onion</item>
+        <item>Orange</item>
+        <item>Pear</item>
+        <item>Pepper</item>
+        <item>Pimiento</item>
+        <item>Pumpkin</item>
+        <item>Pumpkin1</item>
+        <item>Strawberry</item>
+        <item>Tomato</item>
+        <item>Watermelon</item>
+    </string-array>
+</resources>

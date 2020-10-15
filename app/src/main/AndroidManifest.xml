@@ -33,6 +33,7 @@
         <activity android:name=".game1.SuccessActivity" />
         <activity android:name=".game1.FailActivity" />
         <activity android:name=".game1.CalTitle" />
+        <activity android:name=".game3.GameThree" />
         <activity android:name=".ui.OnBoarding.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

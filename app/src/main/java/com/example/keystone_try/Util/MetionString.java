@@ -11,11 +11,11 @@ public class MetionString {
         stringList.add(R.string.metion1);
         stringList.add(R.string.metion2);
         stringList.add(R.string.metion3);
-        stringList.add(R.string.metion4);
-        stringList.add(R.string.metion5);
-        stringList.add(R.string.metion6);
-        stringList.add(R.string.metion7);
-        stringList.add(R.string.metion8);
+       /// stringList.add(R.string.metion4);
+      //  stringList.add(R.string.metion5);
+      //  stringList.add(R.string.metion6);
+       // stringList.add(R.string.metion7);
+       // stringList.add(R.string.metion8);
 
         int a = (int) (Math.random()*stringList.size());
 

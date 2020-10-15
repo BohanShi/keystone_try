@@ -31,12 +31,13 @@ public class SuccessActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success);
 
-        Toast toast =  Toast.makeText(SuccessActivity.this, "自定义效果", Toast.LENGTH_SHORT);
+        Toast toast =  Toast.makeText(SuccessActivity.this, "ABCDEFGH", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
         TextView text = new TextView(SuccessActivity.this);
-        text.setText("ABCDE");	// 设置文本内容
+        MetionString ms = new MetionString();
+        text.setText(ms.returnValue());
         text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
-        text.setTextSize(45);	// 文本字体大小
+        text.setTextSize(30);	// 文本字体大小
         text.setWidth(900);		// 设置toast的大小
         text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
         text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色

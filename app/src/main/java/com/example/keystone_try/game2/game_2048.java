@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.keystone_try.R;
+import com.example.keystone_try.Util.MetionString;
 
 /**
  * leaned from Youtuber AtoTalKs
@@ -168,9 +169,10 @@ public class game_2048 extends AppCompatActivity {
         Toast toast =  Toast.makeText(game_2048.this, "ABCDEFGH", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
         TextView text = new TextView(game_2048.this);
-        text.setText("ABCDE");	// 设置文本内容
+        MetionString ms = new MetionString();
+        text.setText(ms.returnValue());
         text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
-        text.setTextSize(45);	// 文本字体大小
+        text.setTextSize(30);	// 文本字体大小
         text.setWidth(900);		// 设置toast的大小
         text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
         text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色

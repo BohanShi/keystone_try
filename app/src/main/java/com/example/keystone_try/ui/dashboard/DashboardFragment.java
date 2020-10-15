@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.keystone_try.game1.CalQuestion;
 import com.example.keystone_try.R;
 import com.example.keystone_try.game2.game_2048;
+import com.example.keystone_try.game3.GameThree;
 import com.example.keystone_try.step.utils.SPHelper;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -73,7 +74,9 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                                                                                                     //game3.setError("Not available now");
-                Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
+                isFirstTime(R.string.intro, R.string.introGameThree, GameThree.class, 1);
+
             }
         });
 

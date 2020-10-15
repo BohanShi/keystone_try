@@ -50,22 +50,22 @@ public class LoginActivity extends AppCompatActivity {
         OnBoardingItem itemOne = new OnBoardingItem();
 //        itemOne.setTitle(R.string.nul);
 //        itemOne.setDescription(R.string.nul);
-        itemOne.setImage(R.drawable.final1);
+        itemOne.setImage(R.drawable.finalob1);
 
         OnBoardingItem itemTwo = new OnBoardingItem();
 //        itemTwo.setTitle(R.string.nul);
 //        itemTwo.setDescription(R.string.nul);
-        itemTwo.setImage(R.drawable.final2);
+        itemTwo.setImage(R.drawable.finalob2);
 
         OnBoardingItem itemThree = new OnBoardingItem();
 //        itemThree.setTitle(R.string.nul);
 //        itemThree.setDescription(R.string.nul);
-        itemThree.setImage(R.drawable.final3);
+        itemThree.setImage(R.drawable.finalob3);
 
-//        OnBoardingItem itemFour = new OnBoardingItem();
+        OnBoardingItem itemFour = new OnBoardingItem();
 //        itemFour.setTitle(R.string.nul);
 //        itemFour.setDescription(R.string.nul);
-//        itemFour.setImage(R.drawable.new1);
+        itemFour.setImage(R.drawable.finalob4);
 //
 //        OnBoardingItem itemFive = new OnBoardingItem();
 //        itemFive.setTitle(R.string.nul);
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         onBoardingItems.add(itemOne);
         onBoardingItems.add(itemTwo);
         onBoardingItems.add(itemThree);
-//        onBoardingItems.add(itemFour);
+        onBoardingItems.add(itemFour);
 //        onBoardingItems.add(itemFive);
 //        onBoardingItems.add(itemSix);
 

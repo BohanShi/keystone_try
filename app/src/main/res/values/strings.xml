@@ -58,6 +58,7 @@
     <string name="intro2048">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided.</string>
 
     <string name="introCal">In this game, you will need to calculate the equation that appeared on the screen. You will get one score if you can answer it correctly, and you can see your current score on top of the screen. The game will continue until you get one wrong answer.</string>
+    <string name="introGameThree">In this game, you need to find all the same pictures within the specified time. If the two flipped pictures are inconsistent, they will be flipped over again.</string>
 
 
     <string name="title_opendata">Know More!</string>
@@ -78,13 +79,9 @@
 
     <string name="main_content">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided. Go to Video: <a href="https://youtu.be/khnyOFmCgII">2048 guide Video</a></string>
 
-    <string name="metion1">Number of Deaths Across Australia</string>
-    <string name="metion2">Number of Deaths Across Australia</string>
-    <string name="metion3">Number of Deaths Across Australia</string>
-    <string name="metion4">Number of Deaths Across Australia</string>
-    <string name="metion5">Number of Deaths Across Australia</string>
-    <string name="metion6">Number of Deaths Across Australia</string>
-    <string name="metion7">Number of Deaths Across Australia</string>
-    <string name="metion8">Number of Deaths Across Australia</string>
+    <string name="metion1">Involving yourself in activities such as games, exercise and outdoor activities would eventually lead to an increase in your cognitive ability. Try out the other games and the Steps counter! </string>
+    <string name="metion2">Taking yourself out for a walk would get you more oxygen for the body and at the same time ensure your physical well-being. Try our Steps calculator and see how many steps you can cover</string>
+    <string name="metion3">30 mins of Physical activity daily such as brisk walking is a good way to improve and maintain your cognitive heath. A part of the app allows you to calculate the steps you have walked in a day. Try it out! </string>
+
 
 </resources>
