@@ -222,7 +222,6 @@ public class GameThree extends Activity {
      */
     private void initCardPanel() {
         isFirstClick = false;
-
         // Randomly take 10 picture indexes from 20 pictures
         int[] randomNumber = getRandomNumber(0, 19, 6);
         // Copy 10 pictures, generate double picture index
@@ -340,8 +339,12 @@ public class GameThree extends Activity {
             recordHighScore();
         }
 
-        countDownTimer.cancel();
-        startDownTimer.cancel();
+        try{
+            countDownTimer.cancel();
+            startDownTimer.cancel();
+        }catch(Exception e){}
+        countDownTimer = null;
+        startDownTimer = null;
         Builder builder = new Builder(GameThree.this);
         builder.setMessage(message);
         builder.setTitle(title);

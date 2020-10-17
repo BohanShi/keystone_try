@@ -52,6 +52,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     private TextView highScoreTV;
     private TextView timeCounterTV;
     private boolean gameOver;
+    private CountDownTimer startDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {                                            // set listener and initial
@@ -119,7 +120,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
      *  start counter
      */
     private void startCounter() {
-        new CountDownTimer(60000, 1000) {
+        startDownTimer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeCounterTV.setText(millisUntilFinished/1000 + "");
@@ -142,24 +143,25 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                 /**
                  * save the score
                  */
-//                if (score > highScore) {
-//                    SPHelper.putInt(getApplicationContext(), "HighScore", score);
-//                    Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
-//
-//                    it.putExtra("Score", score);
-//                    score = 0;
-//                    startActivity(it);
-//                    finish();
-//                } else {
-//                    Intent it = new Intent(CalQuestion.this, FailActivity.class);
-//
-//                    it.putExtra("Score", score);
-//                    score = 0;
-//                    startActivity(it);
-//                    finish();
-//                }
+                if (score > highScore) {
+                    SPHelper.putInt(getApplicationContext(), "HighScore", score);
+                    Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+
+                    it.putExtra("Score", score);
+                    score = 0;
+                    startActivity(it);
+                    finish();
+                } else {
+                    Intent it = new Intent(CalQuestion.this, FailActivity.class);
+
+                    it.putExtra("Score", score);
+                    score = 0;
+                    startActivity(it);
+                    finish();
+                }
             }
-        }.start();
+        };
+        startDownTimer.start();
     }
 
     /**
@@ -337,14 +339,16 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                     if (score > highScore) {
                         SPHelper.putInt(this, "HighScore", score);
                         Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
-
+                        startDownTimer.cancel();
+                        startDownTimer = null;
                         it.putExtra("Score", score);
                         score = 0;
                         startActivity(it);
                         finish();
                     } else {
                         Intent it = new Intent(CalQuestion.this, FailActivity.class);
-
+                        startDownTimer.cancel();
+                        startDownTimer = null;
                         it.putExtra("Score", score);
                         score = 0;
                         startActivity(it);
@@ -370,5 +374,35 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     /**
      * when quit, set current status
      */
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setTitle("Are you sure to quit？")
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .setPositiveButton("Sure", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int highScore = SPHelper.getInt(getApplicationContext(), "HighScore");
+                        if (score > highScore) {
+                            startDownTimer.cancel();
+                            startDownTimer = null;
+                            SPHelper.putInt(getApplicationContext(), "HighScore", score);
+                            Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
+                            it.putExtra("Score", score);
+                            startActivity(it);
+                        } else {
+                            startDownTimer.cancel();
+                            startDownTimer = null;
+                            Intent it = new Intent(CalQuestion.this, FailActivity.class);
+                            it.putExtra("Score", score);
+                            startActivity(it);
+                        }
+                        CalQuestion.this.finish();
 
+                    }
+                }).setNegativeButton("Not Sure", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        }).show();
+    }
 }
