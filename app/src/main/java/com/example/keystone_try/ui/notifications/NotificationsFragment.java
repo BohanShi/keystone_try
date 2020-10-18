@@ -188,7 +188,7 @@ public class NotificationsFragment extends Fragment {
         barEntryArrayList1.add(barEntry1);
         barEntryArrayList2.add(barEntry2);
         barEntryArrayList3.add(barEntry3);
-        BarDataSet barDataSet1 = new BarDataSet(barEntryArrayList1, "Count");
+        BarDataSet barDataSet1 = new BarDataSet(barEntryArrayList1, "Calculation");
         BarDataSet barDataSet2 = new BarDataSet(barEntryArrayList2, "2048");
         BarDataSet barDataSet3 = new BarDataSet(barEntryArrayList3, "Image");
 
@@ -294,11 +294,11 @@ public class NotificationsFragment extends Fragment {
         @Override
         public String getFormattedValue(float value, AxisBase axis) {
             if (value == 1) {
-                return "Count";
+                return "Calculation";
             } else if (value == 2) {
                 return "2048";
             } else if (value == 3) {
-                return "Game Three";
+                return "Image";
             } else {
                 return (int)value+"";
             }
