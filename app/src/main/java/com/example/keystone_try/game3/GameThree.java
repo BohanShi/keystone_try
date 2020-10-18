@@ -206,7 +206,7 @@ public class GameThree extends Activity {
             @Override
             public void onFinish() {
                 timeTxt.setText("000");
-                showMessage("Time out!", "You have scored " + quantity + "!");
+                showMessage("Time out!", "You have scored " + quantity + "! Keep trying!!");
             }
         };
         countDownTimer.start();
