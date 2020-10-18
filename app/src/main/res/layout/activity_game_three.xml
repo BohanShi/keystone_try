@@ -8,6 +8,7 @@
     android:padding="10dp" >
 
     <Button
+        android:id="@+id/helpb"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:background="@drawable/ic_help_outline_black_24dp"/>

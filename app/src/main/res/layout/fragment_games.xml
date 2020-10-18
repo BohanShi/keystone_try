@@ -40,23 +40,16 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/imageHeader"
-        app:layout_constraintBottom_toTopOf="@+id/scrollHo"
+
         app:layout_constraintStart_toStartOf="parent">
+
         <ImageView
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_90sdp"
-            android:src="@drawable/ic_baseline_arrow_right_alt_24"/>
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="view more games"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowColor="@color/gray"
-            android:textStyle="bold"
-            android:textColor="#27358D"
-            android:shadowRadius="2"
-            android:textSize="@dimen/_25sdp"/>
+            android:src="@drawable/swipe"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="209dp" />
+
     </LinearLayout>
 
 
@@ -64,7 +57,7 @@
         android:id="@+id/scrollHo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_15sdp"
+
         android:layout_marginBottom="@dimen/_10sdp"
         android:clipToPadding="false"
         android:overScrollMode="never"
@@ -72,14 +65,14 @@
         android:paddingEnd="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/imageHeader"
+        app:layout_constraintTop_toBottomOf="@id/metionright"
         app:layout_constraintBottom_toBottomOf="parent">
 
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/_15sdp">
 
@@ -110,6 +103,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_30sdp"
                     android:textStyle="bold" />
+
             </FrameLayout>
 
             <FrameLayout
@@ -173,6 +167,8 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

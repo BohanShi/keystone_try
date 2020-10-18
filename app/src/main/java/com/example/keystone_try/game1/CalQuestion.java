@@ -365,7 +365,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                         //.setMessage(R.string.intro2048)
                         .setNegativeButton("Sure", null);
                 TextView tv = new TextView(this);
-                tv.setText(R.string.main_content);
+                tv.setText(R.string.introCal);
                 tv.setTextSize(24);
                 tv.setPaddingRelative(40,60,40,0);
                 tv.setMovementMethod(LinkMovementMethod.getInstance());

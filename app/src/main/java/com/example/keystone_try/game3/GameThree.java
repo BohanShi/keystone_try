@@ -1,6 +1,7 @@
 package com.example.keystone_try.game3;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,10 +14,12 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView.ScaleType;
 import android.widget.TableLayout;
@@ -61,6 +64,8 @@ public class GameThree extends Activity {
     public long score = 0;
     private CountDownTimer countDownTimer;
     private CountDownTimer startDownTimer;
+
+    private Button helpB;
 
     /**
      * Timer, regular update time
@@ -121,6 +126,26 @@ public class GameThree extends Activity {
         highScore = getHighScore();
         highScoreTxt.setText(String.format("%03d", highScore));
 
+        helpB = findViewById(R.id.helpb);
+
+        helpB.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext())
+                        .setTitle(R.string.intro)
+                        //.setMessage(R.string.intro2048)
+                        .setNegativeButton("Sure", null);
+                TextView tv = new TextView(v.getContext());
+                tv.setText(R.string.introGameThree);
+                tv.setTextSize(24);
+                tv.setPaddingRelative(40,60,40,0);
+                tv.setMovementMethod(LinkMovementMethod.getInstance());
+                builder.setView(tv);
+                // builder.setView(tv1);
+                builder.show();
+            }
+        });
+
 //        faceImg.setOnClickListener(new OnClickListener() {
 //            @Override
 //            public void onClick(View arg0) {
@@ -154,8 +179,8 @@ public class GameThree extends Activity {
         float audioMaxVolumn = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         volumnCurrent = am.getStreamVolume(AudioManager.STREAM_MUSIC);
         volumnRatio = volumnCurrent / audioMaxVolumn;
-        initSound();
-        startShowCard();
+        //initSound();
+        //startShowCard();
     }
 
     /**
