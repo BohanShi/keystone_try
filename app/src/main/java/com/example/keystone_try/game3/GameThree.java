@@ -351,7 +351,7 @@ public class GameThree extends Activity {
         if (rightNum == 12) {
 //            handler.removeCallbacks(runnable);
             playSound(winSoundID);
-            showMessage("Win", "Congratulation!");
+            showMessage("Congratulation", "Great Job! You have found the images correctly!!!");
         }
     }
 
