@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.method.LinkMovementMethod;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,7 +31,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.keystone_try.R;
+import com.example.keystone_try.Util.MetionString;
 import com.example.keystone_try.bean.GameThreeScore;
+import com.example.keystone_try.game1.FailActivity;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
 
@@ -130,7 +134,7 @@ public class GameThree extends Activity {
         highScoreTxt.setText(String.format("%03d", highScore));
 
         helpB = findViewById(R.id.helpb);
-        start = findViewById(R.id.startThirdGame);
+       // start = findViewById(R.id.startThirdGame);
 
         helpB.setOnClickListener(new OnClickListener() {
             @Override
@@ -183,14 +187,9 @@ public class GameThree extends Activity {
         float audioMaxVolumn = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         volumnCurrent = am.getStreamVolume(AudioManager.STREAM_MUSIC);
         volumnRatio = volumnCurrent / audioMaxVolumn;
-        //initSound();
+        initSound();
+        startShowCard();
 
-        start.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startShowCard();
-            }
-        });
 
     }
 
@@ -219,8 +218,9 @@ public class GameThree extends Activity {
             public void onTick(long millisUntilFinished) {
                 timeTxt.setText(String.format("%03d", millisUntilFinished/1000));
                 if (millisUntilFinished/1000 == 9) {
-                    Toast.makeText(getApplicationContext(), "Game will start in " + millisUntilFinished / 1000 + " seconds.",
-                            Toast.LENGTH_SHORT).show();
+
+                    toastShow("Game will start in " + millisUntilFinished / 1000 + " seconds.", 0, true);
+
                 }
             }
 
@@ -233,8 +233,9 @@ public class GameThree extends Activity {
                         buttons[x][y].setImageResource(R.drawable.leaf);
                     }
                 }
-                Toast.makeText(getApplicationContext(), "Game Start!",
-                        Toast.LENGTH_SHORT).show();
+
+                toastShow("Game Start!", 0, true);
+
                 startCounter();
             }
         };
@@ -403,6 +404,7 @@ public class GameThree extends Activity {
             }
         });
         builder.create().show();
+
     }
 
     /**
@@ -503,6 +505,10 @@ public class GameThree extends Activity {
             startDownTimer = null;} catch (Exception e){}
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+
+            MetionString ms = new MetionString();
+            toastShow("",ms.returnValue(),false);
             Builder builder = new Builder(GameThree.this);
             builder.setMessage("Exit the game?");
             builder.setTitle("Alert");
@@ -523,11 +529,35 @@ public class GameThree extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
+
                             System.exit(0);
+
                         }
                     });
             builder.create().show();
         }
+
+
+
         return true;
+    }
+
+    private void toastShow(String texta, int a, boolean b){
+        Toast toast =  Toast.makeText(GameThree.this, "ABCDEFGH", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
+        TextView text = new TextView(GameThree.this);
+        MetionString ms = new MetionString();
+        if (b)
+            text.setText(texta);// 设置文本内容
+        else
+            text.setText(a);
+        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
+        text.setTextSize(30);	// 文本字体大小
+        text.setWidth(900);		// 设置toast的大小
+        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
+        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
+        toast.setView(text); // 将文本插入到toast里
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

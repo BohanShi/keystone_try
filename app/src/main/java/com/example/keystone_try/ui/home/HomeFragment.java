@@ -88,11 +88,11 @@ public class HomeFragment extends Fragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 String input = et.getText().toString();
                                 if (input.equals("")) {
-                                    Toast.makeText(getContext(), "Invalid input!" + input, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), "Invalid input!", Toast.LENGTH_LONG).show();
                                 }else if (Integer.parseInt(input) > 20000){
-                                    Toast.makeText(getContext(), "Too many steps!" + input, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), "Too many steps!", Toast.LENGTH_LONG).show();
                                 }else if (Integer.parseInt(input) < 1000){
-                                    Toast.makeText(getContext(), "Please set more!" + input, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), "Please set more!", Toast.LENGTH_LONG).show();
                                 }
                                 else {
                                     SPHelper.putString(getContext(),"planWalk_QTY", input);
