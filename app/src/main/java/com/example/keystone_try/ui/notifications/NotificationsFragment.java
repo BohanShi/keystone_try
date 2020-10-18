@@ -221,6 +221,7 @@ public class NotificationsFragment extends Fragment {
 
         barChart.setScrollBarSize(1);
         barChart.setData(bardata);
+        //barChart.
     }
 
     public void radioGroupSelected(){

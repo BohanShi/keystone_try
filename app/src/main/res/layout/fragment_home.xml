@@ -107,7 +107,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Step Statistic in recent 7 days"
+        android:text="Step Statistics in recent 7 days"
         android:textStyle="bold"
         android:textSize="25dp"
         android:textColor="@color/black"
