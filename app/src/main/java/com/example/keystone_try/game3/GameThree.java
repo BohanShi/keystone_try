@@ -1,5 +1,6 @@
 package com.example.keystone_try.game3;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -66,6 +67,7 @@ public class GameThree extends Activity {
     private CountDownTimer startDownTimer;
 
     private Button helpB;
+    private Button start;
 
     /**
      * Timer, regular update time
@@ -111,6 +113,7 @@ public class GameThree extends Activity {
         }
     };
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +130,7 @@ public class GameThree extends Activity {
         highScoreTxt.setText(String.format("%03d", highScore));
 
         helpB = findViewById(R.id.helpb);
+        start = findViewById(R.id.startThirdGame);
 
         helpB.setOnClickListener(new OnClickListener() {
             @Override
@@ -180,7 +184,14 @@ public class GameThree extends Activity {
         volumnCurrent = am.getStreamVolume(AudioManager.STREAM_MUSIC);
         volumnRatio = volumnCurrent / audioMaxVolumn;
         //initSound();
-        //startShowCard();
+
+        start.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startShowCard();
+            }
+        });
+
     }
 
     /**
@@ -485,8 +496,12 @@ public class GameThree extends Activity {
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        countDownTimer.cancel();
-        startDownTimer.cancel();
+        try{
+            countDownTimer.cancel();
+            startDownTimer.cancel();
+            countDownTimer = null;
+            startDownTimer = null;} catch (Exception e){}
+
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             Builder builder = new Builder(GameThree.this);
             builder.setMessage("Exit the game?");

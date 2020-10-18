@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.keystone_try.R;
 import com.example.keystone_try.bean.GameOneScore;
+import com.example.keystone_try.bean.GameThreeScore;
 import com.example.keystone_try.bean.GameTwoScore;
 import com.example.keystone_try.step.utils.DbUtils;
 import com.example.keystone_try.step.utils.SPHelper;
@@ -137,7 +138,32 @@ public class NotificationsFragment extends Fragment {
             }
             break;
             case 3:{
+                if(DbUtils.getLiteOrm()==null){
+                    DbUtils.createDb(getContext(), "jingzhi");
+                }
 
+                List<GameThreeScore> scoreList = DbUtils.getQueryAll(GameThreeScore.class);
+                Collections.reverse(scoreList);
+                ArrayList<Entry> values = new ArrayList<>();
+                //add data
+                if (!scoreList.isEmpty()) {
+                    int i=0;
+                    for (; i<7&&i<scoreList.size(); i++) {
+                        GameThreeScore GameThreeScore = scoreList.get(i);
+                        values.add(new Entry(i+1, GameThreeScore.getScore()));
+                    }
+                    for (; i<7; i++) {
+                        values.add(new Entry(i+1, 0));
+                    }
+                }
+
+                xText();
+                yText();
+
+                //execute
+                if (!values.isEmpty()) {
+                    text_all(values);
+                }
             }
             break;
             default:
@@ -148,23 +174,28 @@ public class NotificationsFragment extends Fragment {
     public void drawBarChart(){
         int oneTimes = SPHelper.getInt(getContext(), "OneTimes");
         int twoTimes = SPHelper.getInt(getContext(), "TwoTimes");
-
+        int threeTimes = SPHelper.getInt(getContext(), "ThreeTimes");
 //        ArrayList<String> xVals = new ArrayList<>();
 //        xVals.add("Game One");
 //        xVals.add("Game Two");
 
         ArrayList<BarEntry> barEntryArrayList1 = new ArrayList<>();
         ArrayList<BarEntry> barEntryArrayList2 = new ArrayList<>();
+        ArrayList<BarEntry> barEntryArrayList3 = new ArrayList<>();
         BarEntry barEntry1 = new BarEntry(1, oneTimes);
         BarEntry barEntry2 = new BarEntry(2, twoTimes);
+        BarEntry barEntry3 = new BarEntry(3, threeTimes);
         barEntryArrayList1.add(barEntry1);
         barEntryArrayList2.add(barEntry2);
+        barEntryArrayList3.add(barEntry3);
         BarDataSet barDataSet1 = new BarDataSet(barEntryArrayList1, "Count");
         BarDataSet barDataSet2 = new BarDataSet(barEntryArrayList2, "2048");
+        BarDataSet barDataSet3 = new BarDataSet(barEntryArrayList3, "Image");
 
         ArrayList<IBarDataSet> threebardata = new ArrayList<>();
         threebardata.add(barDataSet1);
         threebardata.add(barDataSet2);
+        threebardata.add(barDataSet3);
 
         BarData bardata = new BarData(threebardata);
         bardata.setValueFormatter(new MonthlyIntegerYValueFormatter());
