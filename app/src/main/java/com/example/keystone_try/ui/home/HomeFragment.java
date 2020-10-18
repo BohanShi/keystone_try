@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
                                 String input = et.getText().toString();
                                 if (input.equals("")) {
                                     Toast.makeText(getContext(), "Invalid input!" + input, Toast.LENGTH_LONG).show();
-                                }else if (Integer.parseInt(input) > 15000){
+                                }else if (Integer.parseInt(input) > 20000){
                                     Toast.makeText(getContext(), "Too many steps!" + input, Toast.LENGTH_LONG).show();
                                 }else if (Integer.parseInt(input) < 1000){
                                     Toast.makeText(getContext(), "Please set more!" + input, Toast.LENGTH_LONG).show();

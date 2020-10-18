@@ -120,7 +120,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
      *  start counter
      */
     private void startCounter() {
-        startDownTimer = new CountDownTimer(10000, 1000) {
+        startDownTimer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeCounterTV.setText(millisUntilFinished/1000 + "");
@@ -360,11 +360,18 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
             break;
             case R.id.game1_help_btn:{
 
-                new AlertDialog.Builder(this).setTitle("Game Introduction")
-                        .setIcon(android.R.drawable.ic_menu_help)
-                        .setMessage(R.string.introCal)
-                        .setPositiveButton("Sure", null)
-                        .show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                        .setTitle(R.string.intro)
+                        //.setMessage(R.string.intro2048)
+                        .setNegativeButton("Sure", null);
+                TextView tv = new TextView(this);
+                tv.setText(R.string.main_content);
+                tv.setTextSize(24);
+                tv.setPaddingRelative(40,60,40,0);
+                tv.setMovementMethod(LinkMovementMethod.getInstance());
+                builder.setView(tv);
+                // builder.setView(tv1);
+                builder.show();
             }
             break;
         }
