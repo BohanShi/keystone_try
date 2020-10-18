@@ -507,8 +507,7 @@ public class GameThree extends Activity {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
 
 
-            MetionString ms = new MetionString();
-            toastShow("",ms.returnValue(),false);
+
             Builder builder = new Builder(GameThree.this);
             builder.setMessage("Exit the game?");
             builder.setTitle("Alert");
@@ -529,7 +528,6 @@ public class GameThree extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
-
                             System.exit(0);
 
                         }
