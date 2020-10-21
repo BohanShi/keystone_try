@@ -168,7 +168,7 @@ public class HomeFragment extends Fragment {
         final String planWalk_QTY = SPHelper.getString(getContext(), "planWalk_QTY");
         goalStepTVl.setText(planWalk_QTY);
         int Step_Today = SPHelper.getInt(getContext(), "Step_Today");
-        Step_Today+= 310;
+        Step_Today+= 0;
         ValueAnimator animator = ObjectAnimator.ofFloat(0, Step_Today);
         animator.setDuration(1500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

@@ -47,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/swipe"
+            android:scaleType="centerCrop"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="209dp" />
 

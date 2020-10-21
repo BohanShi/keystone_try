@@ -253,7 +253,7 @@ public class StepService extends Service implements SensorEventListener {
      */
     private void isCall() {
 //        String time = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("achieveTime", "21:00");
-        String time = "21:00";
+        String time = "22:00";
         String moreTime = "14:00";
         String plan = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("planWalk_QTY", SPHelper.getString(getApplicationContext(),  "planWalk_QTY"));
         String remind = this.getSharedPreferences("share_date", Context.MODE_MULTI_PROCESS).getString("remind", "1");
