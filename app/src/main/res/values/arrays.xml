@@ -23,6 +23,11 @@
         <item>@drawable/tomato</item>
         <item>@drawable/watermelon</item>
     </string-array>
+
+    <string-array name="item_images_svg">
+
+    </string-array>
+    
     <string-array name="item_names">
         <item>Apple</item>
         <item>Apple1</item>

@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.keystone_try.R;
 import com.example.keystone_try.Util.MetionString;
 import com.example.keystone_try.game1.CalQuestion;
+import com.example.keystone_try.game1.SuccessActivity;
 
 /**
  * leaned from Youtuber AtoTalKs
@@ -218,15 +219,16 @@ class InputListener extends AppCompatActivity implements View.OnTouchListener {
     @Override
     public void onBackPressed() {
         Toast toast =  Toast.makeText(InputListener.this, "ABCDEFGH", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
+        toast.setGravity(Gravity.CENTER, 0, 0);	// location of appear
         TextView text = new TextView(InputListener.this);
-        text.setText("ABCDE");	// 设置文本内容
-        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
-        text.setTextSize(45);	// 文本字体大小
-        text.setWidth(900);		// 设置toast的大小
-        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
-        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
-        toast.setView(text); // 将文本插入到toast里
+        MetionString ms = new MetionString();
+        text.setText(ms.returnValue());	// context
+        text.setTextColor(getResources().getColor(R.color.white));	// text color
+        text.setTextSize(30);	// text size
+        text.setWidth(900);		// toast size
+        text.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);	// alignment
+        text.setBackgroundColor(Color.rgb(64,158,255));	// bg color
+        toast.setView(text); // set text into toast
         toast.setDuration(Toast.LENGTH_LONG);
         toast.show();
     }

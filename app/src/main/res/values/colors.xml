@@ -155,4 +155,8 @@
     <color name="icon_background">#e8ba2e</color>
 
     <color name="status_background">#bbada0</color>
+
+    <color name="game1">#7ABAF2</color>
+    <color name="game2">#0074D9</color>
+    <color name="game3">#00305A</color>
 </resources>

@@ -65,8 +65,8 @@ public class GameThree extends Activity {
     private float volumnCurrent;
     private float volumnRatio;
     private static final String HIGH_SCORE = "three high score";
-    public long highScore = 0;
-    public long score = 0;
+    public int highScore = 0;
+    public int score = 0;
     private CountDownTimer countDownTimer;
     private CountDownTimer startDownTimer;
 
@@ -154,23 +154,7 @@ public class GameThree extends Activity {
             }
         });
 
-//        faceImg.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View arg0) {
-//                AlertDialog.Builder builder = new Builder(GameThree.this);
-//                builder.setMessage("The goal of this game is to find all identical pictures. Flip a tile to show the picture, and then try to find its match.");
-//                builder.setTitle("Help");
-//                builder.setNegativeButton("Close",
-//                        new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog,
-//                                                int which) {
-//                                dialog.dismiss();
-//                            }
-//                        });
-//                builder.create().show();
-//            }
-//        });
+
 
         Resources res = getResources();
         item_names = res.getStringArray(R.array.item_names);
@@ -243,15 +227,12 @@ public class GameThree extends Activity {
     }
 
     private void recordHighScore() {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putLong(HIGH_SCORE, highScore);
-        editor.commit();
+        SPHelper.putInt(this, HIGH_SCORE, (int) highScore);
     }
 
-    private long getHighScore() {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        return settings.getLong(HIGH_SCORE, 0);
+    private int getHighScore() {
+
+        return SPHelper.getInt(this, HIGH_SCORE);
     }
 
     /**
@@ -294,7 +275,6 @@ public class GameThree extends Activity {
 
     /**
      * Card click event
-     *
      */
     private class CardClickListener implements OnClickListener {
         @Override
@@ -400,7 +380,7 @@ public class GameThree extends Activity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                System.exit(0);
+                finish();
             }
         });
         builder.create().show();
@@ -528,7 +508,7 @@ public class GameThree extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
-                            System.exit(0);
+                            finish();
 
                         }
                     });
@@ -542,19 +522,19 @@ public class GameThree extends Activity {
 
     private void toastShow(String texta, int a, boolean b){
         Toast toast =  Toast.makeText(GameThree.this, "ABCDEFGH", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
+        toast.setGravity(Gravity.CENTER, 0, 0);	// toast appear location
         TextView text = new TextView(GameThree.this);
         MetionString ms = new MetionString();
         if (b)
-            text.setText(texta);// 设置文本内容
+            text.setText(texta);// text context
         else
             text.setText(a);
-        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
-        text.setTextSize(30);	// 文本字体大小
-        text.setWidth(900);		// 设置toast的大小
-        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// 设置文本居中
-        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
-        toast.setView(text); // 将文本插入到toast里
+        text.setTextColor(getResources().getColor(R.color.white));	// font color
+        text.setTextSize(30);	// font size
+        text.setWidth(900);		// toast size
+        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);	// alignment
+        text.setBackgroundColor(Color.rgb(64,158,255));	// bg color
+        toast.setView(text); // set toast
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.show();
     }

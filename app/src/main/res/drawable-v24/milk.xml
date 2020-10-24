@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67.431mm" height="170.51mm" version="1.1" viewBox="0 0 67.431358 170.51334" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="l" x1="-95.034" x2="-95.034" y1="312.7" y2="817.58" gradientTransform="scale(.26458)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#e7e7e7" offset="0"/>
+   <stop stop-color="#dbdbdb" offset="1"/>
+  </linearGradient>
+  <linearGradient id="m" x1="-213.83" x2="-71.03" y1="563.02" y2="563.02" gradientTransform="scale(.26458)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <radialGradient id="p" cx="-24.739" cy="81.099" r="18.544" gradientTransform="matrix(1 0 0 .085607 0 74.157)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#d8d8d8" offset="0"/>
+   <stop stop-color="#d2d2d2" offset="1"/>
+  </radialGradient>
+  <radialGradient id="n" cx="-24.739" cy="81.099" r="18.544" gradientTransform="matrix(.98958 0 0 .085607 -.25751 54.27)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#e2e2e2" offset="0"/>
+   <stop stop-color="#d2d2d2" offset="1"/>
+  </radialGradient>
+  <linearGradient id="k" x1="-93.499" x2="-93.499" y1="235.85" y2="255.43" gradientTransform="scale(.26458)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0000e6" offset="0"/>
+   <stop stop-color="#55f" offset="1"/>
+  </linearGradient>
+  <radialGradient id="o" cx="-24.738" cy="61.212" r="18.351" gradientTransform="matrix(1 0 0 .086508 0 55.917)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#55f" offset="0"/>
+   <stop stop-color="#2d2dff" offset="1"/>
+  </radialGradient>
+  <filter id="i" x="-.35384" y="-.047657" width="1.7077" height="1.0953" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="11.679196"/>
+  </filter>
+  <filter id="j" x="-.32881" y="-.04815" width="1.6576" height="1.0963" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="11.671499"/>
+  </filter>
+ </defs>
+ <g transform="translate(57.824 -53.517)">
+  <path d="m-41.312 61.212c0 38.156-18.453 44.603-14.78 71.746v70.644c0 7.329 5.9002 13.229 13.229 13.229h36.248c7.329 0 13.229-5.9002 13.229-13.229v-70.644c3.6732-27.143-14.78-33.59-14.78-71.746h-17.503z" color="#000000" color-rendering="auto" fill-rule="evenodd" image-rendering="auto" opacity=".1" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m-41.312 61.212c0 38.156-18.453 44.603-14.78 71.746v70.644c0 7.329 5.9002 13.229 13.229 13.229h36.248c7.329 0 13.229-5.9002 13.229-13.229v-70.644c3.6732-27.143-14.78-33.59-14.78-71.746h-17.503z" color="#000000" color-rendering="auto" fill="none" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m-43.283 81.099c-4.6551 21.772-15.731 30.27-12.809 51.859v70.644c0 7.329 5.9002 13.229 13.229 13.229h36.248c7.329 0 13.229-5.9002 13.229-13.229v-70.644c2.9216-21.589-8.1539-30.086-12.809-51.859z" color="#000000" color-rendering="auto" fill="url(#l)" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m-43.283 81.099c-4.6551 21.772-15.731 30.27-12.809 51.859v70.644c0 7.329 5.9002 13.229 13.229 13.229h36.248c7.329 0 13.229-5.9002 13.229-13.229v-70.644c2.9216-21.589-8.1539-30.086-12.809-51.859z" color="#000000" color-rendering="auto" fill="url(#m)" fill-rule="evenodd" image-rendering="auto" opacity=".2" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <ellipse cx="-24.739" cy="81.099" rx="18.544" ry="1.5875" color="#000000" color-rendering="auto" fill="url(#p)" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path transform="scale(.26458)" d="m-40.111 248.24-36.529 0.0937c2.8079 129.32 37.327 155.77 36.266 254.19v267c0 18.769 0.99073 33.972-2.1836 43.586 17.471-0.36624 22.599-0.96072 34.418-1.7266 8.0818-8.9136 16.275-24.296 16.275-41.859v-267c3.9359-98.442-44.338-124.88-48.246-254.28z" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" filter="url(#j)" image-rendering="auto" opacity=".5" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m-41.312 61.212c0 38.156-18.453 44.603-14.78 71.746v70.644c0 7.329 5.9002 13.229 13.229 13.229h36.248c7.329 0 13.229-5.9002 13.229-13.229v-70.644c3.6732-27.143-14.78-33.59-14.78-71.746h-17.503z" color="#000000" color-rendering="auto" fill="none" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m-6.3873 61.212h-43.619l43.326-7.6951 4.3656 9.4589z" fill="none"/>
+  <path transform="scale(.26458)" d="m-148.02 248.56c-3.5238 129.12-46.198 155.6-42.266 253.96v267c0 17.391 3.5811 32.646 7.6543 41.598a110 5.75 0 0 0 62.961 2.2285c-1.1841-8.4903-1.9656-24.891-2.1074-43.826l-2-267c-1.0606-98.323 11.343-124.87 12.377-253.86zm-31.166 568.46c1.2925 1.6107 2.5489 2.4922 3.6719 2.4922h6.4238c-3.4948-0.48812-6.8718-1.3306-10.096-2.4922z" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" filter="url(#i)" image-rendering="auto" opacity=".348" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <ellipse cx="-24.738" cy="61.212" rx="18.351" ry="1.5875" color="#000000" color-rendering="auto" fill="url(#n)" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m-43.089 61.212v4.6715a18.351 1.5875 0 0 0 18.351 1.5875 18.351 1.5875 0 0 0 18.351 -1.5875v-4.6715z" color="#000000" color-rendering="auto" fill="url(#k)" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <ellipse cx="-24.738" cy="61.212" rx="18.351" ry="1.5875" color="#000000" color-rendering="auto" fill="url(#o)" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ </g>
+</svg>

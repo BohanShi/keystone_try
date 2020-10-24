@@ -39,16 +39,16 @@ public class FailActivity extends AppCompatActivity {
 
 
         Toast toast =  Toast.makeText(FailActivity.this, "ABCDEFGH", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);	// 设置出现位置
+        toast.setGravity(Gravity.CENTER, 0, 0);	// location of appear
         TextView text = new TextView(FailActivity.this);
         MetionString ms = new MetionString();
-        text.setText(ms.returnValue());	// 设置文本内容
-        text.setTextColor(getResources().getColor(R.color.white));	// 文本颜色
-        text.setTextSize(30);	// 文本字体大小
-        text.setWidth(900);		// 设置toast的大小
-        text.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);	// 设置文本居中
-        text.setBackgroundColor(Color.rgb(64,158,255));	// 设置背景颜色
-        toast.setView(text); // 将文本插入到toast里
+        text.setText(ms.returnValue());	// context
+        text.setTextColor(getResources().getColor(R.color.white));	// text color
+        text.setTextSize(30);	// text size
+        text.setWidth(900);		// toast size
+        text.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);	// alignment
+        text.setBackgroundColor(Color.rgb(64,158,255));	// bg color
+        toast.setView(text); // set text into toast
         toast.setDuration(Toast.LENGTH_LONG);
         toast.show();
 
@@ -64,7 +64,6 @@ public class FailActivity extends AppCompatActivity {
                 intent.putExtra("game","game");
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-
                 finish();
             }
         });
