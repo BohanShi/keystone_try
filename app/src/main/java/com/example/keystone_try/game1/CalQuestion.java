@@ -120,7 +120,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
      *  start counter
      */
     private void startCounter() {
-        startDownTimer = new CountDownTimer(10000, 1000) {
+        startDownTimer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeCounterTV.setText(millisUntilFinished/1000 + "");
