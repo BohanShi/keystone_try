@@ -36,26 +36,26 @@ public class DashboardFragment extends Fragment {
     RoundedImageView game1;
     RoundedImageView game2;
     RoundedImageView game3;
-    int highScore;
-    int highScore2;
-    ArrayList<Integer> scores;
+    int times1;
+    int times2;
+    int times3;
 
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_games, container, false);
-        scores = new ArrayList<>();
-        highScore = SPHelper.getInt(getContext(), "OneTimes");
-        highScore2 = SPHelper.getInt(getContext(), "TwoTimes");
-        scores.add(highScore);
-        scores.add(highScore2);
+
+        times1 = SPHelper.getInt(getContext(), "OneTimes");
+        times2 = SPHelper.getInt(getContext(), "TwoTimes");
+        times3 = SPHelper.getInt(getContext(), "ThreeTimes");
+
         game1 = root.findViewById(R.id.game1);
                                                                                                     // set listener
         game1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isFirstTime(R.string.intro, R.string.introCal, CalQuestion.class, 0);
+                isFirstTime(R.string.intro, R.string.introCal, CalQuestion.class, times1);
             }
         });
 
@@ -66,7 +66,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {                                                            // set listener
 
-                isFirstTime(R.string.intro, R.string.main_content, game_2048.class, 1);
+                isFirstTime(R.string.intro, R.string.main_content, game_2048.class, times2);
             }
         });
 
@@ -75,7 +75,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
                                                                                                     //game3.setError("Not available now");
                 //Toast.makeText(getContext(), "Not available now" , Toast.LENGTH_LONG).show();
-                isFirstTime(R.string.intro, R.string.introGameThree, GameThree.class, 1);
+                isFirstTime(R.string.intro, R.string.introGameThree, GameThree.class, times3);
 
             }
         });
@@ -92,7 +92,7 @@ public class DashboardFragment extends Fragment {
      * @param times played times
      */
     public void isFirstTime(final int instructionTitle, int instruction, final Class c, int times){
-        if (!(scores.get(times) > 1)){
+        if (!(times > 0)){
 //            new AlertDialog.Builder(getContext()).setTitle(instructionTitle)
 //                    .setIcon(android.R.drawable.ic_menu_help)
 //                    .setMessage(instruction)

@@ -59,6 +59,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
 
         super.onCreate(savedInstanceState);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        score = 0;
         setContentView(R.layout.activity_cal_question);
         answerTv = findViewById(R.id.textViewResult);
         operator = findViewById(R.id.operator);
@@ -109,7 +110,6 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
     private void initData() {
         getRandomNumber();
 
-        score = SPHelper.getInt(this, "currentScore");
         //highScoreTV.setText(SPHelper.getInt(this, "HighScore"+""));
         int highScore = SPHelper.getInt(this, "HighScore");
         scoreTv.setText(score + "");
@@ -120,7 +120,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
      *  start counter
      */
     private void startCounter() {
-        startDownTimer = new CountDownTimer(60000, 1000) {
+        startDownTimer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeCounterTV.setText(millisUntilFinished/1000 + "");
@@ -146,7 +146,6 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                 if (score > highScore) {
                     SPHelper.putInt(getApplicationContext(), "HighScore", score);
                     Intent it = new Intent(CalQuestion.this, SuccessActivity.class);
-
                     it.putExtra("Score", score);
                     score = 0;
                     startActivity(it);
@@ -356,7 +355,7 @@ public class CalQuestion extends AppCompatActivity implements View.OnClickListen
                     }
                 }
             }
-            SPHelper.putInt(this, "currentScore", score);
+
             break;
             case R.id.game1_help_btn:{
 

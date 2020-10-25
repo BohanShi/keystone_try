@@ -29,6 +29,9 @@ public class SuccessActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_success);
 
         Toast toast =  Toast.makeText(SuccessActivity.this, "ABCDEFGH", Toast.LENGTH_SHORT);
@@ -44,6 +47,10 @@ public class SuccessActivity extends AppCompatActivity {
         toast.setView(text); // set text into toast
         toast.setDuration(Toast.LENGTH_LONG);
         toast.show();
+
+        int score = getIntent().getIntExtra("Score", 0);
+        scoreTv = findViewById(R.id.textView_win_score);
+        scoreTv.setText("Your Score: " + score);
 
         backBtn = findViewById(R.id.success_back);
         backBtn.setOnClickListener(new View.OnClickListener() {

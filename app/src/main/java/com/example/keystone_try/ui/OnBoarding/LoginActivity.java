@@ -1,14 +1,10 @@
 package com.example.keystone_try.ui.OnBoarding;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +13,12 @@ import android.widget.LinearLayout;
 
 import com.example.keystone_try.R;
 import com.example.keystone_try.step.utils.DbUtils;
+import com.example.keystone_try.step.utils.SPHelper;
 import com.example.keystone_try.ui.MainActivity;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,11 +36,14 @@ public class LoginActivity extends AppCompatActivity {
             DbUtils.createDb(this, "jingzhi");
         }
 
+        skipOnBoardingpgae();
         startOnBoardingpage();
 
     }
 
     private void setUpOnboardingItems(){
+        SPHelper.putInt(getApplicationContext(), "isFirstTime",1);
+
         List<OnBoardingItem> onBoardingItems = new ArrayList<>();
 
         OnBoardingItem itemOne = new OnBoardingItem();
@@ -158,6 +157,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (onboardingViewPager.getCurrentItem() +1 < onBoardingAdapter.getItemCount()){
                     onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
                 }else {
+
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
@@ -168,50 +168,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void skipOnBoardingpgae(){
-
-    }
-
-    public String getUUID() {
-
-        String serial = null;
-
-        String m_szDevIDShort = "35" +
-                Build.BOARD.length() % 10 + Build.BRAND.length() % 10 +
-
-                Build.CPU_ABI.length() % 10 + Build.DEVICE.length() % 10 +
-
-                Build.DISPLAY.length() % 10 + Build.HOST.length() % 10 +
-
-                Build.ID.length() % 10 + Build.MANUFACTURER.length() % 10 +
-
-                Build.MODEL.length() % 10 + Build.PRODUCT.length() % 10 +
-
-                Build.TAGS.length() % 10 + Build.TYPE.length() % 10 +
-
-                Build.USER.length() % 10; //13 位
-
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                }
-                serial = android.os.Build.getSerial();
-            } else {
-                serial = Build.SERIAL;
-            }
-            //API>=9 使用serial号
-            return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-        } catch (Exception exception) {
-            //serial需要一个初始化
-            serial = "serial"; // 随便一个初始化
+        if(SPHelper.getInt(getApplicationContext(),"isFirstTime") == 1){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         }
-        //使用硬件信息拼凑出来的15位号码
-        return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
+
     }
+
+
 }

@@ -41,8 +41,8 @@ import java.util.Random;
 
 public class GameThree extends Activity {
 
-    private int[] item_images = new int[20];// image id
-    private String[] item_names = new String[20];// image name
+    private int[] item_images = new int[28];// image id
+    private String[] item_names = new String[28];// image name
     private int[] card_images;// card image index
     private GameThreeCard[][] cards = new GameThreeCard[4][3];// card
     private int lastcard_x = -1;
@@ -240,8 +240,8 @@ public class GameThree extends Activity {
      */
     private void initCardPanel() {
         isFirstClick = false;
-        // Randomly take 10 picture indexes from 20 pictures
-        int[] randomNumber = getRandomNumber(0, 19, 6);
+        // Randomly take 10 picture indexes from 28 pictures
+        int[] randomNumber = getRandomNumber(0, 27, 6);
         // Copy 10 pictures, generate double picture index
         card_images = getRandomCardNumber(randomNumber);
 

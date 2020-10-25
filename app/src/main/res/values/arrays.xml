@@ -22,11 +22,18 @@
         <item>@drawable/strawberry</item>
         <item>@drawable/tomato</item>
         <item>@drawable/watermelon</item>
+
+        <item>@drawable/car</item>
+        <item>@drawable/chair</item>
+        <item>@drawable/clockpg</item>
+        <item>@drawable/frying</item>
+        <item>@drawable/key</item>
+        <item>@drawable/milk</item>
+        <item>@drawable/pot</item>
+        <item>@drawable/towel</item>
+<!--        8-->
     </string-array>
 
-    <string-array name="item_images_svg">
-
-    </string-array>
     
     <string-array name="item_names">
         <item>Apple</item>
@@ -49,5 +56,13 @@
         <item>Strawberry</item>
         <item>Tomato</item>
         <item>Watermelon</item>
+        <item>car</item>
+        <item>chair</item>
+        <item>clockpg</item>
+        <item>frying</item>
+        <item>key</item>
+        <item>milk</item>
+        <item>pot</item>
+        <item>towel</item>
     </string-array>
 </resources>
