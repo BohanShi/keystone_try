@@ -13,12 +13,10 @@ title __NOTIFICATIONS's Class Diagram__\n
             - radioGroup : RadioGroup
             + drawBarChart()
             + drawLineChart()
-            + getResentData()
             + onCreateView()
             + radioGroupSelected()
             + setBarChartArrayList()
             + setLineChartArrayList()
-            + test()
             - text_all()
             - xText()
             - yText()

@@ -42,8 +42,6 @@ title __ONBOARDING's Class Diagram__\n
       namespace OnBoarding {
         class com.example.keystone_try.ui.OnBoarding.OnBoardingAdapter.OnbarodingViewHolder {
             - imageOnBoarding : ImageView
-            - textDescription : TextView
-            - textTitle : TextView
             + OnbarodingViewHolder()
             ~ setOnBoardingData()
         }
@@ -59,12 +57,8 @@ title __ONBOARDING's Class Diagram__\n
             - description : int
             - image : int
             - title : int
-            + getDescription()
             + getImage()
-            + getTitle()
-            + setDescription()
             + setImage()
-            + setTitle()
         }
       }
     }

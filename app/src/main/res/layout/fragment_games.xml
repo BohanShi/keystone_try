@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageHeader"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_180sdp"
+        android:layout_height="@dimen/_140sdp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:src="@drawable/play"
@@ -34,166 +34,160 @@
         app:layout_constraintStart_toStartOf="@id/imageHeader"
         app:layout_constraintTop_toTopOf="@id/imageHeader" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/imageHeader"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_10sdp">
 
-
-
-
-
-
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/imageHeader"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_15sdp">
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_5sdp">
 
-            <FrameLayout
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/game1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:paddingVertical="@dimen/_5sdp">
+                android:layout_height="@dimen/_85sdp"
+                android:scaleType="centerCrop"
+                android:src="@color/game1"
+                app:riv_corner_radius="@dimen/_12sdp" />
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/game1"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_85sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@color/game1"
-                    app:riv_corner_radius="@dimen/_12sdp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:shadowColor="@color/colorPrimary"
-                        android:gravity="center"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="10"
-                        android:text="Calculation"
-                        android:textColor="#EDAD64"
-                        android:textSize="@dimen/_30sdp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:shadowColor="@color/colorPrimary"
-                        android:gravity="center"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="10"
-                        android:text="Challenge your maths within 60s."
-                        android:textColor="#EDAD64"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:paddingVertical="@dimen/_5sdp">
-
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/game2"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_85sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@color/game2"
-                    app:riv_corner_radius="@dimen/_12sdp" />
-
-                <LinearLayout
+                    android:layout_gravity="bottom"
+                    android:shadowColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:text="Calculation"
+                    android:textColor="#EDAD64"
+                    android:textSize="@dimen/_30sdp"
+                    android:textStyle="bold" />
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:shadowColor="@color/colorPrimary"
-                        android:gravity="center"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="10"
-                        android:text="2048"
-                        android:textColor="#FF8800"
-                        android:textSize="@dimen/_30sdp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:shadowColor="@color/colorPrimary"
-                        android:gravity="center"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="10"
-                        android:text="Test your predictions skills and have fun!"
-                        android:textColor="#FF8800"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </FrameLayout>
+                    android:layout_gravity="bottom"
+                    android:shadowColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:text="Challenge your maths within 60s."
+                    android:textColor="#EDAD64"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <FrameLayout
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_5sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/game2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:paddingVertical="@dimen/_5sdp">
+                android:layout_height="@dimen/_85sdp"
+                android:scaleType="centerCrop"
+                android:src="@color/game2"
+                app:riv_corner_radius="@dimen/_12sdp" />
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/game3"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_85sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@color/game3"
-                    app:riv_corner_radius="@dimen/_12sdp"/>
-
-                <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:shadowColor="@color/colorPrimary"
-                        android:gravity="center"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="10"
-                        android:text="Image"
-                        android:textColor="#FF8800"
-                        android:textSize="@dimen/_30sdp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:shadowColor="@color/colorPrimary"
-                        android:gravity="center"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="10"
-                        android:text="Test your memory within 60s."
-                        android:textColor="#FF8800"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </FrameLayout>
+                    android:layout_gravity="bottom"
+                    android:shadowColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:text="2048"
+                    android:textColor="#FF8800"
+                    android:textSize="@dimen/_30sdp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:shadowColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:text="Test your predictions skills and have fun!"
+                    android:textColor="#FF8800"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
 
-        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_5sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/game3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_85sdp"
+                android:scaleType="centerCrop"
+                android:src="@color/game3"
+                app:riv_corner_radius="@dimen/_12sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:shadowColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:text="Image"
+                    android:textColor="#FF8800"
+                    android:textSize="@dimen/_30sdp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:shadowColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:text="Test your memory within 60s."
+                    android:textColor="#FF8800"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
 
 
 

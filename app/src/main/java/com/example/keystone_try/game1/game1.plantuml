@@ -18,6 +18,7 @@ title __GAME1's Class Diagram__\n
           - btn9 : Button
           - btnClear : Button
           - btnOK : Button
+          - gameOver : boolean
           - help : Button
           - highScoreTV : TextView
           - num1 : int
@@ -28,11 +29,14 @@ title __GAME1's Class Diagram__\n
           - random : Random
           - score : int
           - scoreTv : TextView
+          - startDownTimer : CountDownTimer
+          - timeCounterTV : TextView
           + onBackPressed()
           + onClick()
           # onCreate()
           - getRandomNumber()
           - initData()
+          - startCounter()
       }
     }
   }

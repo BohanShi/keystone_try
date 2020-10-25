@@ -103,6 +103,7 @@ title __GAME2's Class Diagram__\n
           - x : float
           - y : float
           + InputListener()
+          + onBackPressed()
           + onTouch()
           - iconPressed()
           - inRange()
@@ -286,6 +287,7 @@ title __GAME2's Class Diagram__\n
           {static} - UNDO_GRID : String
           {static} - UNDO_SCORE : String
           {static} - WIDTH : String
+          + onBackPressed()
           + onKeyDown()
           + onSaveInstanceState()
           # onCreate()
@@ -300,6 +302,7 @@ title __GAME2's Class Diagram__\n
 
   com.example.keystone_try.game2.AnimationCell -up-|> com.example.keystone_try.game2.Cell
   com.example.keystone_try.game2.InputListener .up.|> android.view.View.OnTouchListener
+  com.example.keystone_try.game2.InputListener -up-|> androidx.appcompat.app.AppCompatActivity
   com.example.keystone_try.game2.InputListener o-- com.example.keystone_try.game2.MainView : mView
   com.example.keystone_try.game2.MainGame o-- com.example.keystone_try.game2.AnimationGrid : aGrid
   com.example.keystone_try.game2.MainGame o-- com.example.keystone_try.game2.Grid : grid

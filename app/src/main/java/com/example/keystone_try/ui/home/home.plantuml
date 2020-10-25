@@ -10,7 +10,6 @@ title __HOME's Class Diagram__\n
             ~ goalStepTVl : TextView
             ~ lineChart : LineChart
             ~ settingBtn : Button
-            - homeViewModel : HomeViewModel
             - isBind : boolean
             + onCreateView()
             - getChartData()

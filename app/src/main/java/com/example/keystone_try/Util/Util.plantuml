@@ -10,6 +10,15 @@ title __UTIL's Class Diagram__\n
   }
   
 
+  namespace com.example.keystone_try {
+    namespace Util {
+      class com.example.keystone_try.Util.MetionString {
+          + returnValue()
+      }
+    }
+  }
+  
+
 
 
 right footer

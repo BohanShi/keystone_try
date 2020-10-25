@@ -19,6 +19,21 @@ title __BEAN's Class Diagram__\n
 
   namespace com.example.keystone_try {
     namespace bean {
+      class com.example.keystone_try.bean.GameThreeScore {
+          - id : int
+          - score : int
+          + getId()
+          + getScore()
+          + setId()
+          + setScore()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace com.example.keystone_try {
+    namespace bean {
       class com.example.keystone_try.bean.GameTwoScore {
           - id : int
           - score : long

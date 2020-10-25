@@ -11,7 +11,6 @@ public class StepData {
     // Specify auto-increment, each object needs to have a primary key
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     private int id;
-
     @Column("today")
     private String today;
     @Column("step")

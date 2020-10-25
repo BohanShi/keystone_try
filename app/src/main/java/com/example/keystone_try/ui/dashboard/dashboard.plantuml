@@ -13,10 +13,8 @@ title __DASHBOARD's Class Diagram__\n
             ~ highScore2 : int
             ~ scores : ArrayList<Integer>
             {static} - HIGH_SCORE : String
-            - dashboardViewModel : DashboardViewModel
             + isFirstTime()
             + onCreateView()
-            - get2HighScore()
         }
       }
     }
