@@ -480,9 +480,12 @@ public class GameThree extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         try{
             countDownTimer.cancel();
-            startDownTimer.cancel();
             countDownTimer = null;
-            startDownTimer = null;} catch (Exception e){}
+        } catch (Exception e){}
+        try{
+            startDownTimer.cancel();
+            startDownTimer = null;
+        }catch (Exception e){}
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
 
