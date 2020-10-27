@@ -57,8 +57,8 @@
 
     <string name="intro2048">In this game, user needs to slide numbered tiles on a grid to combine them to create a tile with the number 2048. Every turn, a new tile with a value 2 or 4 will randomly appear on the board. Tiles will move toward the users\' chosen direction, and two tiles of the same number will collide while moving, they will merge into a tile with the total value of the two tiles that collided.</string>
 
-    <string name="introCal">See how many maths questions you can answer within 60s. Check for the video tutorial: <a href="https://youtu.be/mvZ01vugWVk">Calculation game guide Video</a></string>
-    <string name="introGameThree">Challenge your memory by finding as many similar cards as you can within 60s. Check the Game tutorial: <a href="https://youtu.be/IenpbI2TMBs">Image game guide Video</a></string>
+    <string name="introCal">See how many maths questions you can answer within 60s. Check for the video tutorial: <a href="https://www.youtube.com/watch?v=yw3yiuM8RV8">Calculation game guide Video</a></string>
+    <string name="introGameThree">Challenge your memory by finding as many similar cards as you can within 60s. Check the Game tutorial: <a href="https://www.youtube.com/watch?v=FXWt9wslmbI">Image game guide Video</a></string>
 
 
     <string name="title_opendata">Know More!</string>
@@ -77,7 +77,7 @@
     <string name="OD_know_more">Would you like to know about Dementia?</string>
     <string name="OD_barchartDesc">Number of Deaths Across Australia</string>
 
-    <string name="main_content">In this game, add the 2s to get 2048 by moving the tiles across. Check out the Video tutorial:<a href="https://youtu.be/khnyOFmCgII">2048 guide Video</a></string>
+    <string name="main_content">In this game, add the 2s to get 2048 by moving the tiles across. Check out the Video tutorial:<a href="https://www.youtube.com/watch?v=LVEFMLSmvZ4">2048 guide Video</a></string>
 
     <string name="metion1">Try out the other games and the Steps counter! </string>
     <string name="metion2">Go out now and take a brisk walk!</string>
