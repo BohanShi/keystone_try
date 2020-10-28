@@ -38,7 +38,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/imageHeader"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
         android:paddingBottom="@dimen/_10sdp">
 
         <FrameLayout
@@ -68,9 +70,9 @@
                     android:gravity="center"
                     android:shadowDx="0"
                     android:shadowDy="0"
-                    android:shadowRadius="10"
+                    android:shadowRadius="0"
                     android:text="Calculation"
-                    android:textColor="#EDAD64"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_30sdp"
                     android:textStyle="bold" />
                 <TextView
@@ -81,9 +83,9 @@
                     android:gravity="center"
                     android:shadowDx="0"
                     android:shadowDy="0"
-                    android:shadowRadius="10"
+                    android:shadowRadius="0"
                     android:text="Challenge your maths within 60s."
-                    android:textColor="#EDAD64"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -117,9 +119,9 @@
                     android:gravity="center"
                     android:shadowDx="0"
                     android:shadowDy="0"
-                    android:shadowRadius="10"
+                    android:shadowRadius="0"
                     android:text="2048"
-                    android:textColor="#FF8800"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_30sdp"
                     android:textStyle="bold" />
                 <TextView
@@ -130,9 +132,9 @@
                     android:gravity="center"
                     android:shadowDx="0"
                     android:shadowDy="0"
-                    android:shadowRadius="10"
+                    android:shadowRadius="0"
                     android:text="Test your predictions skills and have fun!"
-                    android:textColor="#FF8800"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -164,9 +166,9 @@
                     android:gravity="center"
                     android:shadowDx="0"
                     android:shadowDy="0"
-                    android:shadowRadius="10"
+                    android:shadowRadius="0"
                     android:text="Image"
-                    android:textColor="#FF8800"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_30sdp"
                     android:textStyle="bold" />
                 <TextView
@@ -177,9 +179,9 @@
                     android:gravity="center"
                     android:shadowDx="0"
                     android:shadowDy="0"
-                    android:shadowRadius="10"
+                    android:shadowRadius="0"
                     android:text="Test your memory within 60s."
-                    android:textColor="#FF8800"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold" />
             </LinearLayout>
