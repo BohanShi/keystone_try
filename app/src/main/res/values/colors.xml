@@ -156,7 +156,7 @@
 
     <color name="status_background">#bbada0</color>
 
-    <color name="game1">#0074D9</color>
-    <color name="game2">#0259A5</color>
-    <color name="game3">#003563</color>
+    <color name="game1">#7ABAF2</color>
+    <color name="game2">#0074D9</color>
+    <color name="game3">#00305A</color>
 </resources>
